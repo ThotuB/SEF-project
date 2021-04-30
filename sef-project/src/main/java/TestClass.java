@@ -5,19 +5,38 @@ public class TestClass {
     public static void main(String[] args) throws IOException {
 
         Game x = new Game("E", 12, "descr", "12-12-2012", "31-01-2929", true);
-        Game y = new Game("E", 12, "descr", "12-12-2012", "31-01-2929", true);
-
+        Game y = new Game("F", 12, "dsfsfsfsefewfw", "12-12-2012", "31-01-2929", true);
 
 
         Provider e = new Provider("name1");
         e.addGame(x);
         e.addGame(y);
 
-        System.out.println(e);
+        Provider f = new Provider("name2");
 
-        e.printJson("dtb_resources\\test2.json");
+        Provider g = new Provider("name2");
+
+        g.addGame(x);
+        g.addGame(x);
+        g.addGame(y);
+
+//        e.printJsonProvider("dtb_resources\\test2.json");
+//        f.printJsonProvider("dtb_resources\\test2.json");
+//        g.printJsonProvider("dtb_resources\\test2.json");
+
+        ProviderDTB prov = new ProviderDTB();
+
+        prov.addProvider(e);
+        prov.addProvider(f);
+        prov.addProvider(g);
+
+        prov.printProviders("dtb_resources\\test2.json");
+
+        ProviderDTB p2 = new ProviderDTB();
+
+        p2.readProviders("dtb_resources\\test2.json");
+
+        System.out.println("TEst class" + p2);
 
     }
-
-
 }

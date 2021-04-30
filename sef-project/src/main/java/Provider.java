@@ -1,13 +1,10 @@
-import org.json.JSONArray;
-import org.json.JSONObject;
+import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.Map;
 
 
 public class Provider {
@@ -36,35 +33,17 @@ public class Provider {
         return this.name;
     }
 
-    public void printJson(String filename) throws IOException {
+    public void printJsonProvider(String filename) throws IOException {
 
-        JSONObject jobj = new JSONObject();
-        JSONArray ja = new JSONArray();
+        Gson gson = new Gson();
+        String json = gson.toJson(this);
 
-        Map<String, java.io.Serializable> m = new LinkedHashMap<>(5);
-
-        for (Game g: this.games) {
-            m.put("name", g.getName());
-            m.put("price", g.getPrice());
-            m.put("description", g.getDescription());
-            m.put("startDate", g.getStartDate());
-            m.put("endDate", g.getEndDate());
-        }
-
-        ja.put(m);
-
-        jobj.put("name", this.name);
-        jobj.put("games", ja);
-
-        Files.write(Paths.get(filename), jobj.toString().getBytes());
-
-        PrintWriter pw = new PrintWriter("ceva.json");
-        pw.write(jobj.toString());
-
-        pw.flush();
-        pw.close();
-
+        Files.write(Paths.get(filename), json.getBytes(), StandardOpenOption.APPEND);
     }
 
+    public static Provider readJsonProvider(String json) {
+        Gson gson = new Gson();
 
+        return gson.fromJson(json, Provider.class);
+    }
 }
