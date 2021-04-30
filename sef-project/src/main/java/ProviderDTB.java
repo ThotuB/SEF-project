@@ -37,6 +37,15 @@ public class ProviderDTB {
 
     }
 
+    public void editProvider(int providerNumber, Provider add) throws IOException {
+
+        this.data.remove(providerNumber);
+        this.data.add(add);
+
+        printProviders("dtb_resources\\test2.json");
+
+    }
+
     @Override
     public String toString() {
         return "ProviderDTB{" +
