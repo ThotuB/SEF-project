@@ -12,6 +12,29 @@ public class Game {
     private Date startDate = new Date();
     private Date endDate = new Date();
 
+    public String getName() {
+        return this.name;
+    }
+
+    public String getDescription(){
+        return this.description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public boolean getRent() {
+        return rent;
+    }
+
+    public Date getStartDate() {
+        return this.startDate;
+    }
+
+    public Date getEndDate() {
+        return this.endDate;
+    }
 
     //private picture??
 
@@ -37,11 +60,12 @@ public class Game {
     @Override
     public String toString() {
         return "Game{" +
-                "name = '" + name + '\'' +
-                ", price = " + price +
-                ", description = '" + description + '\'' +
-                ", startDate = " + startDate +
-                ", endDate = " + endDate +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                ", description='" + description + '\'' +
+                ", rent=" + rent +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
                 '}';
     }
 }
