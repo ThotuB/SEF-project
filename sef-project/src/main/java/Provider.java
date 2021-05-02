@@ -1,4 +1,5 @@
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -35,7 +36,7 @@ public class Provider {
 
     public void printJsonProvider(String filename) throws IOException {
 
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(this);
 
         Files.write(Paths.get(filename), json.getBytes(), StandardOpenOption.APPEND);

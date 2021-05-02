@@ -1,4 +1,6 @@
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -17,7 +19,7 @@ public class ProviderDTB {
 
     public void printProviders(String filename) throws IOException {
 
-        Gson gson = new Gson();
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(this);
 
         Files.write(Paths.get(filename), json.getBytes());
@@ -37,12 +39,12 @@ public class ProviderDTB {
 
     }
 
-    public void editProvider(int providerNumber, Provider add) throws IOException {
+    public void editProvider(int providerNumber, Provider add, String filename) throws IOException {
 
         this.data.remove(providerNumber);
         this.data.add(add);
 
-        printProviders("dtb_resources\\test2.json");
+        printProviders(filename);
 
     }
 
