@@ -1,0 +1,12 @@
+[
+  {
+    "username": "thotu",
+    "passwordHashed": "7fd319339103857794c454396a1f7498fc3d6c48b57992d2b50cba7ad7f12b32",
+    "salt": "%lREC"
+  },
+  {
+    "username": "thot",
+    "passwordHashed": "55810826b95943750ed717e314ebacdc8d5716e26e035f6fd3898dbfd8368dca",
+    "salt": "w%np\u0027"
+  }
+]
