@@ -3,10 +3,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-class HomeFrame extends JFrame implements ActionListener {
+class HomeFrame extends GeneralFrame implements ActionListener {
     Container container = getContentPane();
 
     HomeFrame() {
+        super();
         resetContainerLayout();
     }
 

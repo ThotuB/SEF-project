@@ -30,13 +30,13 @@ public class TestClass {
         prov.addProvider(f);
         prov.addProvider(g);
 
-        prov.printProviders("src\\main\\resources\\ProvidersDTB.json");
+        //prov.printProviders("src\\main\\resources\\ProvidersDTB.json");
 
         ProviderDTB p2 = new ProviderDTB();
 
-        p2.readProviders("src\\main\\resources\\ProvidersDTB.json");
+        //p2.readProviders("src\\main\\resources\\ProvidersDTB.json");
 
-        System.out.println("\nRead provider: \n" + p2);
+        //System.out.println("\nRead provider: \n" + p2);
 
     }
 }

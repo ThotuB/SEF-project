@@ -14,7 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-class LoginFrame extends JFrame implements ActionListener {
+class LoginFrame extends GeneralFrame implements ActionListener {
     Container container = getContentPane();
     Database dataBase;
 
@@ -28,8 +28,10 @@ class LoginFrame extends JFrame implements ActionListener {
     JButton registerButton = new JButton("CREATE ACCOUNT");
 
     LoginFrame(Database dataBase) {
+
+        super();
+
         this.dataBase = dataBase;
-        this.getContentPane().setBackground(new Color(54, 57, 63));
 
         resetContainerLayout();
         setComponentProperties();
@@ -44,6 +46,7 @@ class LoginFrame extends JFrame implements ActionListener {
     public void setComponentProperties() {
         loginLabel.setBounds(0, 20, 400, 100);
         loginLabel.setFont(new Font("Verdana", Font.PLAIN, 50));
+
 
         usernameLabel.setBounds(0, 100, 400, 100);
         usernameLabel.setFont(new Font("Verdana", Font.PLAIN, 15));
@@ -277,7 +280,7 @@ class Database {
 
 public class Login {
     public static void main(String[] args){
-        Database DB = new Database("src\\main\\resources\\database.json");
+        Database DB = new Database("src\\main\\resources\\databases\\database.json");
         LoginFrame frame = new LoginFrame(DB);
 
         frame.setTitle("Login");
