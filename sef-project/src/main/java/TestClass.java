@@ -5,7 +5,7 @@ public class TestClass {
     public static void main(String[] args) throws IOException {
 
         Game x = new Game("E", 12, "descr", "12-12-2012", "31-01-2929", true);
-        Game y = new Game("F", 12, "dsfsfsfsefewfw", "12-12-2012", "31-01-2929", true);
+        Game y = new Game("F", 1432, "dsfsfsfsefewfw", "12-12-2012", "31-01-2929", true);
 
 
         Provider e = new Provider("name1");
@@ -30,13 +30,13 @@ public class TestClass {
         prov.addProvider(f);
         prov.addProvider(g);
 
-        prov.printProviders("dtb_resources\\test2.json");
+        prov.printProviders("src\\main\\resources\\ProvidersDTB.json");
 
         ProviderDTB p2 = new ProviderDTB();
 
-        p2.readProviders("dtb_resources\\test2.json");
+        p2.readProviders("src\\main\\resources\\ProvidersDTB.json");
 
-        System.out.println("TEst class" + p2);
+        System.out.println("\nRead provider: \n" + p2);
 
     }
 }

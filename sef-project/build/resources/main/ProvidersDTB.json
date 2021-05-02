@@ -1,0 +1,58 @@
+{
+  "data": [
+    {
+      "name": "name1",
+      "games": [
+        {
+          "name": "E",
+          "price": 12.0,
+          "description": "descr",
+          "rent": true,
+          "startDate": "Dec 12, 2012, 12:00:00 AM",
+          "endDate": "Jan 31, 2929, 12:00:00 AM"
+        },
+        {
+          "name": "F",
+          "price": 1432.0,
+          "description": "dsfsfsfsefewfw",
+          "rent": true,
+          "startDate": "Dec 12, 2012, 12:00:00 AM",
+          "endDate": "Jan 31, 2929, 12:00:00 AM"
+        }
+      ]
+    },
+    {
+      "name": "name2",
+      "games": []
+    },
+    {
+      "name": "name2",
+      "games": [
+        {
+          "name": "E",
+          "price": 12.0,
+          "description": "descr",
+          "rent": true,
+          "startDate": "Dec 12, 2012, 12:00:00 AM",
+          "endDate": "Jan 31, 2929, 12:00:00 AM"
+        },
+        {
+          "name": "E",
+          "price": 12.0,
+          "description": "descr",
+          "rent": true,
+          "startDate": "Dec 12, 2012, 12:00:00 AM",
+          "endDate": "Jan 31, 2929, 12:00:00 AM"
+        },
+        {
+          "name": "F",
+          "price": 1432.0,
+          "description": "dsfsfsfsefewfw",
+          "rent": true,
+          "startDate": "Dec 12, 2012, 12:00:00 AM",
+          "endDate": "Jan 31, 2929, 12:00:00 AM"
+        }
+      ]
+    }
+  ]
+}
