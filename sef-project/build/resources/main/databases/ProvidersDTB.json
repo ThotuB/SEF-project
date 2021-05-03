@@ -4,7 +4,7 @@
       "name": "Jador",
       "games": [
         {
-          "name": "Extra Small",
+          "name": "Game 1",
           "price": 10.0,
           "description": "This is a description for game number 1.",
           "rent": true,
@@ -12,7 +12,7 @@
           "endDate": "Jan 31, 2929, 12:00:00 AM"
         },
         {
-          "name": "Extra Large",
+          "name": "Game 2",
           "price": 142332.0,
           "description": "This is a description for game number 2, which is longer than the description for game number one, using lots of characters because we have 16 gbs of ram and a lot of memory yes yes rucnalup.",
           "rent": true,
@@ -25,7 +25,7 @@
       "name": "thot",
       "games": [
         {
-          "name": "Extra Small",
+          "name": "Game 1",
           "price": 10.0,
           "description": "This is a description for game number 1.",
           "rent": true,
@@ -33,7 +33,7 @@
           "endDate": "Jan 31, 2929, 12:00:00 AM"
         },
         {
-          "name": "Extra Large",
+          "name": "Game 2",
           "price": 142332.0,
           "description": "This is a description for game number 2, which is longer than the description for game number one, using lots of characters because we have 16 gbs of ram and a lot of memory yes yes rucnalup.",
           "rent": true,

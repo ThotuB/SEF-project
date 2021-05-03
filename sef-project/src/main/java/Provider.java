@@ -25,6 +25,10 @@ public class Provider {
                 '}';
     }
 
+    public ArrayList<Game> getGameArray() {
+        return this.games;
+    }
+
     public String getName() {
         return this.name;
     }
