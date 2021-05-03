@@ -45,18 +45,25 @@ class LoginFrame extends GeneralFrame implements ActionListener {
 
     public void setComponentProperties() {
         loginLabel.setBounds(0, 20, 400, 100);
-        loginLabel.setFont(new Font("Verdana", Font.PLAIN, 50));
+        loginLabel.setFont(new Font("Verdana", Font.BOLD, 50));
+        loginLabel.setForeground(Color.WHITE);
 
-
-        usernameLabel.setBounds(0, 100, 400, 100);
+        usernameLabel.setBounds(-110, 100, 400, 100);
         usernameLabel.setFont(new Font("Verdana", Font.PLAIN, 15));
+        usernameLabel.setForeground(Color.ORANGE);
         usernameField.setBounds(50, 170, 300, 50);
+        usernameField.setFont(new Font("Verdana", Font.PLAIN, 17));
 
-        passwordLabel.setBounds(0, 200, 400, 100);
+
+        passwordLabel.setBounds(-110, 200, 400, 100);
         passwordLabel.setFont(new Font("Verdana", Font.PLAIN, 15));
+        passwordLabel.setForeground(Color.ORANGE);
         passwordField.setBounds(50, 270, 300, 50);
+        passwordField.setFont(new Font("Verdana", Font.PLAIN, 17));
 
         showPasswordCheckBox.setBounds(50, 330, 200, 15);
+        showPasswordCheckBox.setBackground(new Color(40, 40, 40));
+        showPasswordCheckBox.setForeground(Color.WHITE);
         loginButton.setBounds(50, 400, 100,50);
         registerButton.setBounds(200, 400, 150, 50);
     }
@@ -285,7 +292,7 @@ public class Login {
 
         frame.setTitle("Login");
         frame.setVisible(true);
-        frame.setBounds(500, 400, 400, 600);
+        frame.setBounds(0, 0, 400, 600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
     }

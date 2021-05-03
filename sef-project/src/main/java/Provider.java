@@ -1,10 +1,5 @@
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 
 
@@ -34,13 +29,13 @@ public class Provider {
         return this.name;
     }
 
-    public void printJsonProvider(String filename) throws IOException {
+    /*public void printJsonProvider(String filename) throws IOException {
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String json = gson.toJson(this);
 
         Files.write(Paths.get(filename), json.getBytes(), StandardOpenOption.APPEND);
-    }
+    }*/
 
     public static Provider readJsonProvider(String json) {
         Gson gson = new Gson();

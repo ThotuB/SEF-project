@@ -8,5 +8,10 @@
     "username": "thot",
     "passwordHashed": "55810826b95943750ed717e314ebacdc8d5716e26e035f6fd3898dbfd8368dca",
     "salt": "w%np\u0027"
+  },
+  {
+    "username": "Jador",
+    "passwordHashed": "883fbef4df40879a0617f8a550ce97b7e0ebaac4a9f702ece156668be2295ad7",
+    "salt": "1(2b$"
   }
 ]

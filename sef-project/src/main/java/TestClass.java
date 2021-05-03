@@ -4,39 +4,24 @@ public class TestClass {
 
     public static void main(String[] args) throws IOException {
 
-        Game x = new Game("E", 12, "descr", "12-12-2012", "31-01-2929", true);
-        Game y = new Game("F", 1432, "dsfsfsfsefewfw", "12-12-2012", "31-01-2929", true);
+        Game x = new Game("Extra Small", 10, "This is a description for game number 1.", "12-12-2012", "31-01-2929", true);
+        Game y = new Game("Extra Large", 142332, "This is a description for game number 2, which is longer than the description for game number one, using lots of characters because we have 16 gbs of ram and a lot of memory yes yes rucnalup.", "01-12-2021", "01-03-2023", true);
 
 
-        Provider e = new Provider("name1");
+        Provider e = new Provider("Jador");
         e.addGame(x);
         e.addGame(y);
 
-        Provider f = new Provider("name2");
+        Provider f = new Provider("thot");
+        f.addGame(x);
+        f.addGame(y);
 
-        Provider g = new Provider("name2");
+        ProviderDTB alfa = new ProviderDTB();
 
-        g.addGame(x);
-        g.addGame(x);
-        g.addGame(y);
+        alfa.addProvider(e);
+        alfa.addProvider(f);
 
-//        e.printJsonProvider("dtb_resources\\test2.json");
-//        f.printJsonProvider("dtb_resources\\test2.json");
-//        g.printJsonProvider("dtb_resources\\test2.json");
-
-        ProviderDTB prov = new ProviderDTB();
-
-        prov.addProvider(e);
-        prov.addProvider(f);
-        prov.addProvider(g);
-
-        //prov.printProviders("src\\main\\resources\\ProvidersDTB.json");
-
-        ProviderDTB p2 = new ProviderDTB();
-
-        //p2.readProviders("src\\main\\resources\\ProvidersDTB.json");
-
-        //System.out.println("\nRead provider: \n" + p2);
+        alfa.printProviders("src\\main\\resources\\databases\\ProvidersDTB.json");
 
     }
 }

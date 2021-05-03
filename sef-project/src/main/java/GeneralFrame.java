@@ -10,4 +10,5 @@ public class GeneralFrame extends JFrame {
         this.getContentPane().setBackground(new Color(40, 40, 40));
 
     }
+
 }
