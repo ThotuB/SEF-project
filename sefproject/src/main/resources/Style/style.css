@@ -1,0 +1,20 @@
+* {
+    button-background: #2F3136;
+    gray-background-1: #36393F;
+    gray-background-2: #2F3136;
+    gray-background-3: #292B2F;
+    gray-background-4: #202225;
+}
+
+.root {
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-background-color: gray-background-1;
+    -fx-text-fill: #ffffff;
+}
+
+.button {
+    -fx-background-color: button-background;
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 5;
+}
