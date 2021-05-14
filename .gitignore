@@ -2,3 +2,5 @@
 *.xml
 *.lock
 *.bin
+*.class
+*.prefs
