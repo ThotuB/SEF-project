@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "name": "Jador",
+      "games": [
+        {
+          "name": "Extra Small",
+          "price": 10.0,
+          "description": "This is a description for game number 1.",
+          "rent": true,
+          "startDate": "Dec 12, 2012, 12:00:00 AM",
+          "endDate": "Jan 31, 2929, 12:00:00 AM"
+        },
+        {
+          "name": "Extra Large",
+          "price": 142332.0,
+          "description": "This is a description for game number 2, which is longer than the description for game number one, using lots of characters because we have 16 gbs of ram and a lot of memory yes yes rucnalup.",
+          "rent": true,
+          "startDate": "Dec 1, 2021, 12:00:00 AM",
+          "endDate": "Mar 1, 2023, 12:00:00 AM"
+        }
+      ]
+    },
+    {
+      "name": "thot",
+      "games": [
+        {
+          "name": "Extra Small",
+          "price": 10.0,
+          "description": "This is a description for game number 1.",
+          "rent": true,
+          "startDate": "Dec 12, 2012, 12:00:00 AM",
+          "endDate": "Jan 31, 2929, 12:00:00 AM"
+        },
+        {
+          "name": "Extra Large",
+          "price": 142332.0,
+          "description": "This is a description for game number 2, which is longer than the description for game number one, using lots of characters because we have 16 gbs of ram and a lot of memory yes yes rucnalup.",
+          "rent": true,
+          "startDate": "Dec 1, 2021, 12:00:00 AM",
+          "endDate": "Mar 1, 2023, 12:00:00 AM"
+        }
+      ]
+    }
+  ]
+}
