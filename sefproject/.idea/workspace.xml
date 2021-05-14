@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14e3526d-9a33-406e-8b95-dd6a422b92f2" name="Default Changelist" comment="logreg">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Components/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Components/Provider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Databases/ProviderDTB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/TestLogReg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/TestLogReg.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
