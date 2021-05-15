@@ -4,6 +4,8 @@
     gray-background-2: #2F3136;
     gray-background-3: #292B2F;
     gray-background-4: #202225;
+    bloo: #7289da;
+    porpal: #3644d9;
 }
 
 .root {
@@ -32,11 +34,24 @@
     -fx-font-family: "Franklin Gothic Book";
     -fx-text-fill: #ffffff;
     -fx-background-radius: 5;
-    -fx-font-size: 20;
+    -fx-font-size: 25px;
 }
 
 .button:hover {
     -fx-opacity: 0.6;
+}
+
+.text_white {
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-fill: white;
+    -fx-font-size: 25px;
+}
+
+.text_title {
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-weight: bolder;
+    -fx-fill: white;
+    -fx-font-size: 40px;
 }
 
 .grid {
@@ -50,10 +65,21 @@
 }
 
 .text-field {
-    -fx-background-color: gray-background-4 ;
-    -fx-background-insets: 0, 0 0 1 0 ;
-    -fx-background-radius: 0 ;
+    -fx-background-color: porpal, gray-background-4;
+    -fx-background-insets: 0, 0 0 2 0;
+    -fx-background-radius: 0;
+
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 25px;
+    -fx-text-fill: white;
 }
+
 .text-field:focused {
-    -fx-background-color: -fx-focus-color, gray-background-4 ;
+    -fx-background-color: bloo, gray-background-4;
+}
+
+.check-box {
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 15px;
+    -fx-text-fill: white;
 }
