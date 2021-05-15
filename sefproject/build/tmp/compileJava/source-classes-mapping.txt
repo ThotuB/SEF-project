@@ -10,13 +10,13 @@ Components/Provider.java
  Components.Provider
 Tests/TestLogReg.java
  Tests.TestLogReg
-Databases/UserDTB.java
- Databases.UserDTB
- Databases.UserDTB$1
-Components/Game.java
- Components.Game
 MainScenesControllers/ProviderWelcomeController.java
  MainScenesControllers.ProviderCollection
  MainScenesControllers.ProviderWelcomeController
+Components/Game.java
+ Components.Game
 Controllers/ProviderHomeController.java
  Controllers.ProviderHomeController
+Databases/UserDTB.java
+ Databases.UserDTB
+ Databases.UserDTB$1
