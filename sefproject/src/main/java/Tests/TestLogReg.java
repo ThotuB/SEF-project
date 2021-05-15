@@ -1,26 +1,36 @@
 package Tests;
 
+import Controllers.LogRegController;
+import Controllers.ProviderHomeController;
+import Databases.UserDTB;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class TestLogReg extends Application {
+    UserDTB userDTB;
+
+    @Override
+    public void init() throws Exception {
+        super.init();
+        userDTB = new UserDTB("src/main/resources/Databases/UserDTB.json");
+    }
+
     @Override
     public void start(Stage stage) throws Exception {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Stages/logreg.fxml"));
 
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Stages/provider_main.fxml"));
-//
-//        Parent root = loader.load();
-//
-//        Scene scene = new Scene(root);
-//
-//        ProviderHomeController providerHomeController = loader.getController();
-//
-//        stage.setScene(scene);
-//        stage.setTitle("Login/Register");
-//
-//        providerHomeController.setNameLabel("John");
-//
-//        stage.show();
+        Parent root = loader.load();
+
+        LogRegController controller = loader.getController();
+        controller.setUserDTB(userDTB);
+
+        Scene scene = new Scene(root);
+
+        stage.setScene(scene);
+        stage.setTitle("Login/Register");
+
+        stage.show();
     }
 
     public static void main(String[] args) {
