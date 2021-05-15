@@ -1,5 +1,5 @@
-Databases/ProviderDTB.java
- Databases.ProviderDTB
+Tests/TestLogReg.java
+ Tests.TestLogReg
 Controllers/LogRegController.java
  Controllers.LogRegController
 Components/User.java
@@ -9,11 +9,13 @@ Components/Provider.java
 Databases/UserDTB.java
  Databases.UserDTB
  Databases.UserDTB$1
-MainScenesControllers/ProviderWelcomeController.java
- MainScenesControllers.ProviderWelcomeController
 Components/Game.java
  Components.Game
+Databases/ProviderDTB.java
+ Databases.ProviderDTB
+Tests/CreateProvDTB_Test.java
+ Tests.CreateProvDTB_Test
+MainScenesControllers/ProviderWelcomeController.java
+ MainScenesControllers.ProviderWelcomeController
 Controllers/ProviderHomeController.java
  Controllers.ProviderHomeController
-Tests/TestLogReg.java
- Tests.TestLogReg
