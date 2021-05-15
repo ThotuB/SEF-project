@@ -14,12 +14,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2969213649851632" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProviderHomeController">
+<SplitPane dividerPositions="0.2969213649851632" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProviderHomeController">
   <items>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #383838;">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="root_darkest" stylesheets="@../Style/style.css">
          <children>
             <Line endX="192.06668090820312" layoutX="100.0" layoutY="253.0" startX="-72.59999084472656" />
-            <VBox layoutX="14.0" layoutY="265.0" prefHeight="416.0" prefWidth="274.0" style="-fx-background-color: #383838;" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="265.0">
+            <VBox layoutX="14.0" layoutY="265.0" prefHeight="416.0" prefWidth="274.0" styleClass="root_darkest" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="265.0">
                <children>
                   <Button fx:id="newOfferButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="New Offer">
                      <VBox.margin>
@@ -52,15 +52,15 @@
                   <Image url="@../Images/raccoon.png" />
                </image>
             </ImageView>
-            <Text layoutX="103.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raccoony" wrappingWidth="123.32080078125">
+            <Text fill="WHITE" layoutX="103.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raccoony" wrappingWidth="123.32080078125">
                <font>
                   <Font size="23.0" />
                </font>
             </Text>
          </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #606060;">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="root_darker">
          <children>
-            <AnchorPane layoutX="-5.0" layoutY="57.0" prefHeight="200.0" prefWidth="764.0" style="-fx-background-color: #383838;">
+            <AnchorPane layoutX="-5.0" layoutY="57.0" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest">
                <children>
                   <Text fill="WHITE" layoutX="38.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, ">
                      <font>
@@ -79,12 +79,12 @@
                   </Text>
                </children>
             </AnchorPane>
-            <Text layoutX="260.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here's a list of your offers:">
+            <Text fill="WHITE" layoutX="260.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here's a list of your offers:">
                <font>
                   <Font name="Dubai Regular" size="22.0" />
                </font>
             </Text>
-            <GridPane fx:id="gamesGridPane" alignment="CENTER" gridLinesVisible="true" layoutX="32.0" layoutY="360.0" prefHeight="307.0" prefWidth="693.0" styleClass="grid" stylesheets="@../Style/listView.css">
+            <GridPane fx:id="gamesGridPane" alignment="CENTER" gridLinesVisible="true" layoutX="31.0" layoutY="359.0" prefHeight="307.0" prefWidth="693.0" styleClass="grid" stylesheets="@../Style/listView.css">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
