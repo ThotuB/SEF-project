@@ -1,22 +1,25 @@
-Databases/ProviderDTB.java
- Databases.ProviderDTB
 Controllers/LogRegController.java
  Controllers.LogRegController
 Components/User.java
  Components.User
+Databases/ProviderDTB.java
+ Databases.ProviderDTB
 Tests/CreateProvDTB_Test.java
  Tests.CreateProvDTB_Test
 Components/Provider.java
  Components.Provider
+Components/ProviderCollection.java
+ Components.ProviderCollection
 Tests/TestLogReg.java
  Tests.TestLogReg
-MainScenesControllers/ProviderWelcomeController.java
- MainScenesControllers.ProviderCollection
- MainScenesControllers.ProviderWelcomeController
+Controllers/NewOfferController.java
+ Controllers.NewOfferController
 Components/Game.java
  Components.Game
-Controllers/ProviderHomeController.java
- Controllers.ProviderHomeController
 Databases/UserDTB.java
  Databases.UserDTB
  Databases.UserDTB$1
+MainScenesControllers/ProviderApplication.java
+ MainScenesControllers.ProviderApplication
+Controllers/ProviderController.java
+ Controllers.ProviderController

@@ -40,22 +40,24 @@ public class Game {
 
     //private picture??
 
-    public Game(String name, double price, String description, String dateStart, String dateEnd, boolean rent) {
+    public Game(String name, double price, String description, Date dateStart, Date dateEnd, boolean rent) {
 
         this.name = name;
         this.price = price;
         this.description = description;
         this.rent = rent;
+        this.startDate = dateStart;
+        this.endDate = dateEnd;
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-
-        try {
-            startDate = dateFormat.parse(dateStart);
-            endDate = dateFormat.parse(dateEnd);
-        }
-        catch (ParseException e) {
-            System.out.println("Parse exception encountered while trying to format date");
-        }
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//
+//        try {
+//            startDate = dateFormat.parse(dateStart);
+//            endDate = dateFormat.parse(dateEnd);
+//        }
+//        catch (ParseException e) {
+//            System.out.println("Parse exception encountered while trying to format date");
+//        }
 
     }
 
