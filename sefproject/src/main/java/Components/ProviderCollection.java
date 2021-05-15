@@ -14,8 +14,20 @@ public class ProviderCollection {
 
     }
 
+    public ProviderDTB getProviderDTB() {
+        return providerDTB;
+    }
+
     public Provider getCurrentProvider() {
         return currentProvider;
+    }
+
+    public void updateCurrentProvider(Provider add) {
+        currentProvider = add;
+    }
+
+    public void updateProviderDTB(ProviderDTB add) {
+        providerDTB = add;
     }
 
     public Provider getProvider(String username){
