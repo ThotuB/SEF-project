@@ -2,6 +2,7 @@ package Tests;
 
 import Controllers.LogRegController;
 import Controllers.ProviderHomeController;
+import Databases.UserDTB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,6 +10,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class TestLogReg extends Application {
+    UserDTB userDTB;
+
+    @Override
+    public void init() throws Exception {
+        super.init();
+        userDTB = new UserDTB("src/main/resources/Databases/UserDTB.json");
+    }
+
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Stages/logreg.fxml"));
@@ -16,7 +25,7 @@ public class TestLogReg extends Application {
         Parent root = loader.load();
 
         LogRegController controller = loader.getController();
-        controller.setUserDTB();
+        controller.setUserDTB(userDTB);
 
         Scene scene = new Scene(root);
 

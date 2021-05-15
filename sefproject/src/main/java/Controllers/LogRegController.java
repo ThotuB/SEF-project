@@ -35,12 +35,19 @@ public class LogRegController {
         }
     }
 
-    public void loginButton(){
+    public void loginAction(){
         String username = usernameTextField.getText();
         String email = emailTextField.getText();
         String password = getPassword();
 
         User user = new User(username, email, password);
+
+        if ( userDTB.existsUser(user) ){
+            System.out.println("login succ");
+        }
+        else {
+            System.out.println("login not succ");
+        }
     }
 
     public void registerButton(){
@@ -48,10 +55,23 @@ public class LogRegController {
         String email = emailTextField.getText();
         String password = getPassword();
 
+        User user = new User(username, email, password);
 
+        if ( !userDTB.existsUsername(user.getUsername()) ){
+            user.setSalt();
+            user.setPasswordHashed();
+
+            userDTB.add(user);
+            userDTB.update();
+
+            System.out.println("Registration Complete");
+        }
+        else {
+            System.out.println("Username Already Taken");
+        }
     }
 
-    public void showPasswordCheck(){
+    public void showPasswordAction(){
         if ( showPasswordCheckbox.isSelected() ){
             passwordTextField.setText(passwordPasswordField.getText());
             passwordTextField.setVisible(true);

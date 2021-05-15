@@ -9,43 +9,46 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LogRegController">
    <children>
-      <Text layoutX="142.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="LOGIN / REGISTER" AnchorPane.bottomAnchor="709.30859375" AnchorPane.leftAnchor="142.0" AnchorPane.rightAnchor="141.92578125" AnchorPane.topAnchor="45.33984375" />
-      <VBox layoutY="141.0" prefHeight="659.0" prefWidth="400.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="141.0">
+      <Text layoutX="142.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="LOGIN / REGISTER" />
+      <VBox layoutY="134.0" prefHeight="666.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="134.0">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_white" text="Username" />
-            <TextField promptText="Raccoony">
+            <TextField fx:id="usernameTextField" styleClass="text-field" text="Raccoony">
                <VBox.margin>
                   <Insets bottom="25.0" />
-               </VBox.margin>
-            </TextField>
+               </VBox.margin></TextField>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_white" text="Email" />
-            <TextField promptText="email_doesnt@work.anyways">
+            <TextField fx:id="emailTextField" text="it_doesnt@work.anyways">
                <VBox.margin>
                   <Insets bottom="25.0" />
                </VBox.margin>
             </TextField>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_white" text="Password" />
-            <PasswordField promptText="qwerty12345" styleClass="text-field">
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </PasswordField>
-            <CheckBox mnemonicParsing="false" text="Show Password">
-               <VBox.margin>
+            <StackPane>
+               <children>
+                  <TextField fx:id="passwordTextField" styleClass="text-field" text="qwerty12345" />
+                  <PasswordField fx:id="passwordPasswordField" styleClass="text-field" />
+               </children>
+               <padding>
+                  <Insets bottom="15.0" />
+               </padding>
+            </StackPane>
+            <CheckBox fx:id="showPasswordCheckbox" mnemonicParsing="false" onAction="#showPasswordAction" text="Show Password">
+               <padding>
                   <Insets bottom="25.0" />
-               </VBox.margin>
+               </padding>
             </CheckBox>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="LOGIN" />
-                  <Region prefHeight="100.0" prefWidth="129.0" HBox.hgrow="ALWAYS" />
-                  <Button mnemonicParsing="false" text="REGISTER" />
+                  <Button mnemonicParsing="false" onAction="#loginAction" text="LOGIN" />
+                  <Region prefHeight="100.0" prefWidth="130.0" HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#registerButton" text="REGISTER" />
                </children>
             </HBox>
          </children>

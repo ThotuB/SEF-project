@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class UserDTB {
     private ArrayList<User> userDB = new ArrayList<User>();
-    private final String path;
+    public final String path;
 
     public UserDTB(String path){
         this.path = new File(path).getAbsolutePath();
