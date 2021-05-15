@@ -1,12 +1,5 @@
 package Tests;
 
-import Components.Game;
-import Components.Provider;
-import Controllers.ProviderHomeController;
-import Databases.ProviderDTB;
-
-import java.io.IOException;
-
 public class CreateProvDTB_Test {
 
     public static void main(String[] args) {

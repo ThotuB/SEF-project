@@ -2,26 +2,30 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.2969213649851632" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProviderHomeController">
+<SplitPane dividerPositions="0.2969213649851632" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProviderController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="root_darkest" stylesheets="@../Style/style.css">
          <children>
             <Line endX="192.06668090820312" layoutX="100.0" layoutY="253.0" startX="-72.59999084472656" />
-            <VBox layoutX="14.0" layoutY="265.0" prefHeight="416.0" prefWidth="274.0" styleClass="root_darkest" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="265.0">
+            <VBox layoutX="14.0" layoutY="265.0" prefHeight="416.0" prefWidth="274.0" spacing="80.0" styleClass="root_darkest" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="265.0">
                <children>
-                  <Button fx:id="newOfferButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="New Offer">
+                  <Button fx:id="seeGamesButton" mnemonicParsing="false" onAction="#seeGamesClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="See Games">
                      <VBox.margin>
                         <Insets left="40.0" top="40.0" />
                      </VBox.margin>
@@ -31,15 +35,15 @@
                   </Button>
                   <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Change Offer">
                      <VBox.margin>
-                        <Insets left="40.0" top="100.0" />
+                        <Insets left="40.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Dubai Regular" size="18.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="See Customers">
+                  <Button fx:id="newOfferButton" mnemonicParsing="false" onAction="#newOfferClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="New Offer">
                      <VBox.margin>
-                        <Insets left="40.0" top="100.0" />
+                        <Insets left="40.0" />
                      </VBox.margin>
                      <font>
                         <Font name="Dubai Regular" size="18.0" />
@@ -57,44 +61,67 @@
                   <Font size="23.0" />
                </font>
             </Text>
-         </children></AnchorPane>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="root_darker">
+         </children>
+      </AnchorPane>
+      <StackPane>
          <children>
-            <AnchorPane layoutX="-5.0" layoutY="57.0" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest">
+          <AnchorPane fx:id="welcomeAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="root_darker">
                <children>
-                  <Text fill="WHITE" layoutX="38.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, ">
+                  <AnchorPane layoutX="-5.0" layoutY="57.0" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest">
+                     <children>
+                        <Text fill="WHITE" layoutX="38.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, ">
+                           <font>
+                              <Font name="Dubai Regular" size="43.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="provNameLabel" fill="WHITE" layoutX="234.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- insert name here -" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="182.25900268554688">
+                           <font>
+                              <Font name="Dubai Regular" size="43.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="117.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hope you're having a nice day!">
+                           <font>
+                              <Font name="Dubai Regular" size="43.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <Text fill="WHITE" layoutX="260.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here's a list of your offers:">
                      <font>
-                        <Font name="Dubai Regular" size="43.0" />
+                        <Font name="Dubai Regular" size="22.0" />
                      </font>
                   </Text>
-                  <Text fx:id="provNameLabel" fill="WHITE" layoutX="234.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- insert name here -" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="182.25900268554688">
-                     <font>
-                        <Font name="Dubai Regular" size="43.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" layoutX="117.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hope you're having a nice day!">
-                     <font>
-                        <Font name="Dubai Regular" size="43.0" />
-                     </font>
-                  </Text>
+                  <GridPane fx:id="gamesGridPane" alignment="CENTER" gridLinesVisible="true" layoutX="31.0" layoutY="359.0" prefHeight="307.0" prefWidth="693.0" styleClass="grid">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
                </children>
             </AnchorPane>
-            <Text fill="WHITE" layoutX="260.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here's a list of your offers:">
-               <font>
-                  <Font name="Dubai Regular" size="22.0" />
-               </font>
-            </Text>
-            <GridPane fx:id="gamesGridPane" alignment="CENTER" gridLinesVisible="true" layoutX="31.0" layoutY="359.0" prefHeight="307.0" prefWidth="693.0" styleClass="grid" stylesheets="@../Style/listView.css">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
-            </GridPane>
-         </children></AnchorPane>
+            <AnchorPane fx:id="newOfferAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest" visible="false">
+               <children>
+                  <TextField fx:id="descriptionTextField" alignment="TOP_LEFT" layoutX="400.0" layoutY="317.0" prefHeight="225.0" prefWidth="327.0" promptText="Description" styleClass="text-field" stylesheets="@../Style/style.css" />
+                  <VBox layoutX="78.0" layoutY="315.0" prefHeight="340.0" prefWidth="231.0" spacing="30.0">
+                     <children>
+                        <TextField fx:id="gameNameTextField" prefHeight="38.0" prefWidth="160.0" promptText="Game Name" styleClass="text-field" stylesheets="@../Style/style.css" />
+                        <TextField fx:id="priceTextField" prefHeight="38.0" prefWidth="160.0" promptText="Price" styleClass="text-field" stylesheets="@../Style/style.css" />
+                        <DatePicker fx:id="startDateDatePicker" prefHeight="22.0" prefWidth="240.0" promptText="Start Date" />
+                        <DatePicker fx:id="endDateDatePicker" prefHeight="22.0" prefWidth="240.0" promptText="End Date" />
+                        <ChoiceBox fx:id="choiceBoxo" prefHeight="22.0" prefWidth="238.0" styleClass="text-field" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="newOfferButton1" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" onAction="#makeNewOfferButtonClick" prefHeight="73.0" prefWidth="398.0" text="Make New Offer!" />
+                  <Text layoutX="52.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Please fill in the game details." />
+                  <Text layoutX="55.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="With care." />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
   </items>
 </SplitPane>

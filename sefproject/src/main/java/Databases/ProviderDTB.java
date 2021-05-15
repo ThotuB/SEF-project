@@ -28,6 +28,10 @@ public class ProviderDTB {
         return data;
     }
 
+    public void editProviderDTB(Provider adding) {
+
+    }
+
     public void printProviders() {
 
         try {
@@ -62,17 +66,11 @@ public class ProviderDTB {
 
     }
 
-    public void editProvider(int providerNumber, Provider add) {
+    public void editProvider(Provider add) {
 
-        try {
-            this.data.remove(providerNumber);
-            this.data.add(add);
+        data.removeIf(i -> i.getName().equals(add.getName()));
+        this.data.add(add);
 
-            printProviders();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     @Override
