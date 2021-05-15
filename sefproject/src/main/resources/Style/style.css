@@ -6,28 +6,25 @@
     gray-background-4: #202225;
 }
 
-.root_darkest {
+.root {
     -fx-font-family: "Franklin Gothic Book";
-    -fx-background-color: gray-background-4;
     -fx-text-fill: #ffffff;
+}
+
+.root_darkest {
+    -fx-background-color: gray-background-4;
 }
 
 .root_darker {
-    -fx-font-family: "Franklin Gothic Book";
     -fx-background-color: gray-background-3;
-    -fx-text-fill: #ffffff;
 }
 
 .root_dark{
-    -fx-font-family: "Franklin Gothic Book";
     -fx-background-color: gray-background-2;
-    -fx-text-fill: #ffffff;
 }
 
 .root_darkish{
-    -fx-font-family: "Franklin Gothic Book";
     -fx-background-color: gray-background-1;
-    -fx-text-fill: #ffffff;
 }
 
 .button {
@@ -50,4 +47,13 @@
     -fx-hgap: 10;
     -fx-vgap: 10;
     -fx-alignment: center;
+}
+
+.text-field {
+    -fx-background-color: gray-background-4 ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ;
+}
+.text-field:focused {
+    -fx-background-color: -fx-focus-color, gray-background-4 ;
 }
