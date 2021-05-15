@@ -15,16 +15,23 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LogRegController">
    <children>
-      <Text layoutX="142.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="LOGIN / REGISTER" />
-      <VBox layoutY="134.0" prefHeight="666.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="134.0">
+      <VBox prefHeight="800.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="0.0">
          <children>
+            <AnchorPane>
+               <children>
+                  <Text layoutX="-1.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="LOGIN / REGISTER" textAlignment="CENTER" wrappingWidth="401.07421875" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+               </children>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </AnchorPane>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_white" text="Username" />
-            <TextField fx:id="usernameTextField" styleClass="text-field" text="Raccoony">
+            <TextField fx:id="usernameTextField" promptText="Raccoony" styleClass="text-field">
                <VBox.margin>
                   <Insets bottom="25.0" />
                </VBox.margin></TextField>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_white" text="Email" />
-            <TextField fx:id="emailTextField" text="it_doesnt@work.anyways">
+            <TextField fx:id="emailTextField" promptText="it_doesnt@work.anyways">
                <VBox.margin>
                   <Insets bottom="25.0" />
                </VBox.margin>
@@ -33,7 +40,7 @@
             <StackPane>
                <children>
                   <TextField fx:id="passwordTextField" styleClass="text-field" text="qwerty12345" />
-                  <PasswordField fx:id="passwordPasswordField" styleClass="text-field" />
+                  <PasswordField fx:id="passwordPasswordField" promptText="•••••••••••" styleClass="text-field" />
                </children>
                <padding>
                   <Insets bottom="15.0" />

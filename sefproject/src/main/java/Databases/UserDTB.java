@@ -11,6 +11,8 @@ import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class UserDTB {
     private ArrayList<User> userDB = new ArrayList<User>();
@@ -29,10 +31,39 @@ public class UserDTB {
         }
     }
 
+    // VALIDATION
+    public static boolean validUsername(User user){
+        if ( user.getUsername().length() >= 5 ){
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean validEmail(User user){
+        Pattern pattern = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
+        Matcher matcher = pattern.matcher(user.getEmail());
+
+        if ( matcher.matches() ){
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean validPassword(User user){
+        Pattern pattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{5,20}$");
+        Matcher matcher = pattern.matcher(user.getPassword());
+
+        if ( matcher.matches() ){
+            return true;
+        }
+        return false;
+    }
+
+    // EXISTANCE
     public boolean existsUser(User user){
         if ( userDB != null ){
             for (User u : userDB) {
-                if ( u.getUsername().equals(user.getUsername()) ){
+                if ( u.getUsername().equals(user.getUsername()) || u.getEmail().equals(user.getEmail()) ){
                     user.setSalt(u.getSalt());
                     user.setPasswordHashed();
 
@@ -49,10 +80,10 @@ public class UserDTB {
         return false;
     }
 
-    public boolean existsUsername(String username){
+    public boolean existsUsernameOrEmail(User user){
         if ( userDB != null ){
             for (User u : userDB) {
-                if ( u.getUsername().equals(username) ){
+                if ( u.getUsername().equals(user.getUsername()) || u.getEmail().equals(user.getEmail()) ){
                     return true;
                 }
             }

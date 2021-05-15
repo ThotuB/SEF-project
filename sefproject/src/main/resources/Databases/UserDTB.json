@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "username": "Gion",
+    "email": "gion@gionmail.com",
+    "passwordHashed": "0c052e571725a0f521c3b0ae5aa457af8faa943b0bd1f5f602fe7f2bec034193",
+    "salt": "P\u0027\u003d\u003eB"
+  },
+  {
+    "username": "Thotu",
+    "email": "bob@bobmail.com",
+    "passwordHashed": "7dd52fdd6ffe5abd5194944ffc719a999f48fcc256924755d60a65c2faea56b6",
+    "salt": "\u003d/Wf["
+  },
+  {
+    "username": "Thotu69",
+    "email": "cox@coxmail.com",
+    "passwordHashed": "f2f7ec14a7301090432fe64b5573f57f0b4981cd687677b5f61d61cd58f40710",
+    "salt": "t${_7"
+  },
+  {
+    "username": "jkfgdskjh",
+    "email": "pulan@cur.cox",
+    "passwordHashed": "9a1e5281179976220ed77b1325b2fe1980ad2afb43e03658e354059c35246052",
+    "salt": "2K4Ia"
+  }
+]

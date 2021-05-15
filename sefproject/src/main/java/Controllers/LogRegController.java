@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class LogRegController {
     UserDTB userDTB;
@@ -57,7 +58,22 @@ public class LogRegController {
 
         User user = new User(username, email, password);
 
-        if ( !userDTB.existsUsername(user.getUsername()) ){
+        if ( !UserDTB.validUsername(user) ){
+            System.out.println("Invalid Username!");
+            return;
+        }
+
+        if ( !UserDTB.validEmail(user) ){
+            System.out.println("Invalid Email!");
+            return;
+        }
+
+        if ( !UserDTB.validPassword(user) ){
+            System.out.println("Invalid Password!");
+            return;
+        }
+
+        if ( !userDTB.existsUsernameOrEmail(user) ){
             user.setSalt();
             user.setPasswordHashed();
 
