@@ -17,4 +17,9 @@
     -fx-font-family: "Franklin Gothic Book";
     -fx-text-fill: #ffffff;
     -fx-background-radius: 5;
+    -fx-font-size: 20;
+}
+
+.button:hover {
+    -fx-opacity: 0.6;
 }
