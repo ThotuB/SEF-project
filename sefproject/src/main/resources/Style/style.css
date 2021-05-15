@@ -33,7 +33,7 @@
     -fx-background-color: button-background;
     -fx-font-family: "Franklin Gothic Book";
     -fx-text-fill: #ffffff;
-    -fx-background-radius: 5;
+    -fx-background-radius: 20;
     -fx-font-size: 25px;
 }
 
