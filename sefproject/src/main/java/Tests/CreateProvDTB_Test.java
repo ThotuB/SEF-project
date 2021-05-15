@@ -29,9 +29,9 @@ public class CreateProvDTB_Test {
 //
 //        alfa.printProviders();
 //
-        ProviderHomeController bla = new ProviderHomeController("Jador");
-
-        System.out.println(bla.getCurrentProvider());
+//        ProviderHomeController bla = new ProviderHomeController("Jador");
+//
+//        System.out.println(bla.getCurrentProvider());
     }
 
 }

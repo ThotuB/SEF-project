@@ -32,6 +32,15 @@ public class Provider {
         return this.games;
     }
 
+    public ArrayList<String> getStringGameArray(){
+        ArrayList<String> gameNames = new ArrayList<>();
+
+        for (Game i : this.games) {
+            gameNames.add(i.getName());
+        }
+        return gameNames;
+    }
+
     public String getName() {
         return this.name;
     }

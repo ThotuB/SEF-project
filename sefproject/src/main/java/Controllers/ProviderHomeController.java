@@ -1,42 +1,33 @@
 package Controllers;
 
-import Components.Provider;
-import Databases.ProviderDTB;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.text.Text;
+
+import java.util.ArrayList;
 
 public class ProviderHomeController {
 
-    private ProviderDTB providerDTB = new ProviderDTB();
-    private Provider currentProvider;
-
-    public ProviderHomeController(String username) {
-
-        providerDTB.readProviders();
-        currentProvider = getProvider(username);
-
-    }
-
-    public Provider getCurrentProvider() {
-        return currentProvider;
-    }
-
-    public Provider getProvider(String username){
-
-        for (Provider i: providerDTB.getData()) {
-            if (i.getName().equals(username)) {
-                return i;
-            }
-        }
-        return null;
-    }
-
     @FXML
     private Text provNameLabel;
+    private ListView<String> offerListListView = new ListView<>();
 
     public void setNameLabel(String name) {
         provNameLabel.setText(name);
+    }
+
+    public void setOfferListListView(ArrayList<String> from) {
+
+        //System.out.println(from);
+
+        offerListListView.getItems().addAll(from);
+
+        offerListListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
     }
 
     public void click(ActionEvent actionEvent) {
