@@ -1,4 +1,4 @@
-package Tests;
+package Applications;
 
 import Controllers.LogRegController;
 import Databases.UserDTB;
@@ -9,7 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class TestLogReg extends Application {
+public class LogRegApplication extends Application {
     UserDTB userDTB;
 
     @Override

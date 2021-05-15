@@ -1,4 +1,4 @@
-package MainScenesControllers;
+package Applications;
 
 import Components.ProviderCollection;
 import Controllers.ProviderController;
