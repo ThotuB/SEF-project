@@ -1,8 +1,10 @@
 
-*.xml
-*.lock
-*.bin
-*.class
-*.prefs
-sefproject/.gradle/7.0/dependencies-accessors/dependencies-accessors.lock
-*.lock
+sefproject/.gradle/7.0/executionHistory/executionHistory.bin
+sefproject/.gradle/7.0/executionHistory/executionHistory.lock
+sefproject/.gradle/7.0/fileHashes/fileHashes.bin
+sefproject/.gradle/7.0/fileHashes/fileHashes.lock
+sefproject/.gradle/7.0/javaCompile/javaCompile.lock
+sefproject/.gradle/7.0/javaCompile/taskHistory.bin
+sefproject/.gradle/buildOutputCleanup/buildOutputCleanup.lock
+sefproject/.gradle/buildOutputCleanup/outputFiles.bin
+sefproject/.idea/workspace.xml
