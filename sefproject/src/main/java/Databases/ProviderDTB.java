@@ -1,53 +1,78 @@
 package Databases;
 
+import Components.Provider;
+import Components.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.security.Provider;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProviderDTB {
 
     List<Provider> data = new ArrayList<>();
+    private final String path = "src/main/resources/Databases/ProvidersDTB.json";
 
     public void addProvider(Provider adding){
         data.add(adding);
     }
 
-    public void printProviders(String filename) throws IOException {
-
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String json = gson.toJson(this);
-
-        Files.write(Paths.get(filename), json.getBytes());
+    public List<Provider> getData() {
+        return data;
     }
 
-    public void readProviders(String filename) throws IOException{
+    public void printProviders() {
 
-        Gson gson = new Gson();
+        try {
 
-        String content = Files.readString(Path.of(filename), StandardCharsets.US_ASCII);
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String json = gson.toJson(this);
 
-        ProviderDTB t = gson.fromJson(content, ProviderDTB.class);
-
-        for (Provider i: t.data) {
-            addProvider(i);
+            Files.write(Paths.get(path), json.getBytes());
         }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
-    public void editProvider(int providerNumber, Provider add, String filename) throws IOException {
+    public void readProviders(){
 
-        this.data.remove(providerNumber);
-        this.data.add(add);
+        try {
+            Gson gson = new Gson();
 
-        printProviders(filename);
+            String content = Files.readString(Path.of(path), StandardCharsets.US_ASCII);
 
+            ProviderDTB t = gson.fromJson(content, ProviderDTB.class);
+
+            for (Provider i: t.data) {
+                addProvider(i);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void editProvider(int providerNumber, Provider add) {
+
+        try {
+            this.data.remove(providerNumber);
+            this.data.add(add);
+
+            printProviders();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
