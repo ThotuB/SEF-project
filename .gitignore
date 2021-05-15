@@ -4,3 +4,5 @@
 *.bin
 *.class
 *.prefs
+sefproject/.gradle/7.0/dependencies-accessors/dependencies-accessors.lock
+*.lock

@@ -40,7 +40,7 @@ public class ProviderWelcomeController extends Application {
         welcomeStage.setScene(scene);
 
         providerHomeController.setNameLabel(providerCollection.getCurrentProvider().getName());
-        providerHomeController.setOfferListListView(providerCollection.getCurrentProvider().getStringGameArray());
+        providerHomeController.setGamesGridPane(providerCollection.getCurrentProvider().getStringGameArray());
 
         System.out.println(providerCollection.getCurrentProvider().getStringGameArray());
 
@@ -48,7 +48,7 @@ public class ProviderWelcomeController extends Application {
     }
 
     public static void main(String[] args) {
-        launch("Jador");
+        launch("Raul");
     }
 }
 

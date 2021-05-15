@@ -4,8 +4,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 import java.util.ArrayList;
@@ -14,24 +21,36 @@ public class ProviderHomeController {
 
     @FXML
     private Text provNameLabel;
-    private ListView<String> offerListListView = new ListView<>();
+    //public ListView<String> offerListListView;
+    public GridPane gamesGridPane;
+    public Button newOfferButton;
 
     public void setNameLabel(String name) {
         provNameLabel.setText(name);
     }
 
-    public void setOfferListListView(ArrayList<String> from) {
+    public void setGamesGridPane(ArrayList<String> from) {
 
-        //System.out.println(from);
+        int n = 0;
+        int m = 0;
 
-        offerListListView.getItems().addAll(from);
 
-        offerListListView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        for (String i: from) {
 
+            Text a = new Text();
+            a.setText("\t\t" + i);
+            a.setFont(new Font("Verdana",20));
+            a.setFill(Color.WHITESMOKE);
+
+            gamesGridPane.add(a, m, n);
+            gamesGridPane.setAlignment(Pos.CENTER_RIGHT);
+
+            m++;
+            if (m == 2) {
+                n++;
+                m = 0;
+            }
+
+        }
     }
-
-    public void click(ActionEvent actionEvent) {
-
-    }
-
 }
