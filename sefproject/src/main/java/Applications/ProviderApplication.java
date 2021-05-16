@@ -40,6 +40,7 @@ public class ProviderApplication extends Application {
 
         providerController.setNameLabel(providerCollection.getCurrentProvider().getName());
         providerController.setGamesGridPane(providerCollection.getCurrentProvider().getStringGameArray());
+        providerController.setGameListListView(providerCollection.getCurrentProvider().getStringGameArray());
 
         //System.out.println(providerCollection.getCurrentProvider().getStringGameArray());
         welcomeStage.setResizable(false);

@@ -33,7 +33,7 @@
     -fx-background-color: button-background;
     -fx-font-family: "Franklin Gothic Book";
     -fx-text-fill: #ffffff;
-    -fx-background-radius: 5;
+    -fx-background-radius: 20;
     -fx-font-size: 25px;
 }
 
@@ -82,4 +82,26 @@
     -fx-font-family: "Franklin Gothic Book";
     -fx-font-size: 15px;
     -fx-text-fill: white;
+}
+
+.list-view {
+    -fx-background-color: gray-background-4;
+    -fx-background-radius: 5.0;
+    -fx-background-insets: 0.0 5.0 0.0 5.0;
+}
+
+.list-view .list-cell:even {
+    -fx-background-color: gray-background-1;
+    -fx-text-fill: whitesmoke;
+    -fx-font-size: 20;
+}
+.list-view .list-cell:odd {
+    -fx-background-color: gray-background-4;
+    -fx-text-fill: whitesmoke;
+    -fx-font-size: 20;
+}
+
+.list-view:focused .list-cell:filled:selected {
+    /* 3: (This is more specific and therefore overrides the above)*/
+    -fx-background-color: linear-gradient(#000 0%, #222 25%, #444 75%, #666 100%);
 }

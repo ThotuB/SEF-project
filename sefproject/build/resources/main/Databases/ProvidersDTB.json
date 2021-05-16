@@ -41,14 +41,6 @@
           "endDate": "Mar 1, 2023, 12:00:00 AM"
         },
         {
-          "name": "Game 3",
-          "price": 69.0,
-          "description": "N-avem",
-          "rent": true,
-          "startDate": "Apr 25, 2021, 12:00:00 AM",
-          "endDate": "Jun 5, 2021, 12:00:00 AM"
-        },
-        {
           "name": "please work",
           "price": 123.0,
           "description": "test",

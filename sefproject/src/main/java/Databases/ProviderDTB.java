@@ -1,13 +1,8 @@
 package Databases;
 
 import Components.Provider;
-import Components.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
-
-import java.io.IOException;
-import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -28,12 +23,11 @@ public class ProviderDTB {
         return data;
     }
 
-    public void editProviderDTB(Provider adding) {
-
+    public void removeProvider(Provider toBeRemoved) {
+        this.data.removeIf(i -> i.getName().equals(toBeRemoved.getName()));
     }
 
     public void printProviders() {
-
         try {
 
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -44,7 +38,6 @@ public class ProviderDTB {
         catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public void readProviders(){
@@ -63,13 +56,6 @@ public class ProviderDTB {
         catch (Exception e) {
             e.printStackTrace();
         }
-
-    }
-
-    public void editProvider(Provider add) {
-
-        data.removeIf(i -> i.getName().equals(add.getName()));
-        this.data.add(add);
 
     }
 

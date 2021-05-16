@@ -28,10 +28,6 @@ public class Provider {
                 '}';
     }
 
-    public ArrayList<Game> getGameArray() {
-        return this.games;
-    }
-
     public ArrayList<String> getStringGameArray(){
         ArrayList<String> gameNames = new ArrayList<>();
 
@@ -45,9 +41,9 @@ public class Provider {
         return this.name;
     }
 
-    public static Provider readJsonProvider(String json) {
-        Gson gson = new Gson();
+    public void removeGame(String name) {
 
-        return gson.fromJson(json, Provider.class);
+        this.games.removeIf(i -> i.getName().equals(name));
+
     }
 }
