@@ -15,11 +15,11 @@ Pula/App.java
  Pula.App
 Databases/ProviderDTB.java
  Databases.ProviderDTB
-Applications/ProviderApplication.java
- Applications.ProviderApplication
-Components/Provider.java
- Components.Provider
-Controllers/ProviderController.java
- Controllers.ProviderController
 Components/ProviderCollection.java
  Components.ProviderCollection
+Components/Provider.java
+ Components.Provider
+Applications/ProviderApplication.java
+ Applications.ProviderApplication
+Controllers/ProviderController.java
+ Controllers.ProviderController

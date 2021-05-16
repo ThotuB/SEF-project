@@ -16,6 +16,14 @@ public class Provider {
         games = new ArrayList<>();
     }
 
+    public Game getGame(String name) {
+        for (Game i: this.games) {
+            if (i.getName().equals(name))
+                return i;
+        }
+        return null;
+    }
+
     public void addGame (Game g) {
         games.add(g);
     }

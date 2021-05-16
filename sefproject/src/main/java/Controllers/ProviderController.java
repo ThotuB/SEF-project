@@ -17,6 +17,10 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -39,6 +43,7 @@ public class ProviderController implements Initializable {
     public DatePicker startDateDatePicker;
     public DatePicker endDateDatePicker;
     public ChoiceBox<String> choiceBoxo;
+
     public ListView<String> gameListListView;
 
     ProviderCollection providerCollection;
@@ -47,6 +52,12 @@ public class ProviderController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         loadData();
+    }
+
+    public static LocalDate NOW_LOCAL_DATE (){
+        String date = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        return LocalDate.parse(date , formatter);
     }
 
     private void loadData() {
@@ -59,6 +70,10 @@ public class ProviderController implements Initializable {
         list.addAll(a,b);
 
         choiceBoxo.getItems().addAll(list);
+        choiceBoxo.setValue("true");
+
+        startDateDatePicker.setValue(NOW_LOCAL_DATE());
+        endDateDatePicker.setValue(NOW_LOCAL_DATE());
 
     }
 
@@ -88,10 +103,28 @@ public class ProviderController implements Initializable {
 
     }
 
+    public LocalDate convertToLocalDate(Date dateToConvert) {
+        return dateToConvert.toInstant()
+                .atZone(ZoneId.systemDefault())
+                .toLocalDate();
+    }
+
     public void changeThisOfferButtonClick() {
 
         providerCollection = new ProviderCollection(provNameLabel.getText());
 
+        Game toSetFields = providerCollection.getCurrentProvider()
+                .getGame(gameListListView.getSelectionModel().getSelectedItem());
+        
+        gameNameTextField.setText(toSetFields.getName());
+        priceTextField.setText("" + toSetFields.getPrice());
+        descriptionTextField.setText(toSetFields.getDescription());
+        
+        startDateDatePicker.setValue(convertToLocalDate(toSetFields.getStartDate()));
+        endDateDatePicker.setValue(convertToLocalDate(toSetFields.getEndDate()));
+        choiceBoxo.setValue("" + toSetFields.getRent());
+        
+        
         //remove current prov from dtb
         providerCollection.getProviderDTB().removeProvider(providerCollection.getCurrentProvider());
         //remove this game from current provider
@@ -108,6 +141,15 @@ public class ProviderController implements Initializable {
 
     }
 
+    public void resetGameDataFields() {
+        gameNameTextField.setText("");
+        priceTextField.setText("");
+        descriptionTextField.setText("");
+        startDateDatePicker.setValue(NOW_LOCAL_DATE());
+        endDateDatePicker.setValue(NOW_LOCAL_DATE());
+        choiceBoxo.setValue("true");
+    }
+
     public void makeNewOfferButtonClick() {
 
         String gName;
@@ -117,10 +159,27 @@ public class ProviderController implements Initializable {
         boolean rent;
         String description;
 
+        boolean validInput = true;
+
         Calendar cal = Calendar.getInstance();
 
         gName = gameNameTextField.getText();
-        price = Double.parseDouble(priceTextField.getText());
+
+        if (gName.isBlank()){
+            System.out.println("Name-field is blank");
+            validInput = false;
+            //gName += "Default Game Name";
+        }
+
+        if (priceTextField.getText().matches("[0-9.]+") && priceTextField.getText().length() > 0) {
+            price = Double.parseDouble(priceTextField.getText());
+        }
+        else {
+            System.out.println("Not a good input number");
+            validInput = false;
+            price = 0;
+        }
+
         startDate = java.sql.Date.valueOf(startDateDatePicker.getValue());
 
         cal.setTime(startDate);
@@ -134,23 +193,42 @@ public class ProviderController implements Initializable {
         endDate = cal.getTime();
 
         rent = Boolean.parseBoolean(choiceBoxo.getValue());
+
         description = descriptionTextField.getText();
 
-        Game addedGame = new Game(gName, price, description, startDate, endDate, rent);
-        System.out.println(addedGame);
+        if (description.isBlank()){
+            System.out.println("Desc-field is blank");
+            validInput = false;
+            //description += "Default default Name";
+        }
 
-        providerCollection = new ProviderCollection(provNameLabel.getText());
-        //remove current prov from dtb
-        providerCollection.getProviderDTB().removeProvider(providerCollection.getCurrentProvider());
-        //add this game from current provider
-        providerCollection.getCurrentProvider().addGame(addedGame);
-        //add current provider to dtb
-        providerCollection.getProviderDTB().addProvider(providerCollection.getCurrentProvider());
-        //updateDatabase
-        providerCollection.getProviderDTB().printProviders();
+        if (validInput) {
+            Game addedGame = new Game(gName, price, description, startDate, endDate, rent);
 
-        this.setGamesGridPane(providerCollection.getCurrentProvider().getStringGameArray());
-        this.setGameListListView(providerCollection.getCurrentProvider().getStringGameArray());
+            System.out.println("Game " + gName + " successfully added!");
+
+            providerCollection = new ProviderCollection(provNameLabel.getText());
+            //remove current prov from dtb
+            providerCollection.getProviderDTB().removeProvider(providerCollection.getCurrentProvider());
+            //add this game from current provider
+            providerCollection.getCurrentProvider().addGame(addedGame);
+            //add current provider to dtb
+            providerCollection.getProviderDTB().addProvider(providerCollection.getCurrentProvider());
+            //updateDatabase
+            providerCollection.getProviderDTB().printProviders();
+
+            this.setGamesGridPane(providerCollection.getCurrentProvider().getStringGameArray());
+            this.setGameListListView(providerCollection.getCurrentProvider().getStringGameArray());
+
+            seeGamesClick();
+
+            resetGameDataFields();
+
+        }
+        else {
+            System.out.println("Invalid input!");
+        }
+
 
     }
 
