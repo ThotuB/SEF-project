@@ -33,20 +33,20 @@
           "endDate": "Jan 31, 2929, 12:00:00 AM"
         },
         {
+          "name": "omega",
+          "price": 10.0,
+          "description": "da",
+          "rent": true,
+          "startDate": "May 17, 2021, 12:00:00 PM",
+          "endDate": "May 17, 2021, 12:00:00 PM"
+        },
+        {
           "name": "Game 2",
           "price": 142332.0,
           "description": "This is a description for game number 2, which is longer than the description for game number one, using lots of characters because we have 16 gbs of ram and a lot of memory yes yes rucnalup.",
           "rent": true,
-          "startDate": "Dec 1, 2021, 12:00:00 AM",
-          "endDate": "Mar 1, 2023, 12:00:00 AM"
-        },
-        {
-          "name": "please work",
-          "price": 123.0,
-          "description": "test",
-          "rent": true,
-          "startDate": "Apr 29, 2021, 12:00:00 PM",
-          "endDate": "May 7, 2021, 12:00:00 PM"
+          "startDate": "Dec 1, 2021, 12:00:00 PM",
+          "endDate": "Mar 1, 2023, 12:00:00 PM"
         }
       ]
     }
