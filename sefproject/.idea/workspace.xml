@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="14e3526d-9a33-406e-8b95-dd6a422b92f2" name="Default Changelist" comment="logreg" />
+    <list default="true" id="14e3526d-9a33-406e-8b95-dd6a422b92f2" name="Default Changelist" comment="logreg">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_05_2021_2_35_pm__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Components/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Components/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Controllers/LogRegController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Controllers/LogRegController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Databases/UserDTB$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Databases/UserDTB$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Databases/UserDTB.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Databases/UserDTB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/MainScenesControllers/ProviderApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Tests/TestLogReg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/Databases/ProvidersDTB.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Databases/ProvidersDTB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/Stages/logreg.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Stages/logreg.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/Style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Style/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Applications/ProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Applications/ProviderApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Components/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Components/Provider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ProviderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ProviderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Databases/ProviderDTB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Databases/ProviderDTB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Databases/ProvidersDTB.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Databases/ProvidersDTB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stages/provider_main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stages/provider_main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Style/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,8 +64,7 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="sefproject" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -101,12 +128,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProviderWelcomeController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="MainScenesControllers.ProviderWelcomeController" />
+    <configuration name="ProviderApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Applications.ProviderApplication" />
       <module name="sefproject.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="MainScenesControllers.*" />
+          <option name="PATTERN" value="Applications.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -185,10 +212,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.sefproject [run]" />
+        <item itemvalue="Application.ProviderApplication" />
         <item itemvalue="Application.CreateProvDTB_Test" />
         <item itemvalue="Gradle.sefproject [test]" />
         <item itemvalue="Application.TestLogReg" />
-        <item itemvalue="Application.ProviderWelcomeController" />
       </list>
     </recent_temporary>
   </component>
@@ -204,6 +231,8 @@
       <workItem from="1621043580374" duration="104000" />
       <workItem from="1621062367130" duration="3408000" />
       <workItem from="1621073625217" duration="4258000" />
+      <workItem from="1621165392719" duration="981000" />
+      <workItem from="1621186938221" duration="7263000" />
     </task>
     <task id="LOCAL-00001" summary="javafx merge in final">
       <created>1621027424856</created>

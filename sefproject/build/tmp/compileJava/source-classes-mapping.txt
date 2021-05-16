@@ -1,23 +1,25 @@
 Controllers/LogRegController.java
  Controllers.LogRegController
-Components/User.java
- Components.User
 Components/Game.java
  Components.Game
+Components/User.java
+ Components.User
 Tests/CreateProvDTB_Test.java
  Tests.CreateProvDTB_Test
-Components/Provider.java
- Components.Provider
 Databases/UserDTB.java
  Databases.UserDTB
  Databases.UserDTB$1
-Tests/TestLogReg.java
- Tests.TestLogReg
+Applications/LogRegApplication.java
+ Applications.LogRegApplication
+Pula/App.java
+ Pula.App
 Databases/ProviderDTB.java
  Databases.ProviderDTB
-Components/ProviderCollection.java
- Components.ProviderCollection
+Applications/ProviderApplication.java
+ Applications.ProviderApplication
+Components/Provider.java
+ Components.Provider
 Controllers/ProviderController.java
  Controllers.ProviderController
-MainScenesControllers/ProviderApplication.java
- MainScenesControllers.ProviderApplication
+Components/ProviderCollection.java
+ Components.ProviderCollection
