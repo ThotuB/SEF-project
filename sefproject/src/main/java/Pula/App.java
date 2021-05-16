@@ -2,6 +2,7 @@ package Pula;
 
 import Components.User;
 import Controllers.LogRegController;
+import Databases.ProviderDTB;
 import Databases.UserDTB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,10 +17,12 @@ public class App extends Application {
     public static App instance;
 
     private final UserDTB userDTB;
+    private final ProviderDTB providerDTB;
 
     public App(){
         instance = this;
         userDTB = new UserDTB("src/main/resources/Databases/UserDTB.json");
+        providerDTB = new ProviderDTB();
     }
 
     public static App getInstance(){
@@ -36,6 +39,10 @@ public class App extends Application {
         return loggedUser;
     }
 
+    public UserDTB getUserDTB() {
+        return userDTB;
+    }
+
     /// GOTOs
     public void gotoLogout(){
         loggedUser = null;
@@ -45,6 +52,9 @@ public class App extends Application {
     public void gotoProfile() {
         try {
             replaceSceneContent("/Stages/provider_main.fxml");
+
+//            ProviderController controller = loader.getController();
+//            controller.setUserDTB(userDTB);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -52,17 +62,16 @@ public class App extends Application {
 
     private void gotoLogin() {
         try {
-            FXMLLoader loader = replaceSceneContent("/Stages/logreg.fxml");
+            LogRegController controller = (LogRegController)replaceSceneContent("/Stages/logreg.fxml");
 
-            LogRegController controller = loader.getController();
-            controller.setUserDTB(userDTB);
+            controller.setDTB();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
     }
 
     // CHANGE SCENE
-    private FXMLLoader replaceSceneContent(String fxml) throws Exception {
+    private Object replaceSceneContent(String fxml) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
         Parent page = loader.load();
         Scene scene = stage.getScene();
@@ -75,7 +84,7 @@ public class App extends Application {
         }
         stage.sizeToScene();
 
-        return loader;
+        return loader.getController();
     }
 
     public static void main(String[] args) {

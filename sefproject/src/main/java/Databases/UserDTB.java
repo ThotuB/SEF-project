@@ -15,7 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserDTB {
-    private ArrayList<User> userDB = new ArrayList<User>();
+    private ArrayList<User> data = new ArrayList<User>();
     public final String path;
 
     public UserDTB(String path){
@@ -23,7 +23,7 @@ public class UserDTB {
 
         try {
             Reader reader = Files.newBufferedReader(Paths.get(path));
-            userDB = new Gson().fromJson(reader, new TypeToken<ArrayList<User>>() {}.getType());
+            data = new Gson().fromJson(reader, new TypeToken<ArrayList<User>>() {}.getType());
             reader.close();
         }
         catch (Exception ex) {
@@ -33,36 +33,27 @@ public class UserDTB {
 
     // VALIDATION
     public static boolean validUsername(User user){
-        if ( user.getUsername().length() >= 5 ){
-            return true;
-        }
-        return false;
+        return user.getUsername().length() >= 5;
     }
 
     public static boolean validEmail(User user){
         Pattern pattern = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
         Matcher matcher = pattern.matcher(user.getEmail());
 
-        if ( matcher.matches() ){
-            return true;
-        }
-        return false;
+        return matcher.matches();
     }
 
     public static boolean validPassword(User user){
         Pattern pattern = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z]).{5,20}$");
         Matcher matcher = pattern.matcher(user.getPassword());
 
-        if ( matcher.matches() ){
-            return true;
-        }
-        return false;
+        return matcher.matches();
     }
 
     // EXISTANCE
     public boolean existsUser(User user){
-        if ( userDB != null ){
-            for (User u : userDB) {
+        if ( data != null ){
+            for (User u : data) {
                 if ( u.getUsername().equals(user.getUsername()) || u.getEmail().equals(user.getEmail()) ){
                     user.setSalt(u.getSalt());
                     user.setPasswordHashed();
@@ -81,8 +72,8 @@ public class UserDTB {
     }
 
     public boolean existsUsernameOrEmail(User user){
-        if ( userDB != null ){
-            for (User u : userDB) {
+        if ( data != null ){
+            for (User u : data) {
                 if ( u.getUsername().equals(user.getUsername()) || u.getEmail().equals(user.getEmail()) ){
                     return true;
                 }
@@ -92,8 +83,12 @@ public class UserDTB {
         return false;
     }
 
+    public void remove(String username){
+        data.removeIf(user -> user.getUsername().equals(username));
+    }
+
     public void add(User user){
-        userDB.add(user);
+        data.add(user);
     }
 
     public void update(){
@@ -104,7 +99,7 @@ public class UserDTB {
 
         try {
             BufferedWriter writer = Files.newBufferedWriter(Paths.get(path));
-            String json = gson.toJson(userDB);
+            String json = gson.toJson(data);
 
             writer.write(json);
             writer.close();
@@ -115,10 +110,10 @@ public class UserDTB {
     }
 
     public void print(){
-        if ( userDB == null ){
+        if ( data == null ){
             return;
         }
-        for (User u : userDB) {
+        for (User u : data) {
             System.out.println(u);
         }
     }

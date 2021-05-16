@@ -24,8 +24,8 @@ public class LogRegApplication extends Application {
 
         Parent root = loader.load();
 
-        LogRegController controller = loader.getController();
-        controller.setUserDTB(userDTB);
+//        LogRegController controller = loader.getController();
+//        controller.setUserDTB(userDTB);
 
         Scene scene = new Scene(root);
 

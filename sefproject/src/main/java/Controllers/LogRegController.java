@@ -10,7 +10,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class LogRegController {
+public class LogRegController{
     UserDTB userDTB;
 
     @FXML
@@ -25,8 +25,8 @@ public class LogRegController {
     @FXML
     CheckBox showPasswordCheckbox;
 
-    public void setUserDTB(UserDTB userDTB){
-        this.userDTB = userDTB;
+    public void setDTB() {
+        userDTB = App.getInstance().getUserDTB();
     }
 
     public String getPassword(){
