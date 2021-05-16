@@ -1,7 +1,9 @@
 package Controllers;
 
+import Applications.ProviderApplication;
 import Components.User;
 import Databases.UserDTB;
+import Pula.App;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
@@ -45,6 +47,9 @@ public class LogRegController {
 
         if ( userDTB.existsUser(user) ){
             System.out.println("login succ");
+            String[] args = {user.getUsername()} ;
+
+            App.getInstance().gotoProfile();
         }
         else {
             System.out.println("login not succ");
