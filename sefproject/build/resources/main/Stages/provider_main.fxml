@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -33,7 +34,7 @@
                         <Font name="Dubai Regular" size="18.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Change Offer">
+                  <Button fx:id="changeOfferButton" mnemonicParsing="false" onAction="#changeOfferClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Change Offer">
                      <VBox.margin>
                         <Insets left="40.0" />
                      </VBox.margin>
@@ -119,6 +120,14 @@
                   <Button fx:id="newOfferButton1" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" onAction="#makeNewOfferButtonClick" prefHeight="73.0" prefWidth="398.0" text="Make New Offer!" />
                   <Text layoutX="52.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Please fill in the game details." />
                   <Text layoutX="55.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="With care." />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="changeOfferAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest" visible="false">
+               <children>
+                  <Button fx:id="changeOfferButton" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" onAction="#changeThisOfferButtonClick" prefHeight="73.0" prefWidth="398.0" text="Change this offer!" />
+                  <Text layoutX="52.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Please choose a game." />
+                  <Text layoutX="55.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="With care." />
+                  <ListView fx:id="gameListListView" layoutX="33.0" layoutY="249.0" prefHeight="327.0" prefWidth="657.0" styleClass="grid" />
                </children>
             </AnchorPane>
          </children>

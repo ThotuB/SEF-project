@@ -1,21 +1,15 @@
 package Controllers;
 
 import Components.Game;
-import Components.Provider;
 import Components.ProviderCollection;
-import Databases.ProviderDTB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
-import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -34,8 +28,10 @@ public class ProviderController implements Initializable {
     private Text provNameLabel;
     public GridPane gamesGridPane;
     public Button newOfferButton;
+
     public AnchorPane welcomeAnchorPane;
     public AnchorPane newOfferAnchorPane;
+    public AnchorPane changeOfferAnchorPane;
 
     public TextField gameNameTextField;
     public TextField priceTextField;
@@ -43,6 +39,7 @@ public class ProviderController implements Initializable {
     public DatePicker startDateDatePicker;
     public DatePicker endDateDatePicker;
     public ChoiceBox<String> choiceBoxo;
+    public ListView<String> gameListListView;
 
     ProviderCollection providerCollection;
     ObservableList<String> list = FXCollections.observableArrayList();
@@ -53,6 +50,7 @@ public class ProviderController implements Initializable {
     }
 
     private void loadData() {
+
         list.removeAll();
 
         String a = "true";
@@ -72,12 +70,42 @@ public class ProviderController implements Initializable {
 
         newOfferAnchorPane.setVisible(true);
         welcomeAnchorPane.setVisible(false);
+        changeOfferAnchorPane.setVisible(false);
     }
 
     public void seeGamesClick() {
 
         welcomeAnchorPane.setVisible(true);
         newOfferAnchorPane.setVisible(false);
+        changeOfferAnchorPane.setVisible(false);
+    }
+
+    public void changeOfferClick() {
+
+        changeOfferAnchorPane.setVisible(true);
+        newOfferAnchorPane.setVisible(false);
+        welcomeAnchorPane.setVisible(false);
+
+    }
+
+    public void changeThisOfferButtonClick() {
+
+        providerCollection = new ProviderCollection(provNameLabel.getText());
+
+        //remove current prov from dtb
+        providerCollection.getProviderDTB().removeProvider(providerCollection.getCurrentProvider());
+        //remove this game from current provider
+        providerCollection.getCurrentProvider().removeGame(gameListListView.getSelectionModel().getSelectedItem());
+        //add current provider to dtb
+        providerCollection.getProviderDTB().addProvider(providerCollection.getCurrentProvider());
+        //updateDTB
+        providerCollection.getProviderDTB().printProviders();
+
+        this.setGamesGridPane(providerCollection.getCurrentProvider().getStringGameArray());
+        this.setGameListListView(providerCollection.getCurrentProvider().getStringGameArray());
+
+        newOfferClick();
+
     }
 
     public void makeNewOfferButtonClick() {
@@ -112,23 +140,18 @@ public class ProviderController implements Initializable {
         System.out.println(addedGame);
 
         providerCollection = new ProviderCollection(provNameLabel.getText());
-        Provider temp = providerCollection.getCurrentProvider();
-
-        temp.addGame(addedGame);
-
-        providerCollection.updateCurrentProvider(temp);
-        ProviderDTB tempDTB = providerCollection.getProviderDTB();
-
-        tempDTB.editProvider(temp);
-
-        providerCollection.updateProviderDTB(tempDTB);
-
-        //System.out.println(providerCollection.getProviderDTB());
-
+        //remove current prov from dtb
+        providerCollection.getProviderDTB().removeProvider(providerCollection.getCurrentProvider());
+        //add this game from current provider
+        providerCollection.getCurrentProvider().addGame(addedGame);
+        //add current provider to dtb
+        providerCollection.getProviderDTB().addProvider(providerCollection.getCurrentProvider());
+        //updateDatabase
         providerCollection.getProviderDTB().printProviders();
 
         this.setGamesGridPane(providerCollection.getCurrentProvider().getStringGameArray());
-        //this.setGamesGridPane();
+        this.setGameListListView(providerCollection.getCurrentProvider().getStringGameArray());
+
     }
 
     public void setGamesGridPane(ArrayList<String> from) {
@@ -160,4 +183,18 @@ public class ProviderController implements Initializable {
 
         }
     }
+
+    public void setGameListListView(ArrayList<String> from) {
+
+        ObservableList<String> observableList = FXCollections.observableArrayList();
+
+        observableList.removeAll();
+
+        observableList.addAll(from);
+
+        gameListListView.getItems().clear();
+        gameListListView.getItems().addAll(observableList);
+
+    }
+
 }
