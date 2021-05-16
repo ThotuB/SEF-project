@@ -15,7 +15,7 @@ public class App extends Application {
 
     public static App instance;
 
-    private UserDTB userDTB;
+    private final UserDTB userDTB;
 
     public App(){
         instance = this;
