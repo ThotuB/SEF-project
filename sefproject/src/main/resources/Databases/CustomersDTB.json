@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Alin",
+    "library": [
+      {
+        "name": "Alfa",
+        "price": 10.0,
+        "description": "A t",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:26:29 PM",
+        "endDate": "May 17, 2021, 12:26:29 PM"
+      },
+      {
+        "name": "beta",
+        "price": 10.0,
+        "description": "A t ",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:26:29 PM",
+        "endDate": "May 17, 2021, 12:26:29 PM"
+      },
+      {
+        "name": "OhmeGhad",
+        "price": 10.0,
+        "description": "A t",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:43:25 PM",
+        "endDate": "May 17, 2021, 12:43:25 PM"
+      },
+      {
+        "name": "Ciucas",
+        "price": 10.0,
+        "description": "A t ",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:43:25 PM",
+        "endDate": "May 17, 2021, 12:43:25 PM"
+      }
+    ],
+    "money": 200.0
+  },
+  {
+    "name": "Oare apar aici",
+    "library": [
+      {
+        "name": "Alfa",
+        "price": 10.0,
+        "description": "A t",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:26:29 PM",
+        "endDate": "May 17, 2021, 12:26:29 PM"
+      },
+      {
+        "name": "Alfa",
+        "price": 10.0,
+        "description": "A t",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:43:25 PM",
+        "endDate": "May 17, 2021, 12:43:25 PM"
+      }
+    ],
+    "money": 10000.0
+  }
+]

@@ -3,8 +3,10 @@ package Components;
 import java.util.ArrayList;
 
 public class Customer {
+
     private String name;
     private ArrayList<Game> library;
+    private double money;
 
     public Customer(String name)  {
         this.name = name;
@@ -38,6 +40,10 @@ public class Customer {
         this.library = library;
     }
 
+    public void setMoney(Double money) {
+        this.money = money;
+    }
+
     // GAME OPTIONS
     public void addGame(Game game) {
         library.add(game);
@@ -58,7 +64,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Provider{" +
+        return "Customer{" +
                 "name='" + name + '\'' +
                 ", library=" + library +
                 '}';
