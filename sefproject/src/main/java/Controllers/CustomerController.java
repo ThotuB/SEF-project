@@ -2,6 +2,7 @@ package Controllers;
 
 import Components.Customer;
 import Components.Game;
+import Components.Provider;
 import Databases.CustomerDTB;
 import Databases.ProviderDTB;
 import javafx.collections.FXCollections;
@@ -10,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
@@ -23,10 +25,14 @@ public class CustomerController {
 
     CustomerDTB customerDTB;
     Customer currentCustomer;
+    ProviderDTB providerDTB;
 
     @FXML
     public GridPane gamesGridPane;
+
     public Text customerNameLabel;
+    public Text balanceText;
+
     public ListView<String> gameListListView;
     public ListView<Double> gameListViewPrice;
     public ListView<String> gameListViewPeriod;
@@ -36,13 +42,15 @@ public class CustomerController {
     public AnchorPane transactionsAnchorPane;
     public AnchorPane browseGamesAnchorPane;
 
+    public Button chooseThisGameButton;
 
     public void setup(String username){
-
+        providerDTB = new ProviderDTB("src/main/resources/Databases/ProvidersDTB.json");
         customerDTB = new CustomerDTB("src/main/resources/Databases/CustomersDTB.json", username);
         //customerDTB = App.getInstance().getCustomerDTB();
         currentCustomer = customerDTB.getCurrentCustomer();
 
+        chooseThisGameButton.disableProperty().bind(gameListListView.getSelectionModel().selectedItemProperty().isNull());
 
         loadData();
 //        resetGameDataFields();
@@ -50,11 +58,11 @@ public class CustomerController {
     }
 
     private void updateGridAndList() {
-        ProviderDTB gameHolders = new ProviderDTB("src/main/resources/Databases/ProvidersDTB.json");
+
 
         //System.out.println(gameHolders);
 
-        setGameListListView(gameHolders.getAllGamesFromDTB());
+        setGameListListView(providerDTB.getAllGamesFromDTB());
         setGamesGridPane(currentCustomer.getStringGameArray());
     }
 
@@ -95,9 +103,6 @@ public class CustomerController {
         ObservableList<Double> observableListGamePrice = FXCollections.observableArrayList();
         ObservableList<String> observableListGamePeriod = FXCollections.observableArrayList();
 
-        //System.out.println(listViewStr);
-
-
         observableListGameName.removeAll();
         observableListGamePrice.removeAll();
         observableListGamePeriod.removeAll();
@@ -114,7 +119,6 @@ public class CustomerController {
                     "Forever");
 
         }
-//
 //        System.out.println(observableListGameName);
 //        System.out.println(observableListGamePrice);
 //        System.out.println(observableListGamePeriod);
@@ -133,6 +137,8 @@ public class CustomerController {
 
     public void loadData() {
         customerNameLabel.setText(currentCustomer.getName());
+        balanceText.setText("" + currentCustomer.getMoney());
+
     }
 
 
@@ -162,6 +168,38 @@ public class CustomerController {
         transactionsAnchorPane.setVisible(false);
         libraryAnchorPane.setVisible(false);
         browseGamesAnchorPane.setVisible(false);
+    }
+
+    public void chooseThisGameButton() {
+
+        Game currentGame = providerDTB.getAllGamesFromDTB().get(0); //TODO: ceva sa facem sa fie asta initializat
+
+        for (Provider i: providerDTB.getData()) {
+            for (Game j: i.getGames()) {
+                if (j.getName().equals(gameListListView.getSelectionModel().getSelectedItem()))
+                    currentGame = j;
+            }
+        }
+
+        if (currentCustomer.getMoney() < currentGame.getPrice())  {
+            System.out.println("Not enough money");
+            return;
+        }
+
+        addGameToLibrary(currentGame);
+
+        customerDTB.updateDatabase();
+        //TODO: Transactions
+        setGamesGridPane(currentCustomer.getStringGameArray());
+
+        seeLibraryClick();
+
+    }
+
+    public void addGameToLibrary(Game currentGame) {
+        this.currentCustomer.addGame(currentGame);
+
+
     }
 
 }

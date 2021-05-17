@@ -116,9 +116,8 @@
             <AnchorPane fx:id="transactionsAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest" visible="false">
                <children>
                   <Button fx:id="changeOfferButton1" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="398.0" text="Change this offer!" />
-                  <Text layoutX="52.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Please choose a game." />
-                  <Text layoutX="55.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="With care." />
-                  <ListView fx:id="gameListListView1" layoutX="33.0" layoutY="249.0" prefHeight="327.0" prefWidth="657.0" styleClass="grid" />
+                  <Text layoutX="52.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Here's a list of your transactions." />
+                  <ListView fx:id="gameListListView1" layoutX="33.0" layoutY="158.0" prefHeight="418.0" prefWidth="658.0" styleClass="grid" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="addMoneyAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest" visible="false">
@@ -150,7 +149,7 @@
             </AnchorPane>
             <AnchorPane fx:id="browseGamesAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest">
                <children>
-                  <Button layoutX="345.0" layoutY="601.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="398.0" text="Choose this game!" />
+                  <Button fx:id="chooseThisGameButton" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" onAction="#chooseThisGameButton" prefHeight="73.0" prefWidth="398.0" text="Choose this game!" />
                   <Text layoutX="48.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Choose a game you'd like" />
                   <HBox layoutX="31.0" layoutY="139.0" prefHeight="443.0" prefWidth="694.0">
                      <children>
@@ -170,6 +169,18 @@
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Period" wrappingWidth="307.33782744407654" />
                      </children>
                   </HBox>
+                  <VBox layoutX="33.0" layoutY="582.0" prefHeight="136.0" prefWidth="270.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Current balance" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Text fx:id="balanceText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="balance" />
+                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
                </children>
             </AnchorPane>
          </children>
