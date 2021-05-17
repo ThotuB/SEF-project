@@ -7,7 +7,6 @@ import java.util.ArrayList;
 
 
 public class Provider {
-
     private String name;
     private ArrayList<Game> games;
 
@@ -35,11 +34,11 @@ public class Provider {
     }
 
     // SETTERS
-    public void getName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public void getGames(ArrayList<Game> games) {
+    public void setGames(ArrayList<Game> games) {
         this.games = games;
     }
 
@@ -52,6 +51,11 @@ public class Provider {
         this.games.removeIf(i -> i.getName().equals(name));
     }
 
+    public void changeGame(){
+
+    }
+
+    // PRINTING
     public ArrayList<String> getStringGameArray(){
         ArrayList<String> gameNames = new ArrayList<>();
 

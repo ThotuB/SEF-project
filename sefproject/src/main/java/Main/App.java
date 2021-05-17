@@ -60,7 +60,7 @@ public class App extends Application {
         gotoLogin();
     }
 
-    public void gotoProfile(String username) {
+    public void gotoProvider(String username) {
         try {
             ProviderController controller = (ProviderController)replaceSceneContent("/Stages/provider_main.fxml");
 

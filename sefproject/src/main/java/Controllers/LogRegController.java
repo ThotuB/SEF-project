@@ -47,7 +47,7 @@ public class LogRegController{
             App.alert("Login Successful", "Welcome, " + user.getUsername() + "!");
             System.out.println("login successful");
 
-            App.getInstance().gotoProfile(user.getUsername());
+            App.getInstance().gotoProvider(user.getUsername());
         }
         else {
             App.alert("Login Failed", "Invalid data given!");
@@ -87,7 +87,7 @@ public class LogRegController{
             App.alert("Registration Complete", "Welcome, " + user.getUsername() + "!");
             System.out.println("registration successful");
 
-            App.getInstance().gotoProfile(user.getUsername());
+            App.getInstance().gotoProvider(user.getUsername());
         }
         else {
             App.alert("Registration Failed", "User already exists!");

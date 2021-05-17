@@ -92,8 +92,8 @@ public class ProviderDTB {
         data.add(provider);
     }
 
-    public void remove(Provider toBeRemoved) {
-        this.data.removeIf(i -> i.getName().equals(toBeRemoved.getName()));
+    public void remove(Provider provider) {
+        data.removeIf(prov -> prov.getName().equals(provider.getName()));
     }
 
     public void updateDatabase() {

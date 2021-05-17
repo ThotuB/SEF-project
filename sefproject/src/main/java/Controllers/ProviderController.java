@@ -132,15 +132,9 @@ public class ProviderController {
         startDateDatePicker.setValue(convertToLocalDate( game.getStartDate() ));
         endDateDatePicker.setValue(convertToLocalDate( game.getEndDate() ));
         choiceBoxo.setValue( String.valueOf(game.getRent()) );
-        
-        
-        //remove current prov from dtb
-        providerDTB.remove(currentProvider);
-        //remove this game from current provider
+
         currentProvider.removeGame(gameListListView.getSelectionModel().getSelectedItem());
-        //add current provider to dtb
-        providerDTB.add(currentProvider);
-        //updateDTB
+
         providerDTB.updateDatabase();
 
         updateGridAndList();
@@ -193,13 +187,8 @@ public class ProviderController {
 
         System.out.println("Game " + gName + " successfully added!");
 
-        //remove current prov from dtb
-        providerDTB.remove(currentProvider);
-        //add this game from current provider
-        providerDTB.getCurrentProvider().addGame(game);
-        //add current provider to dtb
-        providerDTB.add(currentProvider);
-        //updateDatabase
+        currentProvider.addGame(game);
+
         providerDTB.updateDatabase();
 
         updateGridAndList();
