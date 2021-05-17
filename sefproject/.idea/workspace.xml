@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="14e3526d-9a33-406e-8b95-dd6a422b92f2" name="Default Changelist" comment="logreg">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Images/coins.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/fileHashes/fileHashes.bin" afterDir="false" />
@@ -13,11 +14,26 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.0/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Applications/LogRegApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Applications/LogRegApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Controllers/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Controllers/CustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Controllers/LogRegController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Controllers/LogRegController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Databases/ProviderDTB$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Databases/ProviderDTB$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Databases/ProviderDTB.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Databases/ProviderDTB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Databases/UserDTB.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Databases/UserDTB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Tests/ProviderDTB_Test.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/Databases/ProvidersDTB.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Databases/ProvidersDTB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/Databases/UserDTB.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Databases/UserDTB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/Stages/customer_main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Stages/customer_main.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Components/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Components/Provider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ProviderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ProviderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Databases/ProviderDTB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Databases/ProviderDTB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Tests/ProviderDTB_Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tests/ProviderDTB_Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Databases/CustomersDTB.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Databases/CustomersDTB.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Databases/ProvidersDTB.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Databases/ProvidersDTB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Databases/UserDTB.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Databases/UserDTB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/Stages/customer_main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stages/customer_main.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +116,11 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\School\Year 2\Semester 2\SEF\Proj\sef-project\sefproject\src\main\resources\Images" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.sefproject [run]">
     <configuration name="CreateProvDTB_Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Tests.CreateProvDTB_Test" />
@@ -140,15 +161,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -219,6 +238,7 @@
       <workItem from="1621073625217" duration="4258000" />
       <workItem from="1621165392719" duration="981000" />
       <workItem from="1621186938221" duration="7263000" />
+      <workItem from="1621275837537" duration="8960000" />
     </task>
     <task id="LOCAL-00001" summary="javafx merge in final">
       <created>1621027424856</created>

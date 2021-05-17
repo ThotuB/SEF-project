@@ -1,5 +1,6 @@
 package Databases;
 
+import Components.Game;
 import Components.Provider;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -21,7 +22,7 @@ public class ProviderDTB {
     private Provider currentProvider;
     private final String path;
 
-    public ProviderDTB(String path, String username){
+    public ProviderDTB(String path){
         this.path = new File(path).getAbsolutePath();
 
         try {
@@ -33,8 +34,8 @@ public class ProviderDTB {
             ex.printStackTrace();
         }
 
-        setCurrentProvider(username);
     }
+
 
     // GETTERS
     public ArrayList<Provider> getData() {
@@ -52,6 +53,17 @@ public class ProviderDTB {
         }
 
         return null;
+    }
+
+    public ArrayList<Game> getAllGamesFromDTB() {
+
+        ArrayList<Game> gameLibrary = new ArrayList<>();
+
+        for (Provider i : data) {
+            gameLibrary.addAll(i.getGames());
+        }
+
+        return gameLibrary;
     }
 
     public Provider getCurrentProvider() {
