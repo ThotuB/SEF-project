@@ -14,6 +14,11 @@ public class Customer {
     }
 
     // GETTERS
+
+    public double getMoney() {
+        return money;
+    }
+
     public String getName() {
         return this.name;
     }

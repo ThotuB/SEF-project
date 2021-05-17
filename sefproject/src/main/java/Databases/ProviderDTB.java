@@ -38,6 +38,7 @@ public class ProviderDTB {
 
 
     // GETTERS
+
     public ArrayList<Provider> getData() {
         return data;
     }

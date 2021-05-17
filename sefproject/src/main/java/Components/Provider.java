@@ -15,6 +15,14 @@ public class Provider {
         games = new ArrayList<>();
     }
 
+    public Game contains(String name) {
+        for (Game i: games) {
+            if (i.getName().equals(name))
+                return i;
+        }
+        return null;
+    }
+
     // GETTERS
     public String getName() {
         return this.name;
