@@ -14,10 +14,10 @@ Renting a game allows a ``Customer`` to own that game only for a specific time p
 
 ``Customers`` can add money to their virtual wallet and buy or rent the games that ``Providers`` offered.
 
-##Authors
+#Authors
 
-###[ThotuB](https://github.com/ThotuB)
-###[RaulQX](https://github.com/RaulQX)
+[ThotuB](https://github.com/ThotuB)
+[RaulQX](https://github.com/RaulQX)
 
-## Licenese
+# Licenese
  [MIT](https://choosealicense.com/licenses/mit/)
