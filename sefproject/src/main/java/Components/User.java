@@ -14,12 +14,20 @@ public class User {
     @Expose
     private String salt;
 
+    @Expose
+    private boolean providerFlag;
+
+    public User() {
+
+    }
+
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
     }
 
+    // GETTERS
     public String getUsername() {
         return username;
     }
@@ -40,7 +48,11 @@ public class User {
         return passwordHashed;
     }
 
+    public boolean getProviderFlag() {
+        return providerFlag;
+    }
 
+    // SETTERS
     public void setUsername(String username) {
         this.username = username;
     }
@@ -71,7 +83,11 @@ public class User {
         this.passwordHashed = DigestUtils.sha256Hex(password + salt);
     }
 
+    public void setProviderFlag(boolean flag) {
+        providerFlag = flag;
+    }
 
+    // PRINTING
     public String toString(){
         return "username: " + username + "\n"
                 + "password: " + password + "\n"

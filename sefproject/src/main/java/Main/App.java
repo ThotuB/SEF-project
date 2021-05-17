@@ -30,6 +30,7 @@ public class App extends Application {
     public App(){
         instance = this;
         userDTB = new UserDTB("src/main/resources/Databases/UserDTB.json");
+        providerDTB = new ProviderDTB("src/main/resources/Databases/ProvidersDTB.json");
     }
 
     // GETTERS
@@ -82,7 +83,7 @@ public class App extends Application {
         try {
             ProviderController controller = (ProviderController)replaceSceneContent("/Stages/provider_main.fxml");
 
-            providerDTB = new ProviderDTB("src/main/resources/Databases/ProvidersDTB.json", username);
+            providerDTB.setCurrentProvider(username);
             controller.setup(username);
         } catch (Exception ex) {
             ex.printStackTrace();

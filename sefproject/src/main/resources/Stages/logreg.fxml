@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
@@ -51,13 +52,24 @@
                   <Insets bottom="25.0" />
                </padding>
             </CheckBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox>
                <children>
                   <Button mnemonicParsing="false" onAction="#loginAction" text="LOGIN" />
-                  <Region prefHeight="100.0" prefWidth="130.0" HBox.hgrow="ALWAYS" />
+                  <Region prefHeight="18.0" prefWidth="158.0" HBox.hgrow="ALWAYS" />
                   <Button mnemonicParsing="false" onAction="#registerButton" text="REGISTER" />
                </children>
             </HBox>
+            <HBox>
+               <children>
+                  <Region HBox.hgrow="ALWAYS" />
+                  <CheckBox fx:id="registerAsProviderCheckbox" mnemonicParsing="false" onAction="#registerAsProviderAction" text="Register as Provider">
+                     <padding>
+                        <Insets bottom="25.0" top="10.0" />
+                     </padding>
+                  </CheckBox>
+               </children>
+            </HBox>
+            <TextArea fx:id="descriptionTextArea" prefHeight="200.0" prefWidth="200.0" styleClass="text-area" />
          </children>
       </VBox>
    </children>
@@ -66,4 +78,3 @@
       <String fx:value="root_darkest" />
    </styleClass>
 </AnchorPane>
-
