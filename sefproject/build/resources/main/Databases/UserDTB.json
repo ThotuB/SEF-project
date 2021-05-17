@@ -22,5 +22,23 @@
     "email": "pulan@cur.cox",
     "passwordHashed": "9a1e5281179976220ed77b1325b2fe1980ad2afb43e03658e354059c35246052",
     "salt": "2K4Ia"
+  },
+  {
+    "username": "Blablalaa",
+    "email": "dadada@ceva.com",
+    "passwordHashed": "a76592e238ca58cb16956096520d2e97b90eac36e36fe2a201d91ff718206ff5",
+    "salt": "g?FLD"
+  },
+  {
+    "username": "Ceva129321",
+    "email": "well_duh@ceva.com",
+    "passwordHashed": "aba67b381137dffc840d12804b0b72ba0cb3814831682ccd85897e37b85b4436",
+    "salt": "Qu9E."
+  },
+  {
+    "username": "CAcacacasac",
+    "email": "dasdas@dasd.com",
+    "passwordHashed": "53738a7fc3017d8b10e214a7c00337b9fcb15381d6c0f9e4b8f9a56fb092fb30",
+    "salt": "DLB/s"
   }
 ]

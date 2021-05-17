@@ -82,7 +82,8 @@ public class App extends Application {
         try {
             ProviderController controller = (ProviderController)replaceSceneContent("/Stages/provider_main.fxml");
 
-            providerDTB = new ProviderDTB("src/main/resources/Databases/ProvidersDTB.json", username);
+            providerDTB = new ProviderDTB("src/main/resources/Databases/ProvidersDTB.json");
+            providerDTB.setCurrentProvider(username);
             controller.setup(username);
         } catch (Exception ex) {
             ex.printStackTrace();
