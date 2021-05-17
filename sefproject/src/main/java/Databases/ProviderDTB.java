@@ -3,60 +3,114 @@ package Databases;
 import Components.Provider;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class ProviderDTB {
+    private ArrayList<Provider> data = new ArrayList<>();
+    private Provider currentProvider;
+    private final String path;
 
-    List<Provider> data = new ArrayList<>();
-    private final String path = "src/main/resources/Databases/ProvidersDTB.json";
+    public ProviderDTB(String path, String username){
+        this.path = new File(path).getAbsolutePath();
 
-    public void addProvider(Provider adding){
-        data.add(adding);
+        try {
+            Reader reader = Files.newBufferedReader(Paths.get(path));
+            data = new Gson().fromJson(reader, new TypeToken<ArrayList<Provider>>() {}.getType());
+            reader.close();
+        }
+        catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        setCurrentProvider(username);
     }
 
-    public List<Provider> getData() {
+    // GETTERS
+    public ArrayList<Provider> getData() {
         return data;
     }
 
-    public void removeProvider(Provider toBeRemoved) {
+    public Provider getProvider(String username){
+        if ( data == null ){
+            return null;
+        }
+        for (Provider provider: data){
+            if ( provider.getName().equals(username) ){
+                return provider;
+            }
+        }
+
+        return null;
+    }
+
+    public Provider getCurrentProvider() {
+        return currentProvider;
+    }
+
+    // SETTER
+    public void setCurrentProvider(String username) {
+        currentProvider = getProvider(username);
+
+        if ( currentProvider == null ){
+            currentProvider = new Provider(username);
+
+            add(currentProvider);
+            updateDatabase();
+        }
+    }
+
+    // VALIDATION
+    public static boolean validGameName(String name){
+        return !name.isBlank();
+    }
+
+    public static boolean validGamePrice(String price){
+        return (price.matches("[0-9.]+") && price.length() > 0);
+    }
+
+    public static boolean validGameDates(Date startDate, Date endDate){
+        return startDate.before(endDate);
+    }
+
+    public static boolean validDescription(String description){
+        return description.length() >= 10;
+    }
+
+    // DATABASE OPTIONS
+    public void add(Provider provider){
+        data.add(provider);
+    }
+
+    public void remove(Provider toBeRemoved) {
         this.data.removeIf(i -> i.getName().equals(toBeRemoved.getName()));
     }
 
-    public void printProviders() {
-        try {
-
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String json = gson.toJson(this);
-
-            Files.write(Paths.get(path), json.getBytes());
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void readProviders(){
+    public void updateDatabase() {
+        Gson gson = new GsonBuilder()
+                .setPrettyPrinting()
+                .create();
 
         try {
-            Gson gson = new Gson();
+            BufferedWriter writer = Files.newBufferedWriter(Paths.get(path));
+            String json = gson.toJson(data);
 
-            String content = Files.readString(Path.of(path), StandardCharsets.US_ASCII);
-
-            ProviderDTB t = gson.fromJson(content, ProviderDTB.class);
-
-            for (Provider i: t.data) {
-                addProvider(i);
-            }
+            writer.write(json);
+            writer.close();
         }
-        catch (Exception e) {
-            e.printStackTrace();
+        catch (Exception ex){
+            ex.printStackTrace();
         }
-
     }
 
     @Override

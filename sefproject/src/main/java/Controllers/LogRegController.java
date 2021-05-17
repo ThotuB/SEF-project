@@ -1,14 +1,12 @@
 package Controllers;
 
-import Applications.ProviderApplication;
 import Components.User;
 import Databases.UserDTB;
-import Pula.App;
+import Main.App;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 public class LogRegController{
     UserDTB userDTB;
@@ -46,13 +44,14 @@ public class LogRegController{
         User user = new User(username, email, password);
 
         if ( userDTB.existsUser(user) ){
-            System.out.println("login succ");
-            String[] args = {user.getUsername()} ;
+            App.alert("Login Successful", "Welcome, " + user.getUsername() + "!");
+            System.out.println("login successful");
 
-            App.getInstance().gotoProfile();
+            App.getInstance().gotoProfile(user.getUsername());
         }
         else {
-            System.out.println("login not succ");
+            App.alert("Login Failed", "Invalid data given!");
+            System.out.println("login failed");
         }
     }
 
@@ -64,17 +63,17 @@ public class LogRegController{
         User user = new User(username, email, password);
 
         if ( !UserDTB.validUsername(user) ){
-            System.out.println("Invalid Username!");
+            System.out.println("registration failed: invalid username");
             return;
         }
 
         if ( !UserDTB.validEmail(user) ){
-            System.out.println("Invalid Email!");
+            System.out.println("registration failed: invalid email");
             return;
         }
 
         if ( !UserDTB.validPassword(user) ){
-            System.out.println("Invalid Password!");
+            System.out.println("registration failed: invalid password");
             return;
         }
 
@@ -83,12 +82,16 @@ public class LogRegController{
             user.setPasswordHashed();
 
             userDTB.add(user);
-            userDTB.update();
+            userDTB.updateDatabase();
 
-            System.out.println("Registration Complete");
+            App.alert("Registration Complete", "Welcome, " + user.getUsername() + "!");
+            System.out.println("registration successful");
+
+            App.getInstance().gotoProfile(user.getUsername());
         }
         else {
-            System.out.println("Username Already Taken");
+            App.alert("Registration Failed", "User already exists!");
+            System.out.println("registration failed");
         }
     }
 

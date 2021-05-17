@@ -11,8 +11,28 @@ public class Game {
     private String description;
     private boolean rent;
 
-    private Date startDate = new Date();
-    private Date endDate = new Date();
+    private Date startDate;
+    private Date endDate;
+
+    public Game(String name, double price, String description, Date dateStart, Date dateEnd, boolean rent) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.rent = rent;
+        this.startDate = dateStart;
+        this.endDate = dateEnd;
+
+//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+//
+//        try {
+//            startDate = dateFormat.parse(dateStart);
+//            endDate = dateFormat.parse(dateEnd);
+//        }
+//        catch (ParseException e) {
+//            System.out.println("Parse exception encountered while trying to format date");
+//        }
+
+    }
 
     public String getName() {
         return this.name;
@@ -36,29 +56,6 @@ public class Game {
 
     public Date getEndDate() {
         return this.endDate;
-    }
-
-    //private picture??
-
-    public Game(String name, double price, String description, Date dateStart, Date dateEnd, boolean rent) {
-
-        this.name = name;
-        this.price = price;
-        this.description = description;
-        this.rent = rent;
-        this.startDate = dateStart;
-        this.endDate = dateEnd;
-
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//
-//        try {
-//            startDate = dateFormat.parse(dateStart);
-//            endDate = dateFormat.parse(dateEnd);
-//        }
-//        catch (ParseException e) {
-//            System.out.println("Parse exception encountered while trying to format date");
-//        }
-
     }
 
     @Override

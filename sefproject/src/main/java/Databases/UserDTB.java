@@ -15,7 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserDTB {
-    private ArrayList<User> data = new ArrayList<User>();
+    private ArrayList<User> data = new ArrayList<>();
     public final String path;
 
     public UserDTB(String path){
@@ -31,7 +31,7 @@ public class UserDTB {
         }
     }
 
-    // VALIDATION
+    // VALIDATION (in need of it)
     public static boolean validUsername(User user){
         return user.getUsername().length() >= 5;
     }
@@ -50,20 +50,21 @@ public class UserDTB {
         return matcher.matches();
     }
 
-    // EXISTANCE
+    // EXISTANCE (is pain)
     public boolean existsUser(User user){
-        if ( data != null ){
-            for (User u : data) {
-                if ( u.getUsername().equals(user.getUsername()) || u.getEmail().equals(user.getEmail()) ){
-                    user.setSalt(u.getSalt());
-                    user.setPasswordHashed();
+        if ( data == null ){
+            return false;
+        }
+        for (User u : data) {
+            if ( u.getUsername().equals(user.getUsername()) || u.getEmail().equals(user.getEmail()) ){
+                user.setSalt(u.getSalt());
+                user.setPasswordHashed();
 
-                    if ( u.getPasswordHashed().equals(user.getPasswordHashed()) ) {
-                        return true;
-                    }
-                    else {
-                        break;
-                    }
+                if ( u.getPasswordHashed().equals(user.getPasswordHashed()) ) {
+                    return true;
+                }
+                else {
+                    break;
                 }
             }
         }
@@ -83,6 +84,7 @@ public class UserDTB {
         return false;
     }
 
+    // DATABASE OPTIONS
     public void remove(String username){
         data.removeIf(user -> user.getUsername().equals(username));
     }
@@ -91,7 +93,7 @@ public class UserDTB {
         data.add(user);
     }
 
-    public void update(){
+    public void updateDatabase(){
         Gson gson = new GsonBuilder()
                 .excludeFieldsWithoutExposeAnnotation()
                 .setPrettyPrinting()

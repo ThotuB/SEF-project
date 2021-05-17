@@ -1,7 +1,9 @@
 package Controllers;
 
 import Components.Game;
-import Components.ProviderCollection;
+import Components.Provider;
+import Databases.ProviderDTB;
+import Main.App;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -26,7 +28,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class ProviderController implements Initializable {
+public class ProviderController {
 
     @FXML
     private Text provNameLabel;
@@ -46,61 +48,171 @@ public class ProviderController implements Initializable {
 
     public ListView<String> gameListListView;
 
-    ProviderCollection providerCollection;
-    ObservableList<String> list = FXCollections.observableArrayList();
+    ProviderDTB providerDTB;
+    Provider currentProvider;
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    // CONSTRUCTOR-ISH
+    public void setup(String username){
+        providerDTB = App.getInstance().getProviderDTB();
+        currentProvider = providerDTB.getCurrentProvider();
+
+        provNameLabel.setText(username);
         loadData();
+        resetGameDataFields();
+        updateGridAndList();
     }
 
-    public static LocalDate NOW_LOCAL_DATE (){
-        String date = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-        return LocalDate.parse(date , formatter);
+    // SETTERS
+    public void setGamesGridPane(ArrayList<String> gridPaneStr) {
+        int col = 0;
+        int row = 0;
+
+        for (Node pane: gamesGridPane.getChildren()) {
+            GridPane.setHalignment(pane, HPos.CENTER);
+            GridPane.setValignment(pane, VPos.CENTER);
+        }
+
+        gamesGridPane.getChildren().clear();
+
+        for (String str: gridPaneStr) {
+
+            Text text = new Text();
+            text.setText(str);
+            text.setFont(new Font("Verdana",20));
+            text.setFill(Color.WHITESMOKE);
+
+            gamesGridPane.add(text, row, col);
+
+            row++;
+            if ( row == 2 ) {
+                col++;
+                row = 0;
+            }
+
+        }
     }
 
-    private void loadData() {
+    public void setGameListListView(ArrayList<String> listViewStr) {
+        ObservableList<String> observableList = FXCollections.observableArrayList();
 
-        list.removeAll();
+        observableList.removeAll();
+        observableList.addAll(listViewStr);
 
-        String a = "true";
-        String b = "false";
-
-        list.addAll(a,b);
-
-        choiceBoxo.getItems().addAll(list);
-        choiceBoxo.setValue("true");
-
-        startDateDatePicker.setValue(NOW_LOCAL_DATE());
-        endDateDatePicker.setValue(NOW_LOCAL_DATE());
-
+        gameListListView.getItems().clear();
+        gameListListView.getItems().addAll(observableList);
     }
 
-    public void setNameLabel(String name) {
-        provNameLabel.setText(name);
-    }
-
+    // ACTIONS
     public void newOfferClick() {
-
         newOfferAnchorPane.setVisible(true);
         welcomeAnchorPane.setVisible(false);
         changeOfferAnchorPane.setVisible(false);
     }
 
     public void seeGamesClick() {
-
         welcomeAnchorPane.setVisible(true);
         newOfferAnchorPane.setVisible(false);
         changeOfferAnchorPane.setVisible(false);
     }
 
     public void changeOfferClick() {
-
         changeOfferAnchorPane.setVisible(true);
         newOfferAnchorPane.setVisible(false);
         welcomeAnchorPane.setVisible(false);
 
+    }
+
+    public void changeThisOfferButtonClick() {
+        Game game = currentProvider.getGame(gameListListView.getSelectionModel().getSelectedItem());
+        
+        gameNameTextField.setText( game.getName() );
+        priceTextField.setText( String.valueOf(game.getPrice()) );
+        descriptionTextField.setText( game.getDescription() );
+        
+        startDateDatePicker.setValue(convertToLocalDate( game.getStartDate() ));
+        endDateDatePicker.setValue(convertToLocalDate( game.getEndDate() ));
+        choiceBoxo.setValue( String.valueOf(game.getRent()) );
+        
+        
+        //remove current prov from dtb
+        providerDTB.remove(currentProvider);
+        //remove this game from current provider
+        currentProvider.removeGame(gameListListView.getSelectionModel().getSelectedItem());
+        //add current provider to dtb
+        providerDTB.add(currentProvider);
+        //updateDTB
+        providerDTB.updateDatabase();
+
+        updateGridAndList();
+
+        newOfferClick();
+
+    }
+
+    public void makeNewOfferButtonClick() {
+        String gName = gameNameTextField.getText();
+        String priceStr = priceTextField.getText();
+        double price;
+        Date startDate = java.sql.Date.valueOf(startDateDatePicker.getValue());;
+        Date endDate = java.sql.Date.valueOf(endDateDatePicker.getValue());
+        boolean rent = Boolean.parseBoolean(choiceBoxo.getValue());
+        String description = descriptionTextField.getText();
+
+        Calendar cal = Calendar.getInstance();
+
+        cal.setTime(startDate);
+        cal.set(Calendar.HOUR_OF_DAY, 12);
+        startDate = cal.getTime();
+
+        cal.setTime(endDate);
+        cal.set(Calendar.HOUR_OF_DAY, 12);
+        endDate = cal.getTime();
+
+        if ( !ProviderDTB.validGameName(gName) ){
+            System.out.println("Invalid input: game name");
+            return;
+        }
+
+        if ( !ProviderDTB.validGamePrice(priceStr) ) {
+            System.out.println("Invalid input: price");
+            return;
+        }
+        price = Double.parseDouble(priceStr);
+
+        if ( !ProviderDTB.validGameDates(startDate, endDate) ) {
+            System.out.println("Invalid input: dates");
+            return;
+        }
+
+        if ( !ProviderDTB.validDescription(description) ){
+            System.out.println("Invalid input: description");
+            return;
+        }
+
+        Game game = new Game(gName, price, description, startDate, endDate, rent);
+
+        System.out.println("Game " + gName + " successfully added!");
+
+        //remove current prov from dtb
+        providerDTB.remove(currentProvider);
+        //add this game from current provider
+        providerDTB.getCurrentProvider().addGame(game);
+        //add current provider to dtb
+        providerDTB.add(currentProvider);
+        //updateDatabase
+        providerDTB.updateDatabase();
+
+        updateGridAndList();
+
+        seeGamesClick();
+        resetGameDataFields();
+    }
+
+    // HELPER
+    public static LocalDate NOW_LOCAL_DATE (){
+        String date = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        return LocalDate.parse(date , formatter);
     }
 
     public LocalDate convertToLocalDate(Date dateToConvert) {
@@ -109,36 +221,14 @@ public class ProviderController implements Initializable {
                 .toLocalDate();
     }
 
-    public void changeThisOfferButtonClick() {
+    private void updateGridAndList() {
+        setGamesGridPane(currentProvider.getStringGameArray());
+        setGameListListView(currentProvider.getStringGameArray());
+    }
 
-        providerCollection = new ProviderCollection(provNameLabel.getText());
-
-        Game toSetFields = providerCollection.getCurrentProvider()
-                .getGame(gameListListView.getSelectionModel().getSelectedItem());
-        
-        gameNameTextField.setText(toSetFields.getName());
-        priceTextField.setText("" + toSetFields.getPrice());
-        descriptionTextField.setText(toSetFields.getDescription());
-        
-        startDateDatePicker.setValue(convertToLocalDate(toSetFields.getStartDate()));
-        endDateDatePicker.setValue(convertToLocalDate(toSetFields.getEndDate()));
-        choiceBoxo.setValue("" + toSetFields.getRent());
-        
-        
-        //remove current prov from dtb
-        providerCollection.getProviderDTB().removeProvider(providerCollection.getCurrentProvider());
-        //remove this game from current provider
-        providerCollection.getCurrentProvider().removeGame(gameListListView.getSelectionModel().getSelectedItem());
-        //add current provider to dtb
-        providerCollection.getProviderDTB().addProvider(providerCollection.getCurrentProvider());
-        //updateDTB
-        providerCollection.getProviderDTB().printProviders();
-
-        this.setGamesGridPane(providerCollection.getCurrentProvider().getStringGameArray());
-        this.setGameListListView(providerCollection.getCurrentProvider().getStringGameArray());
-
-        newOfferClick();
-
+    private void loadData() {
+        choiceBoxo.getItems().removeAll(choiceBoxo.getItems());
+        choiceBoxo.getItems().addAll("true", "false");
     }
 
     public void resetGameDataFields() {
@@ -148,131 +238,6 @@ public class ProviderController implements Initializable {
         startDateDatePicker.setValue(NOW_LOCAL_DATE());
         endDateDatePicker.setValue(NOW_LOCAL_DATE());
         choiceBoxo.setValue("true");
-    }
-
-    public void makeNewOfferButtonClick() {
-
-        String gName;
-        double price;
-        Date startDate;
-        Date endDate;
-        boolean rent;
-        String description;
-
-        boolean validInput = true;
-
-        Calendar cal = Calendar.getInstance();
-
-        gName = gameNameTextField.getText();
-
-        if (gName.isBlank()){
-            System.out.println("Name-field is blank");
-            validInput = false;
-            //gName += "Default Game Name";
-        }
-
-        if (priceTextField.getText().matches("[0-9.]+") && priceTextField.getText().length() > 0) {
-            price = Double.parseDouble(priceTextField.getText());
-        }
-        else {
-            System.out.println("Not a good input number");
-            validInput = false;
-            price = 0;
-        }
-
-        startDate = java.sql.Date.valueOf(startDateDatePicker.getValue());
-
-        cal.setTime(startDate);
-        cal.set(Calendar.HOUR_OF_DAY, 12);
-        startDate = cal.getTime();
-
-        endDate = java.sql.Date.valueOf(endDateDatePicker.getValue());
-
-        cal.setTime(endDate);
-        cal.set(Calendar.HOUR_OF_DAY, 12);
-        endDate = cal.getTime();
-
-        rent = Boolean.parseBoolean(choiceBoxo.getValue());
-
-        description = descriptionTextField.getText();
-
-        if (description.isBlank()){
-            System.out.println("Desc-field is blank");
-            validInput = false;
-            //description += "Default default Name";
-        }
-
-        if (validInput) {
-            Game addedGame = new Game(gName, price, description, startDate, endDate, rent);
-
-            System.out.println("Game " + gName + " successfully added!");
-
-            providerCollection = new ProviderCollection(provNameLabel.getText());
-            //remove current prov from dtb
-            providerCollection.getProviderDTB().removeProvider(providerCollection.getCurrentProvider());
-            //add this game from current provider
-            providerCollection.getCurrentProvider().addGame(addedGame);
-            //add current provider to dtb
-            providerCollection.getProviderDTB().addProvider(providerCollection.getCurrentProvider());
-            //updateDatabase
-            providerCollection.getProviderDTB().printProviders();
-
-            this.setGamesGridPane(providerCollection.getCurrentProvider().getStringGameArray());
-            this.setGameListListView(providerCollection.getCurrentProvider().getStringGameArray());
-
-            seeGamesClick();
-
-            resetGameDataFields();
-
-        }
-        else {
-            System.out.println("Invalid input!");
-        }
-
-
-    }
-
-    public void setGamesGridPane(ArrayList<String> from) {
-
-        int n = 0;
-        int m = 0;
-
-        for (Node pane: gamesGridPane.getChildren()) {
-            GridPane.setHalignment(pane, HPos.CENTER);
-            GridPane.setValignment(pane, VPos.CENTER);
-        }
-
-        gamesGridPane.getChildren().clear();
-
-        for (String i: from) {
-
-            Text a = new Text();
-            a.setText(i);
-            a.setFont(new Font("Verdana",20));
-            a.setFill(Color.WHITESMOKE);
-
-            gamesGridPane.add(a, m, n);
-
-            m++;
-            if (m == 2) {
-                n++;
-                m = 0;
-            }
-
-        }
-    }
-
-    public void setGameListListView(ArrayList<String> from) {
-
-        ObservableList<String> observableList = FXCollections.observableArrayList();
-
-        observableList.removeAll();
-
-        observableList.addAll(from);
-
-        gameListListView.getItems().clear();
-        gameListListView.getItems().addAll(observableList);
-
     }
 
 }

@@ -1,13 +1,18 @@
-package Pula;
+package Main;
 
 import Components.User;
 import Controllers.LogRegController;
+import Controllers.ProviderController;
 import Databases.ProviderDTB;
 import Databases.UserDTB;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class App extends Application {
@@ -17,22 +22,21 @@ public class App extends Application {
     public static App instance;
 
     private final UserDTB userDTB;
-    private final ProviderDTB providerDTB;
+    private ProviderDTB providerDTB;
 
     public App(){
         instance = this;
         userDTB = new UserDTB("src/main/resources/Databases/UserDTB.json");
-        providerDTB = new ProviderDTB();
     }
 
+    // GETTERS
     public static App getInstance(){
         return instance;
     }
 
-    @Override public void start(Stage primaryStage) {
-        stage = primaryStage;
-        gotoLogin();
-        primaryStage.show();
+
+    public ProviderDTB getProviderDTB() {
+        return providerDTB;
     }
 
     public User getLoggedUser() {
@@ -43,18 +47,25 @@ public class App extends Application {
         return userDTB;
     }
 
+    // START
+    @Override
+    public void start(Stage primaryStage) {
+        stage = primaryStage;
+        gotoLogin();
+        primaryStage.show();
+    }
     /// GOTOs
     public void gotoLogout(){
         loggedUser = null;
         gotoLogin();
     }
 
-    public void gotoProfile() {
+    public void gotoProfile(String username) {
         try {
-            replaceSceneContent("/Stages/provider_main.fxml");
+            ProviderController controller = (ProviderController)replaceSceneContent("/Stages/provider_main.fxml");
 
-//            ProviderController controller = loader.getController();
-//            controller.setUserDTB(userDTB);
+            providerDTB = new ProviderDTB("src/main/resources/Databases/ProvidersDTB.json", username);
+            controller.setup(username);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -87,7 +98,25 @@ public class App extends Application {
         return loader.getController();
     }
 
+    public static void alert(String header, String content){
+        Alert alert = new Alert(Alert.AlertType.NONE);
+
+        alert.setTitle("Error");
+
+        alert.setHeaderText(header);
+        alert.setContentText(content);
+
+        ButtonType okButton= new ButtonType("OK", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+        alert.getButtonTypes().setAll(okButton);
+
+        alert.initModality(Modality.APPLICATION_MODAL);
+
+        alert.showAndWait();
+    }
+
     public static void main(String[] args) {
         launch();
     }
+
 }
