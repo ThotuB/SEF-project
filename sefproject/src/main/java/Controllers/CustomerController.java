@@ -20,7 +20,6 @@ import javafx.scene.text.Text;
 import java.util.ArrayList;
 
 public class CustomerController {
-
     CustomerDTB customerDTB;
     Customer currentCustomer;
 

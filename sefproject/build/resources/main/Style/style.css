@@ -105,3 +105,20 @@
     /* 3: (This is more specific and therefore overrides the above)*/
     -fx-background-color: linear-gradient(#000 0%, #222 25%, #444 75%, #666 100%);
 }
+
+.text-area {
+    -fx-background-insets: 0;
+    -fx-background-color: gray-background-4, gray-background-4, gray-background-4, gray-background-4;
+
+    -fx-text-fill: white;
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 20px;
+}
+
+.text-area .content {
+    -fx-background-color: porpal, gray-background-4, porpal, gray-background-4;
+    -fx-background-insets: 0, 2 0 2 0;
+    -fx-background-radius: 0;
+
+    -fx-padding: 10px;
+}
