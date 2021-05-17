@@ -26,7 +26,7 @@
             <Line endX="192.06668090820312" layoutX="100.0" layoutY="253.0" startX="-72.59999084472656" />
             <VBox layoutX="14.0" layoutY="265.0" prefHeight="416.0" prefWidth="274.0" spacing="50.0" styleClass="root_darkest" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="265.0">
                <children>
-                  <Button fx:id="browseGamesButton" mnemonicParsing="false" onAction="#browseGamesClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Browse Games">
+                  <Button fx:id="seeLibraryButton" mnemonicParsing="false" onAction="#seeLibraryClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="See Library">
                      <VBox.margin>
                         <Insets left="40.0" top="40.0" />
                      </VBox.margin>
@@ -34,7 +34,7 @@
                         <Font name="Dubai Regular" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="seeLibraryButton" mnemonicParsing="false" onAction="#seeLibraryClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="See Library">
+                  <Button fx:id="browseGamesButton" mnemonicParsing="false" onAction="#browseGamesClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Browse Games">
                      <VBox.margin>
                         <Insets left="40.0" />
                      </VBox.margin>
@@ -83,7 +83,7 @@
                               <Font name="Dubai Regular" size="43.0" />
                            </font>
                         </Text>
-                        <Text fx:id="provNameLabel" fill="WHITE" layoutX="234.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- insert name here -" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="182.25900268554688">
+                        <Text fx:id="customerNameLabel" fill="WHITE" layoutX="234.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- insert name here -" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="182.25900268554688">
                            <font>
                               <Font name="Dubai Regular" size="43.0" />
                            </font>
@@ -125,17 +125,25 @@
                         <ChoiceBox fx:id="choiceBoxo" prefHeight="22.0" prefWidth="238.0" styleClass="text-field" />
                      </children>
                   </VBox>
-                  <Button fx:id="newOfferButton1" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" onAction="#makeNewOfferButtonClick" prefHeight="73.0" prefWidth="398.0" text="Make New Offer!" />
+                  <Button fx:id="newOfferButton1" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="398.0" text="Make New Offer!" />
                   <Text layoutX="52.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Please fill in the game details." />
                   <Text layoutX="55.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="With care." />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="changeOfferAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest" visible="false">
                <children>
-                  <Button fx:id="changeOfferButton" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" onAction="#changeThisOfferButtonClick" prefHeight="73.0" prefWidth="398.0" text="Change this offer!" />
+                  <Button layoutX="345.0" layoutY="601.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="398.0" text="Change this offer!" />
                   <Text layoutX="52.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Please choose a game." />
                   <Text layoutX="55.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="With care." />
                   <ListView fx:id="gameListListView" layoutX="33.0" layoutY="249.0" prefHeight="327.0" prefWidth="657.0" styleClass="grid" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest" visible="false">
+               <children>
+                  <Button fx:id="changeOfferButton1" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="398.0" text="Change this offer!" />
+                  <Text layoutX="52.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Please choose a game." />
+                  <Text layoutX="55.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="With care." />
+                  <ListView fx:id="gameListListView1" layoutX="33.0" layoutY="249.0" prefHeight="327.0" prefWidth="657.0" styleClass="grid" />
                </children>
             </AnchorPane>
          </children>

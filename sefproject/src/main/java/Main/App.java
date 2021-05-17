@@ -1,8 +1,10 @@
 package Main;
 
 import Components.User;
+import Controllers.CustomerController;
 import Controllers.LogRegController;
 import Controllers.ProviderController;
+import Databases.CustomerDTB;
 import Databases.ProviderDTB;
 import Databases.UserDTB;
 import javafx.application.Application;
@@ -23,6 +25,7 @@ public class App extends Application {
 
     private final UserDTB userDTB;
     private ProviderDTB providerDTB;
+    private CustomerDTB customerDTB;
 
     public App(){
         instance = this;
@@ -37,6 +40,10 @@ public class App extends Application {
 
     public ProviderDTB getProviderDTB() {
         return providerDTB;
+    }
+
+    public CustomerDTB getCustomerDTB() {
+        return customerDTB;
     }
 
     public User getLoggedUser() {
@@ -58,6 +65,17 @@ public class App extends Application {
     public void gotoLogout(){
         loggedUser = null;
         gotoLogin();
+    }
+
+    public void gotoCustomer(String username) {
+        try {
+            CustomerController controller = (CustomerController) replaceSceneContent("/Stages/customer_main.fxml");
+
+            customerDTB = new CustomerDTB("src/main/resources/Databases/CustomersDTB.json", username);
+            controller.setup(username);
+        }catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     public void gotoProvider(String username) {
