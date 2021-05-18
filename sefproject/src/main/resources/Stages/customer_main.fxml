@@ -115,14 +115,36 @@
                   </GridPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="transactionsAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest" visible="false">
+            <AnchorPane fx:id="transactionsAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest">
                <children>
-                  <Button fx:id="changeOfferButton1" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="398.0" text="Change this offer!" />
-                  <Text layoutX="52.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Here's a list of your transactions." />
-                  <ListView fx:id="gameListListView1" layoutX="33.0" layoutY="158.0" prefHeight="418.0" prefWidth="658.0" styleClass="grid" />
+                  <Text layoutX="52.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Here's a list of your game transactions." />
+                  <VBox layoutX="39.0" layoutY="141.0" prefHeight="528.0" prefWidth="694.0">
+                     <children>
+                        <HBox prefHeight="238.0" prefWidth="563.0">
+                           <children>
+                              <HBox prefHeight="63.0" prefWidth="664.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Name" wrappingWidth="236.02032470703125" />
+                                    <Region prefHeight="100.0" prefWidth="34.0" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Price" wrappingWidth="229.2463960647583" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Time Left" wrappingWidth="197.21295547485352" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="577.0" prefWidth="694.0">
+                           <children>
+                              <ListView fx:id="gameTransactionsListView" focusTraversable="false" prefHeight="510.0" prefWidth="227.0" styleClass="grid" />
+                              <ListView fx:id="gameTransactionsPriceListView" focusTraversable="false" prefHeight="142.0" prefWidth="227.0" styleClass="grid" />
+                              <ListView fx:id="gameTransactionsTimeLeftListView" focusTraversable="false" prefHeight="510.0" prefWidth="227.0" styleClass="grid" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="addMoneyAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest">
+            <AnchorPane fx:id="addMoneyAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest" visible="false">
                <children>
                   <Button fx:id="addMoneyButton" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" onAction="#addMoneyToAccount" prefHeight="73.0" prefWidth="398.0" text="Make yourself rich!" />
                   <Text layoutX="122.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Add money to your account!" />

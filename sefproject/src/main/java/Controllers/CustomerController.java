@@ -23,6 +23,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 public class CustomerController {
     CustomerDTB customerDTB;
@@ -36,8 +37,11 @@ public class CustomerController {
     public Text balanceText;
 
     public ListView<String> gameListListView;
-    public ListView<Double> gameListViewPrice;
+    public ListView<String> gameListViewPrice;
     public ListView<String> gameListViewPeriod;
+    public ListView<String> gameTransactionsListView;
+    public ListView<String> gameTransactionsPriceListView;
+    public ListView<String> gameTransactionsTimeLeftListView;
 
     public AnchorPane addMoneyAnchorPane;
     public AnchorPane libraryAnchorPane;
@@ -64,6 +68,7 @@ public class CustomerController {
         updateGridAndList();
         setExpirationDateTextFieldListener();
         setCreditCardTextFieldListener();
+        setGameTransactionsListView();
 
     }
 
@@ -97,9 +102,40 @@ public class CustomerController {
         }
     }
 
+    public void setGameTransactionsListView() {
+
+        ObservableList<String> observableListTransactions = FXCollections.observableArrayList();
+        ObservableList<String> observableListTransactionsPrice = FXCollections.observableArrayList();
+        ObservableList<String> observableListTransactionsTimeLeft = FXCollections.observableArrayList();
+
+        long diffInMillies;
+        long diff;
+
+        for (Game i: currentCustomer.getLibrary()) {
+            observableListTransactions.add(i.getName());
+            observableListTransactionsPrice.add("$" + i.getPrice());
+
+            if (i.getRent()) {
+                diffInMillies = Math.abs(i.getEndDate().getTime() - i.getStartDate().getTime());
+                diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+                observableListTransactionsTimeLeft.add(diff + " days");
+            }
+            else observableListTransactionsTimeLeft.add("" + '\u221e');
+        }
+
+
+        gameTransactionsListView.getItems().clear();
+        gameTransactionsPriceListView.getItems().clear();
+        gameTransactionsTimeLeftListView.getItems().clear();
+
+        gameTransactionsListView.getItems().addAll(observableListTransactions);
+        gameTransactionsPriceListView.getItems().addAll(observableListTransactionsPrice);
+        gameTransactionsTimeLeftListView.getItems().addAll(observableListTransactionsTimeLeft);
+    }
+
     public void setGameListListView(ArrayList<Game> games) {
         ObservableList<String> observableListGameName = FXCollections.observableArrayList();
-        ObservableList<Double> observableListGamePrice = FXCollections.observableArrayList();
+        ObservableList<String> observableListGamePrice = FXCollections.observableArrayList();
         ObservableList<String> observableListGamePeriod = FXCollections.observableArrayList();
 
         observableListGameName.removeAll();
@@ -119,7 +155,7 @@ public class CustomerController {
             }
 
             observableListGameName.add(name);
-            observableListGamePrice.add(price);
+            observableListGamePrice.add("$" + price);
             observableListGamePeriod.add( date );
         }
 //        System.out.println(observableListGameName);
@@ -154,6 +190,7 @@ public class CustomerController {
     }
 
     public void transactionsClick() {
+        setGameTransactionsListView();
         transactionsAnchorPane.setVisible(true);
         libraryAnchorPane.setVisible(false);
         browseGamesAnchorPane.setVisible(false);
@@ -193,14 +230,14 @@ public class CustomerController {
         addGameToLibrary(currentGame);
         updateGridAndList();
 
-        String money = "" + (currentCustomer.getMoney() - currentGame.getPrice());
+        String money = "$" + (currentCustomer.getMoney() - currentGame.getPrice());
         money = money.substring(0, money.indexOf('.') + 2);
 
         currentCustomer.setMoney(Double.parseDouble(money));
 
         customerDTB.updateDatabase();
 
-        balanceText.setText("" + currentCustomer.getMoney());
+        balanceText.setText("$" + currentCustomer.getMoney());
 
         browseGamesClick();
 
@@ -240,7 +277,7 @@ public class CustomerController {
         currentCustomer.setMoney(currentCustomer.getMoney() + Double.parseDouble(amount));
 
         customerDTB.updateDatabase();
-        balanceText.setText("" + currentCustomer.getMoney());
+        balanceText.setText("$" + currentCustomer.getMoney());
 
         browseGamesClick();
 
@@ -309,7 +346,7 @@ public class CustomerController {
 
     public void loadData() {
         customerNameLabel.setText(currentCustomer.getName());
-        balanceText.setText("" + currentCustomer.getMoney());
+        balanceText.setText("$" + currentCustomer.getMoney());
     }
 
     public void addGameToLibrary(Game currentGame) {
@@ -324,5 +361,7 @@ public class CustomerController {
         expirationDateTextField.setText("");
         ccvTextField.setText("");
     }
+
+
 
 }
