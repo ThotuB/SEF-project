@@ -9,9 +9,81 @@
         "rent": false,
         "startDate": "May 17, 2021, 12:00:00 PM",
         "endDate": "May 21, 2021, 12:00:00 PM"
+      },
+      {
+        "name": "Dark Snails",
+        "price": 419.6,
+        "description": "wewqdadqadwqdwqwdqwdwqwq",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:00:00 PM",
+        "endDate": "May 21, 2021, 12:00:00 PM"
+      },
+      {
+        "name": "League of Dengends",
+        "price": 70.0,
+        "description": "wewqdadqadwqdwqwdqwdwqwq",
+        "rent": false,
+        "startDate": "May 17, 2021, 12:00:00 PM",
+        "endDate": "May 21, 2021, 12:00:00 PM"
+      },
+      {
+        "name": "Dark Snails",
+        "price": 419.6,
+        "description": "wewqdadqadwqdwqwdqwdwqwq",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:00:00 PM",
+        "endDate": "May 21, 2021, 12:00:00 PM"
+      },
+      {
+        "name": "Dark Snails",
+        "price": 419.6,
+        "description": "wewqdadqadwqdwqwdqwdwqwq",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:00:00 PM",
+        "endDate": "May 21, 2021, 12:00:00 PM"
+      },
+      {
+        "name": "Dark Snails",
+        "price": 419.6,
+        "description": "wewqdadqadwqdwqwdqwdwqwq",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:00:00 PM",
+        "endDate": "May 21, 2021, 12:00:00 PM"
+      },
+      {
+        "name": "Dark Snails",
+        "price": 419.6,
+        "description": "wewqdadqadwqdwqwdqwdwqwq",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:00:00 PM",
+        "endDate": "May 21, 2021, 12:00:00 PM"
+      },
+      {
+        "name": "Dark Snails",
+        "price": 419.6,
+        "description": "wewqdadqadwqdwqwdqwdwqwq",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:00:00 PM",
+        "endDate": "May 21, 2021, 12:00:00 PM"
+      },
+      {
+        "name": "Dark Snails",
+        "price": 419.6,
+        "description": "wewqdadqadwqdwqwdqwdwqwq",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:00:00 PM",
+        "endDate": "May 21, 2021, 12:00:00 PM"
+      },
+      {
+        "name": "Dark Snails",
+        "price": 419.6,
+        "description": "wewqdadqadwqdwqwdqwdwqwq",
+        "rent": true,
+        "startDate": "May 17, 2021, 12:00:00 PM",
+        "endDate": "May 21, 2021, 12:00:00 PM"
       }
     ],
-    "money": 200.0
+    "money": 113.3
   },
   {
     "name": "Oare apar aici",

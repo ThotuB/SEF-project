@@ -16,13 +16,13 @@ Databases/UserDTB.java
 Databases/CustomerDTB.java
  Databases.CustomerDTB
  Databases.CustomerDTB$1
+Components/Provider.java
+ Components.Provider
+Controllers/ProviderController.java
+ Controllers.ProviderController
 Databases/ProviderDTB.java
  Databases.ProviderDTB
  Databases.ProviderDTB$1
-Controllers/ProviderController.java
- Controllers.ProviderController
-Components/Provider.java
- Components.Provider
 Applications/CustomerApplication.java
  Applications.CustomerApplication
 Controllers/CustomerController.java

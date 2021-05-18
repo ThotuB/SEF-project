@@ -17,9 +17,8 @@
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Databases/ProviderDTB.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Databases/ProviderDTB.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/Stages/customer_main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Stages/customer_main.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Components/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Components/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Components/Provider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Components/Provider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ProviderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ProviderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Databases/ProviderDTB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Databases/ProviderDTB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Databases/CustomersDTB.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Databases/CustomersDTB.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/Stages/customer_main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stages/customer_main.fxml" afterDir="false" />

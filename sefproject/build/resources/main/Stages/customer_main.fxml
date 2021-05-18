@@ -120,19 +120,19 @@
                   <ListView fx:id="gameListListView1" layoutX="33.0" layoutY="158.0" prefHeight="418.0" prefWidth="658.0" styleClass="grid" />
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="addMoneyAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest" visible="false">
+            <AnchorPane fx:id="addMoneyAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest">
                <children>
-                  <Button fx:id="addMoneyButton" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" prefHeight="73.0" prefWidth="398.0" text="Make yourself rich!" />
+                  <Button fx:id="addMoneyButton" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" onAction="#addMoneyToAccount" prefHeight="73.0" prefWidth="398.0" text="Make yourself rich!" />
                   <Text layoutX="122.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Add money to your account!" />
                   <VBox layoutX="111.0" layoutY="394.0" prefHeight="200.0" prefWidth="500.0" spacing="20.0">
                      <children>
-                        <TextField fx:id="priceTextField" prefHeight="48.0" prefWidth="135.0" promptText="Amount" styleClass="text-field" stylesheets="@../Style/style.css" />
-                        <TextField prefHeight="45.0" prefWidth="351.0" promptText="Credit Card Number" />
+                        <TextField fx:id="amountTextField" prefHeight="48.0" prefWidth="135.0" promptText="Amount" styleClass="text-field" stylesheets="@../Style/style.css" />
+                        <TextField fx:id="creditCardTextField" prefHeight="45.0" prefWidth="351.0" promptText="Credit Card Number" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
-                              <TextField prefHeight="45.0" prefWidth="190.0" promptText="Expiration Date" />
+                              <TextField fx:id="expirationDateTextField" prefHeight="45.0" prefWidth="190.0" promptText="Expiration Date" />
                               <Region prefHeight="69.0" prefWidth="185.0" HBox.hgrow="ALWAYS" />
-                              <TextField prefHeight="46.0" prefWidth="129.0" promptText="CCV" />
+                              <TextField fx:id="ccvTextField" prefHeight="46.0" prefWidth="129.0" promptText="CCV" />
                            </children>
                         </HBox>
                      </children>
@@ -147,7 +147,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="browseGamesAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest">
+            <AnchorPane fx:id="browseGamesAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest" visible="false">
                <children>
                   <Button fx:id="chooseThisGameButton" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" onAction="#chooseThisGameButton" prefHeight="73.0" prefWidth="398.0" text="Choose this game!" />
                   <Text layoutX="48.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Choose a game you'd like" />

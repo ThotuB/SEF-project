@@ -7,7 +7,6 @@ import Main.App;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.geometry.HPos;
 import javafx.geometry.VPos;
 import javafx.scene.Node;
@@ -18,7 +17,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -26,7 +24,6 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.ResourceBundle;
 
 public class ProviderController {
 
@@ -167,7 +164,7 @@ public class ProviderController {
             return;
         }
 
-        if ( !ProviderDTB.validGamePrice(priceStr) ) {
+        if ( !ProviderDTB.validDoubleValueInput(priceStr) ) {
             System.out.println("Invalid input: price");
             return;
         }
