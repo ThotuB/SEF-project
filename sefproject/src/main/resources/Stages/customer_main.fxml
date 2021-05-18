@@ -23,55 +23,62 @@
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="root_darkest" stylesheets="@../Style/style.css">
          <children>
-            <Line endX="192.06668090820312" layoutX="100.0" layoutY="253.0" startX="-72.59999084472656" />
-            <VBox layoutX="14.0" layoutY="265.0" prefHeight="416.0" prefWidth="274.0" spacing="25.0" styleClass="root_darkest" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="265.0">
+            <VBox alignment="CENTER" layoutX="14.0" layoutY="33.0" prefHeight="647.0" prefWidth="273.0" spacing="15.0" styleClass="root_darkest" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <Button fx:id="seeLibraryButton" mnemonicParsing="false" onAction="#seeLibraryClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="See Library">
+                  <ImageView fitHeight="213.0" fitWidth="223.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/raccoon.png" />
+                     </image>
                      <VBox.margin>
-                        <Insets left="40.0" top="40.0" />
+                        <Insets top="20.0" />
                      </VBox.margin>
+                  </ImageView>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Raccoony" wrappingWidth="102.32080078125">
                      <font>
-                        <Font name="Dubai Regular" size="18.0" />
+                        <Font size="23.0" />
                      </font>
-                  </Button>
-                  <Button fx:id="browseGamesButton" mnemonicParsing="false" onAction="#browseGamesClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Browse Games">
-                     <VBox.margin>
-                        <Insets left="40.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="Dubai Regular" size="18.0" />
-                     </font>
-                  </Button>
-                  <Button fx:id="transactionsButton1" mnemonicParsing="false" onAction="#transactionsClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Transactions">
-                     <font>
-                        <Font name="Dubai Regular" size="18.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets left="40.0" />
-                     </VBox.margin>
-                  </Button>
-                  <Button fx:id="addMoneyButton" mnemonicParsing="false" onAction="#addMoneyClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Add Money">
-                     <VBox.margin>
-                        <Insets left="40.0" />
-                     </VBox.margin>
-                     <font>
-                        <Font name="Dubai Regular" size="18.0" />
-                     </font>
-                  </Button>
-                  <Region prefHeight="4.0" prefWidth="273.0" VBox.vgrow="ALWAYS" />
+                  </Text>
+                  <Line endX="192.06668090820312" startX="-72.59999084472656" />
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0">
+                     <children>
+                        <Button fx:id="seeLibraryButton" mnemonicParsing="false" onAction="#seeLibraryClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="See Library">
+                           <VBox.margin>
+                              <Insets top="40.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="browseGamesButton" mnemonicParsing="false" onAction="#browseGamesClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Browse Games">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="transactionsButton1" mnemonicParsing="false" onAction="#transactionsClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Transactions">
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="addMoneyButton" mnemonicParsing="false" onAction="#addMoneyClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Add Money">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Region prefHeight="26.0" prefWidth="317.0" />
                   <Button mnemonicParsing="false" onAction="#logOutAction" text="Log Out" />
                </children>
             </VBox>
-            <ImageView fitHeight="181.0" fitWidth="341.0" layoutX="30.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Images/raccoon.png" />
-               </image>
-            </ImageView>
-            <Text fill="WHITE" layoutX="103.0" layoutY="238.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Raccoony" wrappingWidth="123.32080078125">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Text>
          </children>
       </AnchorPane>
       <StackPane>
@@ -156,7 +163,7 @@
                            <children>
                               <TextField fx:id="expirationDateTextField" prefHeight="45.0" prefWidth="196.0" promptText="Expiration Date" />
                               <Region prefHeight="69.0" prefWidth="185.0" HBox.hgrow="ALWAYS" />
-                              <TextField fx:id="ccvTextField" onKeyTyped="#ccvTextFieldChanged" prefHeight="46.0" prefWidth="129.0" promptText="CCV" />
+                              <TextField fx:id="ccvTextField" prefHeight="46.0" prefWidth="129.0" promptText="CCV" />
                            </children>
                         </HBox>
                      </children>
