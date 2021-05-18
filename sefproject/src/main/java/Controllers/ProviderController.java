@@ -36,9 +36,11 @@ public class ProviderController {
     public AnchorPane newOfferAnchorPane;
     public AnchorPane changeOfferAnchorPane;
 
+    public TextArea errorTextArea;
+
     public TextField gameNameTextField;
     public TextField priceTextField;
-    public TextField descriptionTextField;
+    public TextArea descriptionTextArea;
     public DatePicker startDateDatePicker;
     public DatePicker endDateDatePicker;
     public ChoiceBox<String> choiceBoxo;
@@ -48,7 +50,7 @@ public class ProviderController {
     ProviderDTB providerDTB;
     Provider currentProvider;
 
-    // CONSTRUCTOR-ISH
+    /// CONSTRUCTOR-ISH
     public void setup(String username){
         providerDTB = App.getInstance().getProviderDTB();
         currentProvider = providerDTB.getCurrentProvider();
@@ -59,7 +61,7 @@ public class ProviderController {
         updateGridAndList();
     }
 
-    // SETTERS
+    /// SETTERS
     public void setGamesGridPane(ArrayList<String> gridPaneStr) {
         int col = 0;
         int row = 0;
@@ -99,7 +101,7 @@ public class ProviderController {
         gameListListView.getItems().addAll(observableList);
     }
 
-    // ACTIONS
+    /// MOVE BETWEEN PANES
     public void newOfferClick() {
         newOfferAnchorPane.setVisible(true);
         welcomeAnchorPane.setVisible(false);
@@ -116,15 +118,19 @@ public class ProviderController {
         changeOfferAnchorPane.setVisible(true);
         newOfferAnchorPane.setVisible(false);
         welcomeAnchorPane.setVisible(false);
-
     }
 
+    public void logOutAction(){
+        App.getInstance().gotoLogout();
+    }
+
+    /// ACTIONS
     public void changeThisOfferButtonClick() {
         Game game = currentProvider.getGame(gameListListView.getSelectionModel().getSelectedItem());
         
         gameNameTextField.setText( game.getName() );
         priceTextField.setText( String.valueOf(game.getPrice()) );
-        descriptionTextField.setText( game.getDescription() );
+        descriptionTextArea.setText( game.getDescription() );
         
         startDateDatePicker.setValue(convertToLocalDate( game.getStartDate() ));
         endDateDatePicker.setValue(convertToLocalDate( game.getEndDate() ));
@@ -137,17 +143,16 @@ public class ProviderController {
         updateGridAndList();
 
         newOfferClick();
-
     }
 
     public void makeNewOfferButtonClick() {
         String gName = gameNameTextField.getText();
         String priceStr = priceTextField.getText();
-        double price;
+        double price = 0;
         Date startDate = java.sql.Date.valueOf(startDateDatePicker.getValue());;
         Date endDate = java.sql.Date.valueOf(endDateDatePicker.getValue());
         boolean rent = Boolean.parseBoolean(choiceBoxo.getValue());
-        String description = descriptionTextField.getText();
+        String description = descriptionTextArea.getText();
 
         Calendar cal = Calendar.getInstance();
 
@@ -159,26 +164,47 @@ public class ProviderController {
         cal.set(Calendar.HOUR_OF_DAY, 12);
         endDate = cal.getTime();
 
+        boolean valid = true;
+        String errorStr = "";
+
         if ( !ProviderDTB.validGameName(gName) ){
+            errorStr += "Invalid game name!\n";
+            valid = false;
+
             System.out.println("Invalid input: game name");
-            return;
         }
 
         if ( !ProviderDTB.validDoubleValueInput(priceStr) ) {
+            errorStr += "Invalid game price!\n";
+            valid = false;
+
             System.out.println("Invalid input: price");
-            return;
         }
-        price = Double.parseDouble(priceStr);
+        else {
+            price = Double.parseDouble(priceStr);
+        }
 
         if ( !ProviderDTB.validGameDates(startDate, endDate) ) {
+            errorStr += "Invalid start or end dates!\n";
+            valid = false;
+
             System.out.println("Invalid input: dates");
-            return;
         }
 
         if ( !ProviderDTB.validDescription(description) ){
+            errorStr += "Invalid game description!\n";
+            valid = false;
+
             System.out.println("Invalid input: description");
+        }
+
+        if ( !valid ){
+            errorTextArea.setText(errorStr);
+            errorTextArea.setVisible(true);
             return;
         }
+
+        errorTextArea.setVisible(false);
 
         Game game = new Game(gName, price, description, startDate, endDate, rent);
 
@@ -194,7 +220,7 @@ public class ProviderController {
         resetGameDataFields();
     }
 
-    // HELPER
+    /// OTHER
     public static LocalDate NOW_LOCAL_DATE (){
         String date = new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -220,7 +246,7 @@ public class ProviderController {
     public void resetGameDataFields() {
         gameNameTextField.setText("");
         priceTextField.setText("");
-        descriptionTextField.setText("");
+        descriptionTextArea.setText("");
         startDateDatePicker.setValue(NOW_LOCAL_DATE());
         endDateDatePicker.setValue(NOW_LOCAL_DATE());
         choiceBoxo.setValue("true");

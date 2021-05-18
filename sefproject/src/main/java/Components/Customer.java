@@ -3,7 +3,6 @@ package Components;
 import java.util.ArrayList;
 
 public class Customer {
-
     private String name;
     private ArrayList<Game> library;
     private double money;
@@ -14,7 +13,6 @@ public class Customer {
     }
 
     // GETTERS
-
     public double getMoney() {
         return money;
     }

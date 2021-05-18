@@ -29,7 +29,8 @@ public class CustomerDTB_Test {
         test.addGame(alinare);
         test.setMoney(2000.2);
 
-        CustomerDTB customerDTB = new CustomerDTB("src/main/resources/Databases/CustomersDTB.json", test.getName());
+        CustomerDTB customerDTB = new CustomerDTB("src/main/resources/Databases/CustomersDTB.json");
+        customerDTB.setCurrentCustomer(test.getName());
 
         customerDTB.setCurrentCustomer(test.getName());
 

@@ -14,6 +14,8 @@ public class Game {
     private Date startDate;
     private Date endDate;
 
+    private boolean bought;
+
     public Game(String name, double price, String description, Date dateStart, Date dateEnd, boolean rent) {
         this.name = name;
         this.price = price;
@@ -21,19 +23,10 @@ public class Game {
         this.rent = rent;
         this.startDate = dateStart;
         this.endDate = dateEnd;
-
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-//
-//        try {
-//            startDate = dateFormat.parse(dateStart);
-//            endDate = dateFormat.parse(dateEnd);
-//        }
-//        catch (ParseException e) {
-//            System.out.println("Parse exception encountered while trying to format date");
-//        }
-
+        this.bought = false;
     }
 
+    // GETTERS
     public String getName() {
         return this.name;
     }
@@ -58,6 +51,39 @@ public class Game {
         return this.endDate;
     }
 
+    public boolean getBought(){
+        return this.bought;
+    }
+
+    // SETTERS
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setRent(boolean rent) {
+        this.rent = rent;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
+    }
+
+    public void setBought(boolean bought) {
+        this.bought = bought;
+    }
+
     @Override
     public String toString() {
         return "Game{" +
@@ -67,6 +93,7 @@ public class Game {
                 ", rent=" + rent +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
+                ", bought=" + bought +
                 '}';
     }
 }

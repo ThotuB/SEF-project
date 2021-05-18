@@ -1,6 +1,5 @@
 package Main;
 
-import Components.User;
 import Controllers.CustomerController;
 import Controllers.LogRegController;
 import Controllers.ProviderController;
@@ -19,17 +18,18 @@ import javafx.stage.Stage;
 
 public class App extends Application {
     private Stage stage;
-    private User loggedUser;
 
     public static App instance;
 
     private final UserDTB userDTB;
-    private ProviderDTB providerDTB;
-    private CustomerDTB customerDTB;
+    private final ProviderDTB providerDTB;
+    private final CustomerDTB customerDTB;
 
     public App(){
         instance = this;
         userDTB = new UserDTB("src/main/resources/Databases/UserDTB.json");
+        customerDTB = new CustomerDTB("src/main/resources/Databases/CustomersDTB.json");
+        providerDTB = new ProviderDTB("src/main/resources/Databases/ProvidersDTB.json");
     }
 
     // GETTERS
@@ -46,10 +46,6 @@ public class App extends Application {
         return customerDTB;
     }
 
-    public User getLoggedUser() {
-        return loggedUser;
-    }
-
     public UserDTB getUserDTB() {
         return userDTB;
     }
@@ -61,9 +57,9 @@ public class App extends Application {
         gotoLogin();
         primaryStage.show();
     }
+
     /// GOTOs
     public void gotoLogout(){
-        loggedUser = null;
         gotoLogin();
     }
 
@@ -71,7 +67,7 @@ public class App extends Application {
         try {
             CustomerController controller = (CustomerController) replaceSceneContent("/Stages/customer_main.fxml");
 
-            customerDTB = new CustomerDTB("src/main/resources/Databases/CustomersDTB.json", username);
+            customerDTB.setCurrentCustomer(username);
             controller.setup(username);
         }catch (Exception ex) {
             ex.printStackTrace();
@@ -82,7 +78,6 @@ public class App extends Application {
         try {
             ProviderController controller = (ProviderController)replaceSceneContent("/Stages/provider_main.fxml");
 
-            providerDTB = new ProviderDTB("src/main/resources/Databases/ProvidersDTB.json");
             providerDTB.setCurrentProvider(username);
             controller.setup(username);
         } catch (Exception ex) {

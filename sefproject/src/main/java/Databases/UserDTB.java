@@ -31,13 +31,23 @@ public class UserDTB {
         }
     }
 
+    // GETTER
+    public User getUser(User user){
+        for (User u : data) {
+            if ( u.getUsername().equals(user.getUsername()) || u.getEmail().equals(user.getEmail()) ){
+                return u;
+            }
+        }
+        return null;
+    }
+
     // VALIDATION (in need of it)
     public static boolean validUsername(User user){
         return user.getUsername().length() >= 5;
     }
 
     public static boolean validEmail(User user){
-        Pattern pattern = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
+        Pattern pattern = Pattern.compile("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
         Matcher matcher = pattern.matcher(user.getEmail());
 
         return matcher.matches();
@@ -63,9 +73,7 @@ public class UserDTB {
                 if ( u.getPasswordHashed().equals(user.getPasswordHashed()) ) {
                     return true;
                 }
-                else {
-                    break;
-                }
+                break;
             }
         }
 

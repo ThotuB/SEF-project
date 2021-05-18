@@ -16,7 +16,8 @@ public class CustomerApplication extends Application {
     @Override
     public void init() throws Exception {
         super.init();
-        customerDTB = new CustomerDTB("src/main/resources/Databases/CustomersDTB.json", "Alin");
+        customerDTB = new CustomerDTB("src/main/resources/Databases/CustomersDTB.json");
+        customerDTB.setCurrentCustomer("Alin");
 
     }
 

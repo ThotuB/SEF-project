@@ -9,13 +9,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.Reader;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 public class ProviderDTB {
     private ArrayList<Provider> data = new ArrayList<>();
@@ -36,9 +33,7 @@ public class ProviderDTB {
 
     }
 
-
     // GETTERS
-
     public ArrayList<Provider> getData() {
         return data;
     }
@@ -57,14 +52,27 @@ public class ProviderDTB {
     }
 
     public ArrayList<Game> getAllGamesFromDTB() {
-
-        ArrayList<Game> gameLibrary = new ArrayList<>();
+        ArrayList<Game> allGames = new ArrayList<>();
 
         for (Provider i : data) {
-            gameLibrary.addAll(i.getGames());
+            allGames.addAll(i.getGames());
         }
 
-        return gameLibrary;
+        return allGames;
+    }
+
+    public ArrayList<Game> getAvailableGamesFromDTB() {
+        ArrayList<Game> availableGames = new ArrayList<>();
+
+        for (Provider provider : data) {
+            for (Game game : provider.getGames()){
+                if ( !game.getBought() ){
+                    availableGames.add(game);
+                }
+            }
+        }
+
+        return availableGames;
     }
 
     public Provider getCurrentProvider() {
@@ -101,7 +109,7 @@ public class ProviderDTB {
     }
 
     public static boolean validCreditCard (String creditCard) {
-        return (creditCard.matches("[0-9 ]+") && ((creditCard.length() == 16) || creditCard.length() == 19));
+        return (creditCard.matches("[0-9-]+") &&  creditCard.length() == 19);
     }
 
     public static boolean validExpirationDate (String expDate) {
@@ -109,7 +117,7 @@ public class ProviderDTB {
     }
 
     public static boolean validCCV (String ccv) {
-        return ccv.matches("[0-9]+") && (ccv.length() == 3);
+        return ccv.matches("[0-9]+") && ccv.length() == 3;
     }
 
     // DATABASE OPTIONS

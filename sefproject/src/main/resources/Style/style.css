@@ -6,6 +6,7 @@
     gray-background-4: #202225;
     bloo: #7289da;
     porpal: #3644d9;
+    error: #B33A3A;
 }
 
 .root {
@@ -29,18 +30,7 @@
     -fx-background-color: gray-background-1;
 }
 
-.button {
-    -fx-background-color: button-background;
-    -fx-font-family: "Franklin Gothic Book";
-    -fx-text-fill: #ffffff;
-    -fx-background-radius: 20;
-    -fx-font-size: 25px;
-}
-
-.button:hover {
-    -fx-opacity: 0.6;
-}
-
+/* TEXT */
 .text_white {
     -fx-font-family: "Franklin Gothic Book";
     -fx-fill: white;
@@ -64,6 +54,18 @@
     -fx-alignment: center;
 }
 
+.button {
+    -fx-background-color: button-background;
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 20;
+    -fx-font-size: 25px;
+}
+
+.button:hover {
+    -fx-opacity: 0.6;
+}
+
 .text-field {
     -fx-background-color: porpal, gray-background-4;
     -fx-background-insets: 0, 0 0 2 0;
@@ -84,6 +86,7 @@
     -fx-text-fill: white;
 }
 
+/* LIST-VIEW */
 .list-view {
     -fx-background-color: gray-background-4;
     -fx-background-radius: 5.0;
@@ -104,4 +107,79 @@
 .list-view:focused .list-cell:filled:selected {
     /* 3: (This is more specific and therefore overrides the above)*/
     -fx-background-color: linear-gradient(#000 0%, #222 25%, #444 75%, #666 100%);
+}
+
+/* TEXT-REA */
+.text-area {
+    -fx-background-insets: 0;
+    -fx-background-color: gray-background-4, gray-background-4, gray-background-4, gray-background-4;
+
+    -fx-text-fill: white;
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 25px;
+}
+
+.text-area .content {
+    -fx-background-color: porpal, gray-background-4, porpal, gray-background-4;
+    -fx-background-insets: 0, 2 0 2 0;
+    -fx-background-radius: 0;
+
+    -fx-padding: 10px;
+}
+
+.text-area:focused .content {
+    -fx-background-color: bloo, gray-background-4, bloo, gray-background-4;
+}
+
+.text-area-error {
+    -fx-background-insets: 0;
+    -fx-background-color: gray-background-4, gray-background-4, gray-background-4, gray-background-4;
+    -fx-opacity: 1;
+
+    -fx-text-fill: white;
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 20px;
+}
+
+.text-area-error .content {
+    -fx-background-color: error, gray-background-4, error, gray-background-4;
+    -fx-background-insets: 0, 2 0 2 0;
+    -fx-background-radius: 0;
+
+    -fx-padding: 10px;
+}
+
+/* DATE-PICKER */
+.date-picker {
+    -fx-background-insets: 0;
+}
+
+.date-picker > .text-field {
+    -fx-background-color: porpal, gray-background-4, porpal, gray-background-4;
+    -fx-background-insets: 0, 0 0 2 0;
+}
+
+.date-picker:focused > .text-field,
+.date-picker > .text-field:focused {
+    -fx-background-color: bloo, gray-background-4, bloo, gray-background-4;
+}
+
+/* CHOICE-BOX */
+.choice-box {
+    -fx-background-insets: 0, 0 0 2 0;
+    -fx-background-color: porpal, gray-background-4;
+
+    -fx-text-fill: white;
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 25px;
+}
+
+.choice-box:focused {
+    -fx-background-color: bloo, gray-background-4;
+}
+
+.choice-box > .label {
+    -fx-text-fill: white;
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 25px;
 }
