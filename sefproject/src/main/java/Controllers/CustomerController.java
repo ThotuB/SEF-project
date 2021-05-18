@@ -66,6 +66,8 @@ public class CustomerController {
         loadData();
 //        resetGameDataFields();
         updateGridAndList();
+
+        setCVVTextFieldListener();
         setExpirationDateTextFieldListener();
         setCreditCardTextFieldListener();
         setGameTransactionsListView();
@@ -286,53 +288,76 @@ public class CustomerController {
     }
 
 
-    public void ccvTextFieldChanged(){
-        if ( ccvTextField.getText().length() > 3 ){
-            String text = ccvTextField.getText().substring(0, 3);
-            ccvTextField.setText(text);
-            ccvTextField.positionCaret(3);
-        }
+    public void setCVVTextFieldListener(){
+        ccvTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if ( newValue.length() > 3 ){
+                ccvTextField.setText(oldValue);
+                ccvTextField.positionCaret(3);
+            }
+        });
     }
 
     // OTHER
     public void setExpirationDateTextFieldListener(){
         expirationDateTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            if ( newValue.length() > 5 ){
+                expirationDateTextField.setText(oldValue);
+                expirationDateTextField.positionCaret(5);
+                return;
+            }
+
             int addFlag = newValue.length() - oldValue.length();
 
             if ( addFlag > 0 ){
-                if ( newValue.length() > 5 ){
-                    expirationDateTextField.setText(oldValue);
-                    expirationDateTextField.positionCaret(5);
-                    return;
+                String text = "";
+                for (int i = 0 ; i < newValue.length() ; i++){
+                    if ( text.length() == 2 ){
+                        text += "/";
+                    }
+                    if ( Character.isDigit( newValue.charAt(i) ) ){
+                        text += newValue.charAt(i);
+                    }
                 }
-                if ( newValue.length() == 2 ){
-                    expirationDateTextField.setText(newValue + "/");
-                    expirationDateTextField.positionCaret(3);
-                }
+
+                String finalText = text;
+                Platform.runLater(() -> {
+                    int pos = expirationDateTextField.getCaretPosition();
+                    expirationDateTextField.setText(finalText);
+                    if ( pos == 3 ) { pos++; }
+                    expirationDateTextField.positionCaret(pos);
+                });
             }
         });
     }
 
     public void setCreditCardTextFieldListener(){
         creditCardTextField.textProperty().addListener((observable, oldValue, newValue) ->{
+            if ( newValue.length() > 19 ){
+                creditCardTextField.setText(oldValue);
+                creditCardTextField.positionCaret(19);
+                return;
+            }
+
             int addFlag = newValue.length() - oldValue.length();
 
-            int[] arr = {4, 9, 14};
             if ( addFlag > 0 ){
-                if ( newValue.length() > 19 ){
-                    creditCardTextField.setText(oldValue);
-                    creditCardTextField.positionCaret(19);
-                }
-                for (int i = 0 ; i < 3 ; i++){
-                    if ( newValue.length() == arr[i] ){
-                        creditCardTextField.setText(newValue + "-");
-                        creditCardTextField.positionCaret(arr[i]+1);
+                String text = "";
+                for (int i = 0 ; i < newValue.length() ; i++){
+                    if ( text.length() == 4 || text.length() == 9 || text.length() == 14 ){
+                        text += "-";
                     }
-                    if ( newValue.length() == arr[i]+1 && newValue.charAt(newValue.length()-1) != '-' ) {
-                        creditCardTextField.setText(oldValue + "-" + newValue.charAt(newValue.length()-1));
-                        creditCardTextField.positionCaret(arr[i]+2);
+                    if ( Character.isDigit( newValue.charAt(i) ) ){
+                        text += newValue.charAt(i);
                     }
                 }
+
+                String finalText = text;
+                Platform.runLater(() -> {
+                    int pos = creditCardTextField.getCaretPosition();
+                    creditCardTextField.setText(finalText);
+                    if ( pos == 5 || pos == 10 || pos == 15 ) { pos++; }
+                    creditCardTextField.positionCaret(pos);
+                });
             }
         });
 
