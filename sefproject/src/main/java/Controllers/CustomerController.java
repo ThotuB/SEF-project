@@ -6,6 +6,7 @@ import Components.Provider;
 import Databases.CustomerDTB;
 import Databases.ProviderDTB;
 import Main.App;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -61,6 +62,9 @@ public class CustomerController {
         loadData();
 //        resetGameDataFields();
         updateGridAndList();
+        setExpirationDateTextFieldListener();
+        setCreditCardTextFieldListener();
+
     }
 
     /// SETTERS
@@ -111,7 +115,7 @@ public class CustomerController {
                 date += game.getEndDate().toString().substring(0,10);
             }
             else {
-                date += "∞";
+                date += "\u221e";
             }
 
             observableListGameName.add(name);
@@ -171,20 +175,23 @@ public class CustomerController {
     public void chooseThisGameButton() {
         Game currentGame = providerDTB.getAllGamesFromDTB().get(0); //TODO: ceva sa facem sa fie asta initializat
 
-        for (Provider i: providerDTB.getData()) {
-            for (Game j: i.getGames()) {
-                if (j.getName().equals(gameListListView.getSelectionModel().getSelectedItem()))
-                    currentGame = j;
+        for (Provider provider: providerDTB.getData()) {
+            for (Game game: provider.getGames()) {
+                if ( game.getName().equals(gameListListView.getSelectionModel().getSelectedItem()) ) {
+                    currentGame = game;
+                }
             }
         }
 
-        if (currentCustomer.getMoney() < currentGame.getPrice())  {
+        if ( currentCustomer.getMoney() < currentGame.getPrice() )  {
             System.out.println("Not enough money");
             return;
         }
 
+        currentGame.setBought(true);
+        providerDTB.updateDatabase();
         addGameToLibrary(currentGame);
-
+        updateGridAndList();
 
         String money = "" + (currentCustomer.getMoney() - currentGame.getPrice());
         money = money.substring(0, money.indexOf('.') + 2);
@@ -203,7 +210,6 @@ public class CustomerController {
     }
 
     public void addMoneyToAccount() {
-
         String amount = amountTextField.getText();
         String creditCard = creditCardTextField.getText();
         String expirDate = expirationDateTextField.getText();
@@ -242,9 +248,62 @@ public class CustomerController {
 
     }
 
+
+    public void ccvTextFieldChanged(){
+        if ( ccvTextField.getText().length() > 3 ){
+            String text = ccvTextField.getText().substring(0, 3);
+            ccvTextField.setText(text);
+            ccvTextField.positionCaret(3);
+        }
+    }
+
     // OTHER
+    public void setExpirationDateTextFieldListener(){
+        expirationDateTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+            int addFlag = newValue.length() - oldValue.length();
+
+            if ( addFlag > 0 ){
+                if ( newValue.length() > 5 ){
+                    expirationDateTextField.setText(oldValue);
+                    expirationDateTextField.positionCaret(5);
+                    return;
+                }
+                if ( newValue.length() == 2 ){
+                    expirationDateTextField.setText(newValue + "/");
+                    expirationDateTextField.positionCaret(3);
+                }
+            }
+        });
+    }
+
+    public void setCreditCardTextFieldListener(){
+        creditCardTextField.textProperty().addListener((observable, oldValue, newValue) ->{
+            int addFlag = newValue.length() - oldValue.length();
+
+            int[] arr = {4, 9, 14};
+            if ( addFlag > 0 ){
+                if ( newValue.length() > 19 ){
+                    creditCardTextField.setText(oldValue);
+                    creditCardTextField.positionCaret(19);
+                }
+                for (int i = 0 ; i < 3 ; i++){
+                    if ( newValue.length() == arr[i] ){
+                        creditCardTextField.setText(newValue + "-");
+                        creditCardTextField.positionCaret(arr[i]+1);
+                    }
+                    if ( newValue.length() == arr[i]+1 && newValue.charAt(newValue.length()-1) != '-' ) {
+                        creditCardTextField.setText(oldValue + "-" + newValue.charAt(newValue.length()-1));
+                        creditCardTextField.positionCaret(arr[i]+2);
+                    }
+                }
+            }
+        });
+
+
+    }
+
      private void updateGridAndList() {
-            setGameListListView(providerDTB.getAllGamesFromDTB());
+            setGameListListView(providerDTB.getAvailableGamesFromDTB());
             setGamesGridPane(currentCustomer.getStringGameArray());
      }
 

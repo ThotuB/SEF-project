@@ -1,44 +1,16 @@
 [
   {
-    "username": "Gion",
-    "email": "gion@gionmail.com",
-    "passwordHashed": "0c052e571725a0f521c3b0ae5aa457af8faa943b0bd1f5f602fe7f2bec034193",
-    "salt": "P\u0027\u003d\u003eB"
+    "username": "Provider",
+    "email": "prov@user.com",
+    "passwordHashed": "a72925654ab5e1c17791739652fb0eec4da9d32897d2f21328a083e9b104c084",
+    "salt": "ZF+Oi",
+    "providerFlag": true
   },
   {
-    "username": "Thotu",
-    "email": "bob@bobmail.com",
-    "passwordHashed": "7dd52fdd6ffe5abd5194944ffc719a999f48fcc256924755d60a65c2faea56b6",
-    "salt": "\u003d/Wf["
-  },
-  {
-    "username": "Thotu69",
-    "email": "cox@coxmail.com",
-    "passwordHashed": "f2f7ec14a7301090432fe64b5573f57f0b4981cd687677b5f61d61cd58f40710",
-    "salt": "t${_7"
-  },
-  {
-    "username": "jkfgdskjh",
-    "email": "pulan@cur.cox",
-    "passwordHashed": "9a1e5281179976220ed77b1325b2fe1980ad2afb43e03658e354059c35246052",
-    "salt": "2K4Ia"
-  },
-  {
-    "username": "Blablalaa",
-    "email": "dadada@ceva.com",
-    "passwordHashed": "a76592e238ca58cb16956096520d2e97b90eac36e36fe2a201d91ff718206ff5",
-    "salt": "g?FLD"
-  },
-  {
-    "username": "Ceva129321",
-    "email": "well_duh@ceva.com",
-    "passwordHashed": "aba67b381137dffc840d12804b0b72ba0cb3814831682ccd85897e37b85b4436",
-    "salt": "Qu9E."
-  },
-  {
-    "username": "CAcacacasac",
-    "email": "dasdas@dasd.com",
-    "passwordHashed": "53738a7fc3017d8b10e214a7c00337b9fcb15381d6c0f9e4b8f9a56fb092fb30",
-    "salt": "DLB/s"
+    "username": "Customer",
+    "email": "cust@user.com",
+    "passwordHashed": "9fa9b08d4281c8486ebad545b471e6554c4bf921281abcf149e22f44c001b893",
+    "salt": "c2ZYO",
+    "providerFlag": false
   }
 ]
