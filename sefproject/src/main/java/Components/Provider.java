@@ -1,10 +1,6 @@
 package Components;
 
-import Components.Game;
-import com.google.gson.Gson;
-
 import java.util.ArrayList;
-
 
 public class Provider {
     private String name;
@@ -57,10 +53,6 @@ public class Provider {
 
     public void removeGame(String name) {
         this.games.removeIf(i -> i.getName().equals(name));
-    }
-
-    public void changeGame(){
-
     }
 
     // PRINTING
