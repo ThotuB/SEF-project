@@ -88,7 +88,7 @@ public class ProviderDTB {
         return !name.isBlank();
     }
 
-    public static boolean validGamePrice(String price){
+    public static boolean validDoubleValueInput(String price){
         return (price.matches("[0-9.]+") && price.length() > 0);
     }
 
@@ -98,6 +98,18 @@ public class ProviderDTB {
 
     public static boolean validDescription(String description){
         return description.length() >= 10;
+    }
+
+    public static boolean validCreditCard (String creditCard) {
+        return (creditCard.matches("[0-9 ]+") && ((creditCard.length() == 16) || creditCard.length() == 19));
+    }
+
+    public static boolean validExpirationDate (String expDate) {
+        return expDate.matches("[0-1][0-9]/[0-9][0-9]");
+    }
+
+    public static boolean validCCV (String ccv) {
+        return ccv.matches("[0-9]+") && (ccv.length() == 3);
     }
 
     // DATABASE OPTIONS

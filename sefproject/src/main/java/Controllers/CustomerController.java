@@ -13,6 +13,7 @@ import javafx.geometry.VPos;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -42,6 +43,11 @@ public class CustomerController {
     public AnchorPane browseGamesAnchorPane;
 
     public Button chooseThisGameButton;
+
+    public TextField amountTextField;
+    public TextField creditCardTextField;
+    public TextField ccvTextField;
+    public TextField expirationDateTextField;
 
     public void setup(String username){
         providerDTB = new ProviderDTB("src/main/resources/Databases/ProvidersDTB.json");
@@ -140,7 +146,6 @@ public class CustomerController {
 
     }
 
-
     public void seeLibraryClick() {
         libraryAnchorPane.setVisible(true);
         browseGamesAnchorPane.setVisible(false);
@@ -187,18 +192,74 @@ public class CustomerController {
 
         addGameToLibrary(currentGame);
 
+
+        String money = "" + (currentCustomer.getMoney() - currentGame.getPrice());
+        money = money.substring(0, money.indexOf('.') + 2);
+
+        currentCustomer.setMoney(Double.parseDouble(money));
+
         customerDTB.updateDatabase();
-        //TODO: Transactions
-        setGamesGridPane(currentCustomer.getStringGameArray());
+
+        balanceText.setText("" + currentCustomer.getMoney());
+
+        browseGamesClick();
 
         seeLibraryClick();
+        //TODO: add to transactions
 
     }
 
     public void addGameToLibrary(Game currentGame) {
         this.currentCustomer.addGame(currentGame);
+        customerDTB.updateDatabase();
+        setGamesGridPane(currentCustomer.getStringGameArray());
+    }
 
+    public void addMoneyToAccount() {
 
+        String amount = amountTextField.getText();
+        String creditCard = creditCardTextField.getText();
+        String expirDate = expirationDateTextField.getText();
+        String ccv = ccvTextField.getText();
+
+        if ( !ProviderDTB.validDoubleValueInput(amount) ) {
+            System.out.println("Invalid input value for the amount of money");
+            return;
+        }
+
+        if ( !ProviderDTB.validCreditCard(creditCard) ) {
+            System.out.println("Invalid credit card");
+            return;
+        }
+
+        if ( !ProviderDTB.validExpirationDate(expirDate) ) {
+            System.out.println("Invalid expiration date: [xy/ab]");
+            return;
+        }
+
+        if ( !ProviderDTB.validCCV(ccv) ) {
+            System.out.println("Invalid CCV");
+            return;
+        }
+
+        System.out.println("Your balance has incremented by: " + amount);
+
+        currentCustomer.setMoney(currentCustomer.getMoney() + Double.parseDouble(amount));
+
+        customerDTB.updateDatabase();
+        balanceText.setText("" + currentCustomer.getMoney());
+
+        browseGamesClick();
+
+        clearAddMoney();
+
+    }
+
+    public void clearAddMoney() {
+        amountTextField.setText("");
+        creditCardTextField.setText("");
+        expirationDateTextField.setText("");
+        ccvTextField.setText("");
     }
 
 }
