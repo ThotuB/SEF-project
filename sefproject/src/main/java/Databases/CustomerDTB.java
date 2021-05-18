@@ -17,7 +17,7 @@ public class CustomerDTB {
     private Customer currentCustomer;
     private final String path;
 
-    public CustomerDTB(String path, String username){
+    public CustomerDTB(String path){
         this.path = new File(path).getAbsolutePath();
 
         try {
@@ -28,7 +28,6 @@ public class CustomerDTB {
         catch (Exception ex) {
             ex.printStackTrace();
         }
-        setCurrentCustomer(username);
     }
 
     public void setCurrentCustomer(String username) {

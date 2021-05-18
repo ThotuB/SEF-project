@@ -5,6 +5,7 @@ import Components.Game;
 import Components.Provider;
 import Databases.CustomerDTB;
 import Databases.ProviderDTB;
+import Main.App;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -50,9 +51,9 @@ public class CustomerController {
     public TextField expirationDateTextField;
 
     public void setup(String username){
-        providerDTB = new ProviderDTB("src/main/resources/Databases/ProvidersDTB.json");
-        customerDTB = new CustomerDTB("src/main/resources/Databases/CustomersDTB.json", username);
-        //customerDTB = App.getInstance().getCustomerDTB();
+        providerDTB = App.getInstance().getProviderDTB();
+        customerDTB = App.getInstance().getCustomerDTB();
+
         currentCustomer = customerDTB.getCurrentCustomer();
 
         chooseThisGameButton.disableProperty().bind(gameListListView.getSelectionModel().selectedItemProperty().isNull());
@@ -62,16 +63,7 @@ public class CustomerController {
         updateGridAndList();
     }
 
-    private void updateGridAndList() {
-
-
-        //System.out.println(gameHolders);
-
-        setGameListListView(providerDTB.getAllGamesFromDTB());
-        setGamesGridPane(currentCustomer.getStringGameArray());
-    }
-
-    // SETTERS
+    /// SETTERS
     public void setGamesGridPane(ArrayList<String> gridPaneStr) {
         int col = 0;
         int row = 0;
@@ -101,9 +93,7 @@ public class CustomerController {
         }
     }
 
-
-    public void setGameListListView(ArrayList<Game> gamesFromDTB) {
-
+    public void setGameListListView(ArrayList<Game> games) {
         ObservableList<String> observableListGameName = FXCollections.observableArrayList();
         ObservableList<Double> observableListGamePrice = FXCollections.observableArrayList();
         ObservableList<String> observableListGamePeriod = FXCollections.observableArrayList();
@@ -112,17 +102,21 @@ public class CustomerController {
         observableListGamePrice.removeAll();
         observableListGamePeriod.removeAll();
 
-        for (Game i: gamesFromDTB) {
+        for (Game game: games) {
+            String name = game.getName();
+            Double price = game.getPrice();
+            String date = game.getStartDate().toString().substring(0,10) + " -> ";
 
-            observableListGameName.add(i.getName());
-            observableListGamePrice.add(i.getPrice());
-            if (i.getRent()) {
-                observableListGamePeriod.add("" + i.getStartDate().toString().substring(0,10) + " -> " +
-                        i.getEndDate().toString().substring(0,10));
+            if (game.getRent()) {
+                date += game.getEndDate().toString().substring(0,10);
             }
-            else observableListGamePeriod.add("" + i.getStartDate().toString().substring(0,10) + " -> " +
-                    "Forever");
+            else {
+                date += "∞";
+            }
 
+            observableListGameName.add(name);
+            observableListGamePrice.add(price);
+            observableListGamePeriod.add( date );
         }
 //        System.out.println(observableListGameName);
 //        System.out.println(observableListGamePrice);
@@ -140,12 +134,7 @@ public class CustomerController {
         //gameListListView.getItems().addAll(observableList);
     }
 
-    public void loadData() {
-        customerNameLabel.setText(currentCustomer.getName());
-        balanceText.setText("" + currentCustomer.getMoney());
-
-    }
-
+    /// MOVE BETWEEN PANES
     public void seeLibraryClick() {
         libraryAnchorPane.setVisible(true);
         browseGamesAnchorPane.setVisible(false);
@@ -174,8 +163,12 @@ public class CustomerController {
         browseGamesAnchorPane.setVisible(false);
     }
 
-    public void chooseThisGameButton() {
+    public void logOutAction(){
+        App.getInstance().gotoLogout();
+    }
 
+    /// ACTIONS
+    public void chooseThisGameButton() {
         Game currentGame = providerDTB.getAllGamesFromDTB().get(0); //TODO: ceva sa facem sa fie asta initializat
 
         for (Provider i: providerDTB.getData()) {
@@ -207,12 +200,6 @@ public class CustomerController {
         seeLibraryClick();
         //TODO: add to transactions
 
-    }
-
-    public void addGameToLibrary(Game currentGame) {
-        this.currentCustomer.addGame(currentGame);
-        customerDTB.updateDatabase();
-        setGamesGridPane(currentCustomer.getStringGameArray());
     }
 
     public void addMoneyToAccount() {
@@ -253,6 +240,23 @@ public class CustomerController {
 
         clearAddMoney();
 
+    }
+
+    // OTHER
+     private void updateGridAndList() {
+            setGameListListView(providerDTB.getAllGamesFromDTB());
+            setGamesGridPane(currentCustomer.getStringGameArray());
+     }
+
+    public void loadData() {
+        customerNameLabel.setText(currentCustomer.getName());
+        balanceText.setText("" + currentCustomer.getMoney());
+    }
+
+    public void addGameToLibrary(Game currentGame) {
+        this.currentCustomer.addGame(currentGame);
+        customerDTB.updateDatabase();
+        setGamesGridPane(currentCustomer.getStringGameArray());
     }
 
     public void clearAddMoney() {

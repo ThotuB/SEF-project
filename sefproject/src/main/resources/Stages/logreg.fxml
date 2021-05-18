@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LogRegController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="600.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LogRegController">
    <children>
       <VBox prefHeight="800.0" prefWidth="400.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -69,7 +69,7 @@
                   </CheckBox>
                </children>
             </HBox>
-            <TextArea fx:id="descriptionTextArea" prefHeight="200.0" prefWidth="200.0" styleClass="text-area" />
+            <TextArea fx:id="errorTextArea" disable="true" editable="false" prefHeight="265.0" prefWidth="400.0" styleClass="text-area-error" visible="false" />
          </children>
       </VBox>
    </children>

@@ -47,7 +47,7 @@ public class UserDTB {
     }
 
     public static boolean validEmail(User user){
-        Pattern pattern = Pattern.compile("^[A-Za-z0-9+_.-]+@(.+)$");
+        Pattern pattern = Pattern.compile("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
         Matcher matcher = pattern.matcher(user.getEmail());
 
         return matcher.matches();

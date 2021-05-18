@@ -18,7 +18,7 @@ public class LogRegController{
     public TextField emailTextField;
     public PasswordField passwordPasswordField;
     public TextField passwordTextField;
-    public TextArea descriptionTextArea;
+    public TextArea errorTextArea;
 
     @FXML
     public CheckBox showPasswordCheckbox;
@@ -70,34 +70,45 @@ public class LogRegController{
 
         User user = new User(username, email, password);
 
-        if ( !UserDTB.validUsername(user) ){
-            descriptionTextArea.setText("""
-                    Invalid username!
+        boolean valid = true;
+        String errorStr = "";
 
-                    Username needs to:
-                      -be at least 5 characters long.""");
+        if ( !UserDTB.validUsername(user) ){
+            errorStr += "Invalid username! (too short)\n";
+            valid = false;
+
             System.out.println("registration failed: invalid username");
-            return;
         }
 
         if ( !UserDTB.validEmail(user) ){
-            descriptionTextArea.setText("Invalid email address!");
+            errorStr += "Invalid email address!\n";
+            valid = false;
+
             System.out.println("registration failed: invalid email");
-            return;
         }
 
         if ( !UserDTB.validPassword(user) ){
-            descriptionTextArea.setText("""
+            errorStr += """
                     Invalid password!
 
                     Password needs to:
                       - be between 5 and 20 characters long.
                       - have at least 1 uppercase character
-                      - have at least 1 lowercase charracter
-                      - have at least 1 digit""");
+                      - have at least 1 lowercase character
+                      - have at least 1 digit
+                      """;
+            valid = false;
+
             System.out.println("registration failed: invalid password");
+        }
+
+        if ( !valid ){
+            errorTextArea.setText(errorStr);
+            errorTextArea.setVisible(true);
             return;
         }
+
+        errorTextArea.setVisible(false);
 
         if ( !userDTB.existsUsernameOrEmail(user) ){
             user.setSalt();
