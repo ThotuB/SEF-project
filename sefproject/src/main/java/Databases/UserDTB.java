@@ -1,5 +1,6 @@
 package Databases;
 
+import Components.Provider;
 import Components.User;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -18,6 +19,10 @@ public class UserDTB {
     private ArrayList<User> data = new ArrayList<>();
     public final String path;
 
+    public UserDTB(){
+        path = "";
+    }
+
     public UserDTB(String path){
         this.path = new File(path).getAbsolutePath();
 
@@ -32,6 +37,10 @@ public class UserDTB {
     }
 
     // GETTER
+    public ArrayList<User> getData() {
+        return data;
+    }
+
     public User getUser(User user){
         for (User u : data) {
             if ( u.getUsername().equals(user.getUsername()) || u.getEmail().equals(user.getEmail()) ){
