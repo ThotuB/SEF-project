@@ -17,6 +17,10 @@ public class CustomerDTB {
     private Customer currentCustomer;
     private final String path;
 
+    public CustomerDTB(){
+        path = "";
+    }
+
     public CustomerDTB(String path){
         this.path = new File(path).getAbsolutePath();
 
@@ -30,15 +34,9 @@ public class CustomerDTB {
         }
     }
 
-    public void setCurrentCustomer(String username) {
-        currentCustomer = getCustomer(username);
-
-        if ( currentCustomer == null ){
-            currentCustomer = new Customer(username);
-
-            add(currentCustomer);
-            updateDatabase();
-        }
+    // GETTERS
+    public Customer getCurrentCustomer() {
+        return currentCustomer;
     }
 
     public Customer getCustomer(String username){
@@ -54,8 +52,25 @@ public class CustomerDTB {
         return null;
     }
 
-    public void add(Customer adding) {
-        this.data.add(adding);
+    public ArrayList<Customer> getData(){
+        return data;
+    }
+
+    // SETTER
+    public void setCurrentCustomer(String username) {
+        currentCustomer = getCustomer(username);
+
+        if ( currentCustomer == null ){
+            currentCustomer = new Customer(username);
+
+            add(currentCustomer);
+            updateDatabase();
+        }
+    }
+
+
+    public void add(Customer customer) {
+        this.data.add(customer);
     }
 
     public void updateDatabase() {
@@ -73,10 +88,6 @@ public class CustomerDTB {
         catch (Exception ex){
             ex.printStackTrace();
         }
-    }
-
-    public Customer getCurrentCustomer() {
-        return currentCustomer;
     }
 
     @Override

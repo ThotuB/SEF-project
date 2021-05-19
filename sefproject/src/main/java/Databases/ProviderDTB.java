@@ -19,6 +19,10 @@ public class ProviderDTB {
     private Provider currentProvider;
     private final String path;
 
+    public ProviderDTB(){
+        path = "";
+    }
+
     public ProviderDTB(String path){
         this.path = new File(path).getAbsolutePath();
 
