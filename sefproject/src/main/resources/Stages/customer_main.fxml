@@ -167,7 +167,7 @@
                            <children>
                               <TextField fx:id="expirationDateTextField" prefHeight="45.0" prefWidth="196.0" promptText="Expiration Date" />
                               <Region prefHeight="69.0" prefWidth="185.0" HBox.hgrow="ALWAYS" />
-                              <TextField fx:id="ccvTextField" onKeyTyped="#ccvTextFieldChanged" prefHeight="46.0" prefWidth="129.0" promptText="CCV" />
+                              <TextField fx:id="ccvTextField" prefHeight="46.0" prefWidth="129.0" promptText="CCV" />
                            </children>
                         </HBox>
                      </children>
