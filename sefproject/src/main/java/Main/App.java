@@ -68,7 +68,7 @@ public class App extends Application {
             CustomerController controller = (CustomerController) replaceSceneContent("/Stages/customer_main.fxml");
 
             customerDTB.setCurrentCustomer(username);
-            controller.setup(username);
+            controller.setup(providerDTB, customerDTB);
         }catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -79,7 +79,7 @@ public class App extends Application {
             ProviderController controller = (ProviderController)replaceSceneContent("/Stages/provider_main.fxml");
 
             providerDTB.setCurrentProvider(username);
-            controller.setup(username);
+            controller.setup(providerDTB);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -89,7 +89,7 @@ public class App extends Application {
         try {
             LogRegController controller = (LogRegController)replaceSceneContent("/Stages/logreg.fxml");
 
-            controller.setDTB();
+            controller.setup(userDTB);
         } catch (Exception ex) {
             ex.printStackTrace();
         }

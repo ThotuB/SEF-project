@@ -51,11 +51,11 @@ public class ProviderController {
     Provider currentProvider;
 
     /// CONSTRUCTOR-ISH
-    public void setup(String username){
-        providerDTB = App.getInstance().getProviderDTB();
+    public void setup(ProviderDTB providerDTB){
+        this.providerDTB = providerDTB;
         currentProvider = providerDTB.getCurrentProvider();
 
-        provNameLabel.setText(username);
+        provNameLabel.setText(currentProvider.getName());
         loadData();
         resetGameDataFields();
         updateGridAndList();

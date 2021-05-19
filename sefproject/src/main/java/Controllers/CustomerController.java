@@ -55,16 +55,15 @@ public class CustomerController {
     public TextField ccvTextField;
     public TextField expirationDateTextField;
 
-    public void setup(String username){
-        providerDTB = App.getInstance().getProviderDTB();
-        customerDTB = App.getInstance().getCustomerDTB();
+    public void setup(ProviderDTB providerDTB, CustomerDTB customerDTB){
+        this.providerDTB = providerDTB;
+        this.customerDTB = customerDTB;
 
         currentCustomer = customerDTB.getCurrentCustomer();
 
         chooseThisGameButton.disableProperty().bind(gameListListView.getSelectionModel().selectedItemProperty().isNull());
 
         loadData();
-//        resetGameDataFields();
         updateGridAndList();
 
         setCVVTextFieldListener();
@@ -110,7 +109,7 @@ public class CustomerController {
         ObservableList<String> observableListTransactionsPrice = FXCollections.observableArrayList();
         ObservableList<String> observableListTransactionsTimeLeft = FXCollections.observableArrayList();
 
-        long diffInMillies;
+        long diffInMillis;
         long diff;
 
         for (Game i: currentCustomer.getLibrary()) {
@@ -118,8 +117,8 @@ public class CustomerController {
             observableListTransactionsPrice.add("$" + i.getPrice());
 
             if (i.getRent()) {
-                diffInMillies = Math.abs(i.getEndDate().getTime() - i.getStartDate().getTime());
-                diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+                diffInMillis = Math.abs(i.getEndDate().getTime() - i.getStartDate().getTime());
+                diff = TimeUnit.DAYS.convert(diffInMillis, TimeUnit.MILLISECONDS);
                 observableListTransactionsTimeLeft.add(diff + " days");
             }
             else observableListTransactionsTimeLeft.add("" + '\u221e');
@@ -146,7 +145,7 @@ public class CustomerController {
 
         for (Game game: games) {
             String name = game.getName();
-            Double price = game.getPrice();
+            double price = game.getPrice();
             String date = game.getStartDate().toString().substring(0,10) + " -> ";
 
             if (game.getRent()) {
@@ -232,7 +231,7 @@ public class CustomerController {
         addGameToLibrary(currentGame);
         updateGridAndList();
 
-        String money = "$" + (currentCustomer.getMoney() - currentGame.getPrice());
+        String money = "" + (currentCustomer.getMoney() - currentGame.getPrice());
         money = money.substring(0, money.indexOf('.') + 2);
 
         currentCustomer.setMoney(Double.parseDouble(money));

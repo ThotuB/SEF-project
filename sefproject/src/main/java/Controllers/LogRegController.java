@@ -24,8 +24,8 @@ public class LogRegController{
     public CheckBox showPasswordCheckbox;
     public CheckBox registerAsProviderCheckbox;
 
-    public void setDTB() {
-        userDTB = App.getInstance().getUserDTB();
+    public void setup(UserDTB userDTB) {
+        this.userDTB = userDTB;
     }
 
     public String getPassword(){

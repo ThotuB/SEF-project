@@ -21,13 +21,11 @@ public class LogRegApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Stages/logreg.fxml"));
-
         Parent root = loader.load();
-
-//        LogRegController controller = loader.getController();
-//        controller.setUserDTB(userDTB);
-
         Scene scene = new Scene(root);
+
+        LogRegController controller = loader.getController();
+        controller.setup(userDTB);
 
         stage.setScene(scene);
         stage.setTitle("Login/Register");
