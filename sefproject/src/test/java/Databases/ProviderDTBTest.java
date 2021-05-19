@@ -92,11 +92,14 @@ class ProviderDTBTest {
     @Test
     void validGameName() {
         assertTrue(ProviderDTB.validGameName(game1.getName()));
+        assertFalse(ProviderDTB.validGameName(""));
     }
 
     @Test
     void validDoubleValueInput() {
         assertTrue(ProviderDTB.validDoubleValueInput("" + game1.getPrice()));
+        assertTrue(ProviderDTB.validDoubleValueInput("65"));
+        assertFalse(ProviderDTB.validDoubleValueInput("5676jhgf"));
     }
 
     @Test
@@ -106,19 +109,23 @@ class ProviderDTBTest {
 
     @Test
     void validDescription() {
-        assertFalse(ProviderDTB.validDoubleValueInput( game1.getDescription()) );
+        assertTrue(ProviderDTB.validDescription( game1.getDescription()) );
+        assertFalse(ProviderDTB.validDescription( "Too short" ));
+        assertTrue(ProviderDTB.validDescription( "Just long enough" ));
     }
 
     @Test
     void validCreditCard() {
-        String creditCard = "1111-2222-3333-4444";
-        assertTrue(ProviderDTB.validCreditCard(creditCard));
+        assertTrue(ProviderDTB.validCreditCard("1111-2222-3333-4444"));
+        assertFalse(ProviderDTB.validCreditCard("11c1-2222-3333-4444"));
+        assertFalse(ProviderDTB.validCreditCard("324"));
     }
 
     @Test
     void validExpirationDate() {
-        String expirationDate = "11/23";
-        assertTrue(ProviderDTB.validExpirationDate(expirationDate));
+        assertTrue(ProviderDTB.validExpirationDate("11/23"));
+        assertFalse(ProviderDTB.validExpirationDate("23/54"));
+        assertTrue(ProviderDTB.validExpirationDate("09/25"));
     }
 
     @Test

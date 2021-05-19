@@ -11,17 +11,35 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.0/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.0/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.0/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.0/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Applications/CustomerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Applications/CustomerApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Applications/LogRegApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Applications/LogRegApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Components/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Components/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Components/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Components/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Components/Provider.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Components/Provider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Components/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Components/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Controllers/CustomerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Controllers/CustomerController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Controllers/LogRegController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Controllers/LogRegController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Controllers/ProviderController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Controllers/ProviderController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Databases/CustomerDTB$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Databases/CustomerDTB$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Databases/CustomerDTB.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Databases/CustomerDTB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Databases/ProviderDTB$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Databases/ProviderDTB$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Databases/ProviderDTB.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Databases/ProviderDTB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Databases/UserDTB$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Databases/UserDTB$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Databases/UserDTB.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Databases/UserDTB.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/Databases/CustomersDTB.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Databases/CustomersDTB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/Databases/ProvidersDTB.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Databases/ProvidersDTB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/Databases/UserDTB.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Databases/UserDTB.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/Stages/customer_main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Stages/customer_main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/Stages/provider_main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/Stages/provider_main.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/source-classes-mapping.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/ProviderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/ProviderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Databases/ProviderDTB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Databases/ProviderDTB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Databases/CustomersDTB.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Databases/CustomersDTB.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Stages/customer_main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/Stages/customer_main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Databases/ProviderDTBTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Databases/ProviderDTBTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Databases/UserDTBTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Databases/UserDTBTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +68,12 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="sefproject" type="f1a62948:ProjectNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sefproject" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
@@ -103,112 +127,114 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\School\Year 2\Semester 2\SEF\Proj\sef-project\sefproject\src\main\resources\Images" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.sefproject [run]">
-    <configuration name="CreateProvDTB_Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Tests.CreateProvDTB_Test" />
-      <module name="sefproject.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProviderApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Applications.ProviderApplication" />
-      <module name="sefproject.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Applications.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestLogReg" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Tests.TestLogReg" />
-      <module name="sefproject.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.UserDTBTest.validEmail">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="sefproject [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="run" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="ProviderDTBTest.validDoubleValueInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sefproject.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Databases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Databases" />
+      <option name="MAIN_CLASS_NAME" value="Databases.ProviderDTBTest" />
+      <option name="METHOD_NAME" value="validDoubleValueInput" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="sefproject [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="ProviderDTBTest.validGameName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sefproject.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Databases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Databases" />
+      <option name="MAIN_CLASS_NAME" value="Databases.ProviderDTBTest" />
+      <option name="METHOD_NAME" value="validGameName" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDTBTest.validEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sefproject.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Databases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Databases" />
+      <option name="MAIN_CLASS_NAME" value="Databases.UserDTBTest" />
+      <option name="METHOD_NAME" value="validEmail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDTBTest.validPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sefproject.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Databases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Databases" />
+      <option name="MAIN_CLASS_NAME" value="Databases.UserDTBTest" />
+      <option name="METHOD_NAME" value="validPassword" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDTBTest.validUsername" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sefproject.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Databases.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Databases" />
+      <option name="MAIN_CLASS_NAME" value="Databases.UserDTBTest" />
+      <option name="METHOD_NAME" value="validUsername" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.sefproject [run]" />
-        <item itemvalue="Application.ProviderApplication" />
-        <item itemvalue="Application.CreateProvDTB_Test" />
-        <item itemvalue="Gradle.sefproject [test]" />
-        <item itemvalue="Application.TestLogReg" />
+        <item itemvalue="JUnit.UserDTBTest.validEmail" />
+        <item itemvalue="JUnit.UserDTBTest.validUsername" />
+        <item itemvalue="JUnit.UserDTBTest.validPassword" />
+        <item itemvalue="JUnit.ProviderDTBTest.validGameName" />
+        <item itemvalue="JUnit.ProviderDTBTest.validDoubleValueInput" />
       </list>
     </recent_temporary>
   </component>

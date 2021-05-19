@@ -41,16 +41,22 @@ class UserDTBTest {
     @Test
     void validUsername() {
         assertTrue(UserDTB.validUsername(user1));
+        assertTrue(UserDTB.validUsername(new User("Tony Cox", "", "")));
+        assertFalse(UserDTB.validUsername(new User("Bonk", "", "")));
     }
 
     @Test
     void validEmail() {
         assertTrue(UserDTB.validEmail(user1));
+        assertTrue(UserDTB.validEmail(new User("", "caramida@de.cox", "")));
+        assertFalse(UserDTB.validEmail(new User("", "Alabama", "")));
     }
 
     @Test
     void validPassword() {
         assertTrue(UserDTB.validPassword(user1));
+        assertTrue(UserDTB.validPassword(new User("", "", "Af69x")));
+        assertFalse(UserDTB.validPassword(new User("", "", "qwerty")));
     }
 
     @Test
