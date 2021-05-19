@@ -1,16 +1,16 @@
 [
   {
-    "username": "Provider",
-    "email": "prov@user.com",
-    "passwordHashed": "a72925654ab5e1c17791739652fb0eec4da9d32897d2f21328a083e9b104c084",
-    "salt": "ZF+Oi",
+    "username": "Thotu",
+    "email": "bogdantatu@gmail.com",
+    "passwordHashed": "e03ccb329451fcfc46fd6c9a9ad382d1ef332aa81a54ec0f2befaa728b787f48",
+    "salt": "o-eYJ",
     "providerFlag": true
   },
   {
-    "username": "Customer",
-    "email": "cust@user.com",
-    "passwordHashed": "9fa9b08d4281c8486ebad545b471e6554c4bf921281abcf149e22f44c001b893",
-    "salt": "c2ZYO",
+    "username": "Raoul",
+    "email": "raoul@taxevasion.com",
+    "passwordHashed": "9857a832a8d29658796496ee83284ab1a036694d8f96ae4b054beb15a8accd7a",
+    "salt": "H6Noa",
     "providerFlag": false
   }
 ]
