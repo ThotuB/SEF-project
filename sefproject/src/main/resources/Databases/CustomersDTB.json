@@ -22,5 +22,20 @@
       }
     ],
     "money": 999510.1
+  },
+  {
+    "name": "Csgfdgdf",
+    "library": [
+      {
+        "name": "FDsdf",
+        "price": 43.0,
+        "description": "FDdsghshgfhfgjhdfgj gagfdgffds",
+        "rent": true,
+        "startDate": "May 19, 2021, 12:00:00 PM",
+        "endDate": "May 29, 2021, 12:00:00 PM",
+        "bought": true
+      }
+    ],
+    "money": 353603.0
   }
 ]

@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Thotu",
+    "games": [
+      {
+        "name": "Game 1",
+        "price": 68.9,
+        "description": "Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!!!",
+        "rent": true,
+        "startDate": "May 19, 2021, 12:00:00 PM",
+        "endDate": "May 29, 2021, 12:00:00 PM",
+        "bought": true
+      },
+      {
+        "name": "Bruh",
+        "price": 421.0,
+        "description": "I need sleep now!",
+        "rent": false,
+        "startDate": "May 19, 2021, 12:00:00 PM",
+        "endDate": "May 22, 2021, 12:00:00 PM",
+        "bought": true
+      }
+    ]
+  },
+  {
+    "name": "SFdsgdg",
+    "games": [
+      {
+        "name": "FDsdf",
+        "price": 43.0,
+        "description": "FDdsghshgfhfgjhdfgj gagfdgffds",
+        "rent": true,
+        "startDate": "May 19, 2021, 12:00:00 PM",
+        "endDate": "May 29, 2021, 12:00:00 PM",
+        "bought": true
+      }
+    ]
+  }
+]

@@ -1,102 +1,41 @@
 [
   {
-    "name": "Alin",
+    "name": "Raoul",
     "library": [
       {
-        "name": "League of Dengends",
-        "price": 70.0,
-        "description": "wewqdadqadwqdwqwdqwdwqwq",
+        "name": "Bruh",
+        "price": 421.0,
+        "description": "I need sleep now!",
         "rent": false,
-        "startDate": "May 17, 2021, 12:00:00 PM",
-        "endDate": "May 21, 2021, 12:00:00 PM"
+        "startDate": "May 19, 2021, 12:00:00 PM",
+        "endDate": "May 22, 2021, 12:00:00 PM",
+        "bought": true
       },
       {
-        "name": "Dark Snails",
-        "price": 419.6,
-        "description": "wewqdadqadwqdwqwdqwdwqwq",
+        "name": "Game 1",
+        "price": 68.9,
+        "description": "Aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa!!!",
         "rent": true,
-        "startDate": "May 17, 2021, 12:00:00 PM",
-        "endDate": "May 21, 2021, 12:00:00 PM"
-      },
-      {
-        "name": "League of Dengends",
-        "price": 70.0,
-        "description": "wewqdadqadwqdwqwdqwdwqwq",
-        "rent": false,
-        "startDate": "May 17, 2021, 12:00:00 PM",
-        "endDate": "May 21, 2021, 12:00:00 PM"
-      },
-      {
-        "name": "Dark Snails",
-        "price": 419.6,
-        "description": "wewqdadqadwqdwqwdqwdwqwq",
-        "rent": true,
-        "startDate": "May 17, 2021, 12:00:00 PM",
-        "endDate": "May 21, 2021, 12:00:00 PM"
-      },
-      {
-        "name": "Dark Snails",
-        "price": 419.6,
-        "description": "wewqdadqadwqdwqwdqwdwqwq",
-        "rent": true,
-        "startDate": "May 17, 2021, 12:00:00 PM",
-        "endDate": "May 21, 2021, 12:00:00 PM"
-      },
-      {
-        "name": "Dark Snails",
-        "price": 419.6,
-        "description": "wewqdadqadwqdwqwdqwdwqwq",
-        "rent": true,
-        "startDate": "May 17, 2021, 12:00:00 PM",
-        "endDate": "May 21, 2021, 12:00:00 PM"
-      },
-      {
-        "name": "Dark Snails",
-        "price": 419.6,
-        "description": "wewqdadqadwqdwqwdqwdwqwq",
-        "rent": true,
-        "startDate": "May 17, 2021, 12:00:00 PM",
-        "endDate": "May 21, 2021, 12:00:00 PM"
-      },
-      {
-        "name": "Dark Snails",
-        "price": 419.6,
-        "description": "wewqdadqadwqdwqwdqwdwqwq",
-        "rent": true,
-        "startDate": "May 17, 2021, 12:00:00 PM",
-        "endDate": "May 21, 2021, 12:00:00 PM"
-      },
-      {
-        "name": "Dark Snails",
-        "price": 419.6,
-        "description": "wewqdadqadwqdwqwdqwdwqwq",
-        "rent": true,
-        "startDate": "May 17, 2021, 12:00:00 PM",
-        "endDate": "May 21, 2021, 12:00:00 PM"
+        "startDate": "May 19, 2021, 12:00:00 PM",
+        "endDate": "May 29, 2021, 12:00:00 PM",
+        "bought": true
       }
     ],
-    "money": 533
+    "money": 999510.1
   },
   {
-    "name": "Oare apar aici",
+    "name": "Csgfdgdf",
     "library": [
       {
-        "name": "Alfa",
-        "price": 10.0,
-        "description": "A t",
+        "name": "FDsdf",
+        "price": 43.0,
+        "description": "FDdsghshgfhfgjhdfgj gagfdgffds",
         "rent": true,
-        "startDate": "May 17, 2021, 12:26:29 PM",
-        "endDate": "May 17, 2021, 12:26:29 PM"
-      },
-      {
-        "name": "Alfa",
-        "price": 10.0,
-        "description": "A t",
-        "rent": true,
-        "startDate": "May 17, 2021, 12:43:25 PM",
-        "endDate": "May 17, 2021, 12:43:25 PM"
+        "startDate": "May 19, 2021, 12:00:00 PM",
+        "endDate": "May 29, 2021, 12:00:00 PM",
+        "bought": true
       }
     ],
-    "money": 10000.0
+    "money": 353603.0
   }
 ]

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Components.GameTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2021-05-19T06:45:42" hostname="DESKTOP-2J4QSVO" time="0.014">
+  <properties/>
+  <testcase name="getStartDate()" classname="Components.GameTest" time="0.0"/>
+  <testcase name="setStartDate()" classname="Components.GameTest" time="0.001"/>
+  <testcase name="getEndDate()" classname="Components.GameTest" time="0.0"/>
+  <testcase name="getName()" classname="Components.GameTest" time="0.0"/>
+  <testcase name="getRent()" classname="Components.GameTest" time="0.001"/>
+  <testcase name="setBought()" classname="Components.GameTest" time="0.0"/>
+  <testcase name="setDescription()" classname="Components.GameTest" time="0.001"/>
+  <testcase name="getBought()" classname="Components.GameTest" time="0.001"/>
+  <testcase name="setEndDate()" classname="Components.GameTest" time="0.0"/>
+  <testcase name="setPrice()" classname="Components.GameTest" time="0.001"/>
+  <testcase name="getDescription()" classname="Components.GameTest" time="0.001"/>
+  <testcase name="getPrice()" classname="Components.GameTest" time="0.001"/>
+  <testcase name="setName()" classname="Components.GameTest" time="0.0"/>
+  <testcase name="setRent()" classname="Components.GameTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

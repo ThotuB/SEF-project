@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Databases.ProviderDTBTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2021-05-19T06:45:42" hostname="DESKTOP-2J4QSVO" time="0.013">
+  <properties/>
+  <testcase name="validExpirationDate()" classname="Databases.ProviderDTBTest" time="0.001"/>
+  <testcase name="validCCV()" classname="Databases.ProviderDTBTest" time="0.001"/>
+  <testcase name="remove()" classname="Databases.ProviderDTBTest" time="0.001"/>
+  <testcase name="validDoubleValueInput()" classname="Databases.ProviderDTBTest" time="0.002"/>
+  <testcase name="getAllGamesFromDTB()" classname="Databases.ProviderDTBTest" time="0.001"/>
+  <testcase name="validGameDates()" classname="Databases.ProviderDTBTest" time="0.0"/>
+  <testcase name="add()" classname="Databases.ProviderDTBTest" time="0.0"/>
+  <testcase name="validDescription()" classname="Databases.ProviderDTBTest" time="0.001"/>
+  <testcase name="getCurrentProvider()" classname="Databases.ProviderDTBTest" time="0.001"/>
+  <testcase name="getProvider()" classname="Databases.ProviderDTBTest" time="0.0"/>
+  <testcase name="validCreditCard()" classname="Databases.ProviderDTBTest" time="0.0"/>
+  <testcase name="validGameName()" classname="Databases.ProviderDTBTest" time="0.0"/>
+  <testcase name="getAvailableGamesFromDTB()" classname="Databases.ProviderDTBTest" time="0.001"/>
+  <testcase name="setCurrentProvider()" classname="Databases.ProviderDTBTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

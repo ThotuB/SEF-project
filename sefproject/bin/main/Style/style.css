@@ -1,0 +1,185 @@
+* {
+    button-background: #2F3136;
+    gray-background-1: #36393F;
+    gray-background-2: #2F3136;
+    gray-background-3: #292B2F;
+    gray-background-4: #202225;
+    bloo: #7289da;
+    porpal: #3644d9;
+    error: #B33A3A;
+}
+
+.root {
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-text-fill: #ffffff;
+}
+
+.root_darkest {
+    -fx-background-color: gray-background-4;
+}
+
+.root_darker {
+    -fx-background-color: gray-background-3;
+}
+
+.root_dark{
+    -fx-background-color: gray-background-2;
+}
+
+.root_darkish{
+    -fx-background-color: gray-background-1;
+}
+
+/* TEXT */
+.text_white {
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-fill: white;
+    -fx-font-size: 25px;
+}
+
+.text_title {
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-weight: bolder;
+    -fx-fill: white;
+    -fx-font-size: 40px;
+}
+
+.grid {
+    -fx-background-color: gray-background-1;
+    -fx-background-radius: 5.0;
+    -fx-background-insets: 0.0 5.0 0.0 5.0;
+    -fx-padding: 10;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+    -fx-alignment: center;
+}
+
+.button {
+    -fx-background-color: button-background;
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 20;
+    -fx-font-size: 25px;
+}
+
+.button:hover {
+    -fx-opacity: 0.6;
+}
+
+.text-field {
+    -fx-background-color: porpal, gray-background-4;
+    -fx-background-insets: 0, 0 0 2 0;
+    -fx-background-radius: 0;
+
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 25px;
+    -fx-text-fill: white;
+}
+
+.text-field:focused {
+    -fx-background-color: bloo, gray-background-4;
+}
+
+.check-box {
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 15px;
+    -fx-text-fill: white;
+}
+
+/* LIST-VIEW */
+.list-view {
+    -fx-background-color: gray-background-4;
+    -fx-background-radius: 5.0;
+    -fx-background-insets: 0.0 5.0 0.0 5.0;
+}
+
+.list-view .list-cell:even {
+    -fx-background-color: gray-background-1;
+    -fx-text-fill: whitesmoke;
+    -fx-font-size: 20;
+}
+.list-view .list-cell:odd {
+    -fx-background-color: gray-background-4;
+    -fx-text-fill: whitesmoke;
+    -fx-font-size: 20;
+}
+
+.list-view:focused .list-cell:filled:selected {
+    /* 3: (This is more specific and therefore overrides the above)*/
+    -fx-background-color: linear-gradient(#000 0%, #222 25%, #444 75%, #666 100%);
+}
+
+/* TEXT-REA */
+.text-area {
+    -fx-background-insets: 0;
+    -fx-background-color: gray-background-4, gray-background-4, gray-background-4, gray-background-4;
+
+    -fx-text-fill: white;
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 25px;
+}
+
+.text-area .content {
+    -fx-background-color: porpal, gray-background-4, porpal, gray-background-4;
+    -fx-background-insets: 0, 2 0 2 0;
+    -fx-background-radius: 0;
+
+    -fx-padding: 10px;
+}
+
+.text-area:focused .content {
+    -fx-background-color: bloo, gray-background-4, bloo, gray-background-4;
+}
+
+.text-area-error {
+    -fx-background-insets: 0;
+    -fx-background-color: gray-background-4, gray-background-4, gray-background-4, gray-background-4;
+    -fx-opacity: 1;
+
+    -fx-text-fill: white;
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 20px;
+}
+
+.text-area-error .content {
+    -fx-background-color: error, gray-background-4, error, gray-background-4;
+    -fx-background-insets: 0, 2 0 2 0;
+    -fx-background-radius: 0;
+
+    -fx-padding: 10px;
+}
+
+/* DATE-PICKER */
+.date-picker {
+    -fx-background-insets: 0;
+}
+
+.date-picker > .text-field {
+    -fx-background-color: porpal, gray-background-4, porpal, gray-background-4;
+    -fx-background-insets: 0, 0 0 2 0;
+}
+
+.date-picker:focused > .text-field,
+.date-picker > .text-field:focused {
+    -fx-background-color: bloo, gray-background-4, bloo, gray-background-4;
+}
+
+/* CHOICE-BOX */
+.choice-box {
+    -fx-background-insets: 0, 0 0 2 0;
+    -fx-background-color: porpal, gray-background-4;
+
+    -fx-text-fill: white;
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 25px;
+}
+
+.choice-box:focused {
+    -fx-background-color: bloo, gray-background-4;
+}
+
+.choice-box > .label {
+    -fx-text-fill: white;
+    -fx-font-family: "Franklin Gothic Book";
+    -fx-font-size: 25px;
+}

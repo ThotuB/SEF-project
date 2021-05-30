@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Databases.UserDTBTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2021-05-19T06:45:42" hostname="DESKTOP-2J4QSVO" time="0.007">
+  <properties/>
+  <testcase name="existsUsernameOrEmail()" classname="Databases.UserDTBTest" time="0.001"/>
+  <testcase name="validUsername()" classname="Databases.UserDTBTest" time="0.0"/>
+  <testcase name="remove()" classname="Databases.UserDTBTest" time="0.001"/>
+  <testcase name="getUser()" classname="Databases.UserDTBTest" time="0.001"/>
+  <testcase name="validEmail()" classname="Databases.UserDTBTest" time="0.001"/>
+  <testcase name="add()" classname="Databases.UserDTBTest" time="0.0"/>
+  <testcase name="existsUser()" classname="Databases.UserDTBTest" time="0.0"/>
+  <testcase name="validPassword()" classname="Databases.UserDTBTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,31 +1,31 @@
-Components/Customer.java
- Components.Customer
-Tests/CustomerDTB_Test.java
- Tests.CustomerDTB_Test
-Applications/LogRegApplication.java
- Applications.LogRegApplication
-Components/Game.java
- Components.Game
 Controllers/LogRegController.java
  Controllers.LogRegController
 Components/User.java
  Components.User
-Databases/UserDTB.java
- Databases.UserDTB
- Databases.UserDTB$1
-Databases/CustomerDTB.java
- Databases.CustomerDTB
- Databases.CustomerDTB$1
-Components/Provider.java
- Components.Provider
-Controllers/ProviderController.java
- Controllers.ProviderController
 Databases/ProviderDTB.java
  Databases.ProviderDTB
  Databases.ProviderDTB$1
 Applications/CustomerApplication.java
  Applications.CustomerApplication
+Applications/ProviderApplication.java
+ Applications.ProviderApplication
+Components/Provider.java
+ Components.Provider
 Controllers/CustomerController.java
  Controllers.CustomerController
 Main/App.java
  Main.App
+Databases/CustomerDTB.java
+ Databases.CustomerDTB
+ Databases.CustomerDTB$1
+Components/Customer.java
+ Components.Customer
+Applications/LogRegApplication.java
+ Applications.LogRegApplication
+Components/Game.java
+ Components.Game
+Controllers/ProviderController.java
+ Controllers.ProviderController
+Databases/UserDTB.java
+ Databases.UserDTB
+ Databases.UserDTB$1

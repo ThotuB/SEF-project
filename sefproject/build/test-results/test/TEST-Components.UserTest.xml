@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Components.UserTest" tests="14" skipped="0" failures="0" errors="0" timestamp="2021-05-19T06:45:42" hostname="DESKTOP-2J4QSVO" time="0.031">
+  <properties/>
+  <testcase name="setPasswordHashed()" classname="Components.UserTest" time="0.004"/>
+  <testcase name="getPasswordHashed()" classname="Components.UserTest" time="0.003"/>
+  <testcase name="setPassword()" classname="Components.UserTest" time="0.0"/>
+  <testcase name="testToString()" classname="Components.UserTest" time="0.01"/>
+  <testcase name="getPassword()" classname="Components.UserTest" time="0.001"/>
+  <testcase name="getSalt()" classname="Components.UserTest" time="0.001"/>
+  <testcase name="getProviderFlag()" classname="Components.UserTest" time="0.001"/>
+  <testcase name="setEmail()" classname="Components.UserTest" time="0.001"/>
+  <testcase name="testSetSalt()" classname="Components.UserTest" time="0.0"/>
+  <testcase name="setUsername()" classname="Components.UserTest" time="0.0"/>
+  <testcase name="getUsername()" classname="Components.UserTest" time="0.001"/>
+  <testcase name="getEmail()" classname="Components.UserTest" time="0.002"/>
+  <testcase name="setSalt()" classname="Components.UserTest" time="0.001"/>
+  <testcase name="setProviderFlag()" classname="Components.UserTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

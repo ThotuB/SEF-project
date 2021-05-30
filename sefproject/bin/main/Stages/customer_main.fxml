@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.2969213649851632" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.CustomerController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="root_darkest" stylesheets="@../Style/style.css">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="181.0" fitWidth="341.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/raccoon.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Raccoony" wrappingWidth="101.32080078125">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Line endX="192.06668090820312" startX="-72.59999084472656" />
+                  <VBox alignment="CENTER" prefHeight="308.0" prefWidth="317.0" spacing="25.0" styleClass="root_darkest">
+                     <children>
+                        <Button fx:id="seeLibraryButton" mnemonicParsing="false" onAction="#seeLibraryClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="See Library">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="browseGamesButton" mnemonicParsing="false" onAction="#browseGamesClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Browse Games">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="transactionsButton1" mnemonicParsing="false" onAction="#transactionsClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Transactions">
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                        <Button fx:id="addMoneyButton" mnemonicParsing="false" onAction="#addMoneyClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Add Money">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Region prefHeight="55.0" prefWidth="317.0" VBox.vgrow="NEVER" />
+                  <Button mnemonicParsing="false" onAction="#logOutAction" text="Log Out">
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <StackPane>
+         <children>
+          <AnchorPane fx:id="libraryAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="root_darker" visible="false">
+               <children>
+                  <AnchorPane layoutX="-5.0" layoutY="57.0" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest">
+                     <children>
+                        <Text fill="WHITE" layoutX="38.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, ">
+                           <font>
+                              <Font name="Dubai Regular" size="43.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="customerNameLabel" fill="WHITE" layoutX="234.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- insert name here -" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="182.25900268554688">
+                           <font>
+                              <Font name="Dubai Regular" size="43.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="117.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hope you're having a nice day!">
+                           <font>
+                              <Font name="Dubai Regular" size="43.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <Text fill="WHITE" layoutX="260.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here's a list of your games:">
+                     <font>
+                        <Font name="Dubai Regular" size="22.0" />
+                     </font>
+                  </Text>
+                  <GridPane fx:id="gamesGridPane" alignment="CENTER" gridLinesVisible="true" layoutX="31.0" layoutY="359.0" prefHeight="307.0" prefWidth="693.0" styleClass="grid">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="transactionsAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest">
+               <children>
+                  <Text layoutX="52.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Here's a list of your game transactions." />
+                  <VBox layoutX="39.0" layoutY="141.0" prefHeight="528.0" prefWidth="694.0">
+                     <children>
+                        <HBox prefHeight="238.0" prefWidth="563.0">
+                           <children>
+                              <HBox prefHeight="63.0" prefWidth="664.0">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Name" wrappingWidth="236.02032470703125" />
+                                    <Region prefHeight="100.0" prefWidth="34.0" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Price" wrappingWidth="229.2463960647583" />
+                                    <Region prefHeight="200.0" prefWidth="200.0" />
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Time Left" wrappingWidth="197.21295547485352" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="577.0" prefWidth="694.0">
+                           <children>
+                              <ListView fx:id="gameTransactionsListView" focusTraversable="false" prefHeight="510.0" prefWidth="227.0" styleClass="grid" />
+                              <ListView fx:id="gameTransactionsPriceListView" focusTraversable="false" prefHeight="142.0" prefWidth="227.0" styleClass="grid" />
+                              <ListView fx:id="gameTransactionsTimeLeftListView" focusTraversable="false" prefHeight="510.0" prefWidth="227.0" styleClass="grid" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="addMoneyAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest" visible="false">
+               <children>
+                  <Button fx:id="addMoneyButton" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" onAction="#addMoneyToAccount" prefHeight="73.0" prefWidth="398.0" text="Make yourself rich!" />
+                  <Text layoutX="122.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Add money to your account!" />
+                  <VBox layoutX="111.0" layoutY="394.0" prefHeight="200.0" prefWidth="500.0" spacing="20.0">
+                     <children>
+                        <TextField fx:id="amountTextField" prefHeight="48.0" prefWidth="135.0" promptText="Amount" styleClass="text-field" stylesheets="@../Style/style.css" />
+                        <TextField fx:id="creditCardTextField" prefHeight="45.0" prefWidth="351.0" promptText="Credit Card Number" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="expirationDateTextField" prefHeight="45.0" prefWidth="196.0" promptText="Expiration Date" />
+                              <Region prefHeight="69.0" prefWidth="185.0" HBox.hgrow="ALWAYS" />
+                              <TextField fx:id="ccvTextField" prefHeight="46.0" prefWidth="129.0" promptText="CCV" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <opaqueInsets>
+                        <Insets top="5.0" />
+                     </opaqueInsets>
+                  </VBox>
+                  <ImageView fitHeight="209.0" fitWidth="520.0" layoutX="91.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/coins.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="browseGamesAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest" visible="false">
+               <children>
+                  <Button fx:id="chooseThisGameButton" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" onAction="#chooseThisGameButton" prefHeight="73.0" prefWidth="398.0" text="Choose this game!" />
+                  <Text layoutX="48.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Choose a game you'd like" />
+                  <HBox layoutX="31.0" layoutY="139.0" prefHeight="443.0" prefWidth="694.0">
+                     <children>
+                        <ListView fx:id="gameListListView" prefHeight="443.0" prefWidth="253.0" styleClass="grid" />
+                        <Region prefHeight="443.0" prefWidth="19.0" />
+                        <ListView fx:id="gameListViewPrice" focusTraversable="false" prefHeight="443.0" prefWidth="107.0" styleClass="grid" />
+                        <Region prefHeight="443.0" prefWidth="27.0" />
+                        <ListView fx:id="gameListViewPeriod" focusTraversable="false" prefHeight="443.0" prefWidth="328.0" styleClass="grid" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="44.0" layoutY="85.0" prefHeight="35.0" prefWidth="679.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Name" wrappingWidth="250.1536865234375" />
+                        <Region prefHeight="100.0" prefWidth="250.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Price" wrappingWidth="120.44634246826172" />
+                        <Region prefHeight="100.0" prefWidth="299.0" HBox.hgrow="ALWAYS" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Period" wrappingWidth="307.33782744407654" />
+                     </children>
+                  </HBox>
+                  <VBox layoutX="33.0" layoutY="582.0" prefHeight="136.0" prefWidth="270.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Current balance" />
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                              <Text fx:id="balanceText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="balance" />
+                              <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+  </items>
+</SplitPane>

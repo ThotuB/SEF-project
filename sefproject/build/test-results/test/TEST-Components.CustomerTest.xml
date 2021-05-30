@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Components.CustomerTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-05-19T06:45:42" hostname="DESKTOP-2J4QSVO" time="0.029">
+  <properties/>
+  <testcase name="setLibrary()" classname="Components.CustomerTest" time="0.019"/>
+  <testcase name="addGame()" classname="Components.CustomerTest" time="0.001"/>
+  <testcase name="getGame()" classname="Components.CustomerTest" time="0.0"/>
+  <testcase name="getName()" classname="Components.CustomerTest" time="0.001"/>
+  <testcase name="removeGame()" classname="Components.CustomerTest" time="0.002"/>
+  <testcase name="getLibrary()" classname="Components.CustomerTest" time="0.001"/>
+  <testcase name="setMoney()" classname="Components.CustomerTest" time="0.001"/>
+  <testcase name="getMoney()" classname="Components.CustomerTest" time="0.001"/>
+  <testcase name="setName()" classname="Components.CustomerTest" time="0.001"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

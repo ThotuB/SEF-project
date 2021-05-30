@@ -12,5 +12,19 @@
     "passwordHashed": "9857a832a8d29658796496ee83284ab1a036694d8f96ae4b054beb15a8accd7a",
     "salt": "H6Noa",
     "providerFlag": false
+  },
+  {
+    "username": "SFdsgdg",
+    "email": "dgdsgs@gfd.com",
+    "passwordHashed": "1737c58d1b82d53dad31f05ec784fa4143273fb598f70417ed0f9cfd2855ad79",
+    "salt": "lk6uQ",
+    "providerFlag": true
+  },
+  {
+    "username": "Csgfdgdf",
+    "email": "fsfgsdag@gfdgs.fds",
+    "passwordHashed": "8f55fab5bf5b1edd732b5686f8ced8677e637c55d7a3c4fd41a66f3dcd77ef0e",
+    "salt": "\u0027Y2[6",
+    "providerFlag": false
   }
 ]

@@ -32,3 +32,20 @@ javafx {
 application {
     mainClassName = 'Main.App'
 }
+
+configurations {
+    runtimeOnly {
+        canBeResolved = true
+        canBeConsumed = false
+    }
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "Main.App"
+    }
+
+    from {
+        configurations.runtimeOnly.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

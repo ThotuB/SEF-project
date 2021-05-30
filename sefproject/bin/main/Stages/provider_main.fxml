@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.2969213649851632" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" stylesheets="@../Style/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ProviderController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="root_darkest" stylesheets="@../Style/style.css">
+         <children>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="181.0" fitWidth="341.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/raccoon.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Raccoony" wrappingWidth="102.32080078125">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Line endX="192.06668090820312" startX="-72.59999084472656" />
+                  <VBox alignment="CENTER" prefHeight="416.0" prefWidth="274.0" spacing="25.0" styleClass="root_darkest">
+                     <children>
+                        <Button fx:id="seeGamesButton" mnemonicParsing="false" onAction="#seeGamesClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="See Games">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="changeOfferButton" mnemonicParsing="false" onAction="#changeOfferClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="Change Offer">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="newOfferButton" alignment="CENTER" mnemonicParsing="false" onAction="#newOfferClick" prefHeight="35.0" prefWidth="200.0" stylesheets="@../Style/style.css" text="New Offer">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font name="Dubai Regular" size="18.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <Region prefHeight="35.0" prefWidth="317.0" />
+                  <Button mnemonicParsing="false" onAction="#logOutAction" text="Log Out">
+                     <VBox.margin>
+                        <Insets bottom="25.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <StackPane>
+         <children>
+          <AnchorPane fx:id="welcomeAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" styleClass="root_darker">
+               <children>
+                  <AnchorPane layoutX="-5.0" layoutY="57.0" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest">
+                     <children>
+                        <Text fill="WHITE" layoutX="38.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome, ">
+                           <font>
+                              <Font name="Dubai Regular" size="43.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="provNameLabel" fill="WHITE" layoutX="234.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- insert name here -" AnchorPane.leftAnchor="234.0" AnchorPane.rightAnchor="182.25900268554688">
+                           <font>
+                              <Font name="Dubai Regular" size="43.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="117.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hope you're having a nice day!">
+                           <font>
+                              <Font name="Dubai Regular" size="43.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <Text fill="WHITE" layoutX="260.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here's a list of your offers:">
+                     <font>
+                        <Font name="Dubai Regular" size="22.0" />
+                     </font>
+                  </Text>
+                  <GridPane fx:id="gamesGridPane" alignment="CENTER" gridLinesVisible="true" layoutX="31.0" layoutY="359.0" prefHeight="307.0" prefWidth="693.0" styleClass="grid">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="newOfferAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest">
+               <children>
+                  <VBox layoutX="5.0" layoutY="1.0" prefHeight="718.0" prefWidth="725.0" spacing="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Please fill in the game details." />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="With care." />
+                        <HBox spacing="50.0">
+                           <children>
+                              <VBox spacing="25.0">
+                                 <children>
+                                    <TextField fx:id="gameNameTextField" prefHeight="38.0" prefWidth="160.0" promptText="Game Name" styleClass="text-field" stylesheets="@../Style/style.css" />
+                                    <TextField fx:id="priceTextField" prefHeight="45.0" prefWidth="226.0" promptText="Price" styleClass="text-field" stylesheets="@../Style/style.css" />
+                                    <DatePicker fx:id="startDateDatePicker" prefHeight="22.0" prefWidth="240.0" promptText="Start Date" />
+                                    <DatePicker fx:id="endDateDatePicker" prefHeight="22.0" prefWidth="240.0" promptText="End Date" />
+                                    <ChoiceBox fx:id="choiceBoxo" prefHeight="22.0" prefWidth="238.0" />
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </VBox>
+                              <VBox spacing="25.0">
+                                 <children>
+                                    <Region prefHeight="57.0" prefWidth="398.0" />
+                                    <TextArea fx:id="errorTextArea" disable="true" editable="false" focusTraversable="false" prefHeight="144.0" prefWidth="398.0" styleClass="text-area-error" visible="false">
+                                       <font>
+                                          <Font size="25.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="DEFAULT" />
+                                       </cursor>
+                                    </TextArea>
+                                    <Button fx:id="newOfferButton1" mnemonicParsing="false" onAction="#makeNewOfferButtonClick" prefHeight="73.0" prefWidth="398.0" text="Make New Offer!" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <TextArea fx:id="descriptionTextArea" prefHeight="210.0" prefWidth="693.0" promptText="Description">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </TextArea>
+                     </children>
+                     <padding>
+                        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="changeOfferAnchorPane" prefHeight="200.0" prefWidth="764.0" styleClass="root_darkest" visible="false">
+               <children>
+                  <Button fx:id="changeOfferButton" layoutX="345.0" layoutY="601.0" mnemonicParsing="false" onAction="#changeThisOfferButtonClick" prefHeight="73.0" prefWidth="398.0" text="Change this offer!" />
+                  <Text layoutX="52.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="Please choose a game." />
+                  <Text layoutX="55.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text_title" text="With care." />
+                  <ListView fx:id="gameListListView" layoutX="33.0" layoutY="249.0" prefHeight="327.0" prefWidth="657.0" styleClass="grid" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+  </items>
+</SplitPane>
